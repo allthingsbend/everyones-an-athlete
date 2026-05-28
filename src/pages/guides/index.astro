@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Fitness, Nutrition, Recovery and Mental Wellness Guides';
+const description = 'Explore practical guides on training, body care, recovery, nutrition, mental performance, workplace wellness and fitness apps.';
+
+const guides = [
+  {
+    title: 'Fitness, Nutrition, Mental Health and Recovery App',
+    description: 'A complete guide to using one app for workouts, nutrition, recovery, mobility and mental performance.',
+    url: '/guides/fitness-nutrition-mental-health-recovery-app/',
+    category: 'All-in-One Wellness',
+    pillar: 'Training, Recovery, Mindset, Fuel',
+    featured: true
+  },
+  {
+    title: 'Best Fitness Apps with Nutrition Support',
+    description: 'What to look for in a fitness app that combines workout guidance with nutrition education and healthier habits.',
+    url: '/fitness-apps/best-fitness-apps-with-nutrition/',
+    category: 'Fitness Apps',
+    pillar: 'Fuel & Wellness',
+    featured: true
+  },
+  {
+    title: 'All-in-One Physical and Mental Health App',
+    description: 'Why fitness, recovery, stress management and mindset tools work better when they are part of one connected system.',
+    url: '/fitness-apps/all-in-one-physical-mental-health-app/',
+    category: 'Fitness Apps',
+    pillar: 'Mindset',
+    featured: true
+  },
+  {
+    title: 'Fitness Apps with Workout Videos',
+    description: 'How guided workout videos help people train with more confidence, consistency and structure.',
+    url: '/fitness-apps/workout-videos/',
+    category: 'Fitness Apps',
+    pillar: 'Training'
+  },
+  {
+    title: 'Why Nutrition Is Important for Athletes',
+    description: 'How protein, hydration, meal timing and everyday food choices support performance, recovery and long-term health.',
+    url: '/nutrition/why-nutrition-is-important-for-athletes/',
+    category: 'Nutrition',
+    pillar: 'Fuel & Wellness'
+  },
+  {
+    title: 'Mobility and Recovery After Workouts',
+    description: 'Simple recovery habits, mobility work and body care routines that help people feel better between workouts.',
+    url: '/recovery/mobility-recovery-after-workouts/',
+    category: 'Recovery',
+    pillar: 'Body Care'
+  },
+  {
+    title: 'Mental Performance Training for Athletes',
+    description: 'A practical guide to focus, breathing, awareness, confidence and building the mindset behind better performance.',
+    url: '/mental-performance/mental-performance-training-for-athletes/',
+    category: 'Mental Performance',
+    pillar: 'Mindset'
+  },
+  {
+    title: 'Corporate Fitness and Wellness Programs',
+    description: 'How companies can support employees with movement, recovery, nutrition, ergonomics and mental wellness resources.',
+    url: '/corporate-wellness/',
+    category: 'Corporate Wellness',
+    pillar: 'Workplace Wellness'
+  },
+  {
+    title: 'Corporate Fitness and Wellness in San Diego',
+    description: 'A local guide for San Diego companies looking to support healthier, more active and more resilient teams.',
+    url: '/corporate-wellness/san-diego/',
+    category: 'Corporate Wellness',
+    pillar: 'Workplace Wellness'
+  },
+  {
+    title: 'Corporate Fitness and Wellness in Austin',
+    description: 'A local guide for Austin companies interested in workplace wellness, employee movement and team health programs.',
+    url: '/corporate-wellness/austin/',
+    category: 'Corporate Wellness',
+    pillar: 'Workplace Wellness'
+  },
+  {
+    title: 'Workplace Ergonomics Guide',
+    description: 'Desk setup, posture, movement breaks and simple body care habits for people who sit for long periods.',
+    url: '/workplace-wellness/workplace-ergonomics/',
+    category: 'Workplace Wellness',
+    pillar: 'Body Care'
+  }
+];
+
+const featuredGuides = guides.filter((guide) => guide.featured);
+const allGuides = guides.filter((guide) => !guide.featured);
+const categories = [...new Set(guides.map((guide) => guide.category))];
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Everyone’s an Athlete Guides',
+  itemListElement: guides.map((guide, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: guide.title,
+    url: new URL(guide.url, Astro.site).toString()
+  }))
+};
+---
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+
+  <section class="page-hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Guides</div>
+        <h1>Fitness, nutrition, recovery and mental wellness guides.</h1>
+        <p class="lead">Explore practical guides built around the four core pillars of Everyone’s an Athlete: training, body care, mindset, and fuel. These articles are designed to help people move better, recover smarter, eat with more intention, and build healthier routines.</p>
+        <div class="hero-actions">
+          <a class="button" href="https://app.hhmovement.com/">Open the App</a>
+          <a class="button secondary" href="/about/">Learn About the Mission</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h2>Explore by topic</h2>
+        <p>Start with a pillar below, or browse the full guide library.</p>
+        <div class="tag-list">
+          {categories.map((category) => <span>{category}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Featured Guides</div>
+        <h2>Start here.</h2>
+        <p>These guides explain the full app approach and the biggest wellness categories people search for.</p>
+      </div>
+      <div class="grid three">
+        {featuredGuides.map((guide) => (
+          <a class="card guide-card featured-guide" href={guide.url}>
+            <div class="card-meta">{guide.category}</div>
+            <h3>{guide.title}</h3>
+            <p>{guide.description}</p>
+            <span class="text-link">Read the guide</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">All Guides</div>
+        <h2>Browse the full library.</h2>
+        <p>Use these pages to build topical authority around fitness apps, workplace wellness, nutrition, recovery and mental performance.</p>
+      </div>
+      <div class="guide-list">
+        {allGuides.map((guide) => (
+          <a class="guide-row" href={guide.url}>
+            <div>
+              <div class="card-meta">{guide.category} · {guide.pillar}</div>
+              <h3>{guide.title}</h3>
+              <p>{guide.description}</p>
+            </div>
+            <span>Read</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-panel">
+      <div>
+        <div class="eyebrow">Content Strategy</div>
+        <h2>A growing wellness knowledge hub.</h2>
+        <p>This guide library is built to support both users and search visibility. It gives the brand a strong foundation across training, body care, nutrition, recovery, mental performance and workplace wellness.</p>
+      </div>
+      <div class="mini-grid">
+        <div class="mini-card"><strong>Training</strong><span>Workouts, movement quality, guided videos and consistency.</span></div>
+        <div class="mini-card"><strong>Body Care</strong><span>Recovery, mobility, ergonomics, soreness and injury prevention basics.</span></div>
+        <div class="mini-card"><strong>Mindset</strong><span>Stress, confidence, focus, habits and mental performance.</span></div>
+        <div class="mini-card"><strong>Fuel & Wellness</strong><span>Nutrition, hydration, performance habits and whole-person health.</span></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
