@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Fitness, Nutrition, Recovery & Mental Performance App';
+const description = 'Everyone’s an Athlete is a simple wellness app for training, body care, mental performance, and fuel and wellness support.';
+---
+<BaseLayout title={title} description={description}>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Health & Human Movement Inc.</div>
+        <h1>Smarter training, recovery, nutrition and mindset in one simple app.</h1>
+        <p class="lead">Everyone’s an Athlete helps people build sustainable health through guided movement, proactive body care, mental performance tools, and practical nutrition education.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://app.hhmovement.com/">Open the App</a>
+          <a class="btn secondary" href="/about/">Learn the Why</a>
+        </div>
+      </div>
+      <div class="phone-card"><img src="/images/app/screenshot-1.png" alt="Everyone's an Athlete app dashboard showing weekly training progress" /></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="eyebrow">Core pillars</div>
+      <h2>Built around the full human performance picture.</h2>
+      <div class="grid four pillar-grid">
+        <a class="card" href="/training/"><span class="pill">Weightlifting</span><h3>Training</h3><p>Structured strength sessions, follow-along exercise videos, weekly plans, and foundational movement skills.</p></a>
+        <a class="card" href="/body-care/"><span class="pill coral">Recovery</span><h3>Body Care</h3><p>Mobility, recovery, body awareness, and routines that support better movement before or after training.</p></a>
+        <a class="card" href="/mental-performance/"><span class="pill purple">Mindset</span><h3>Mental Performance</h3><p>Simple mental skills for athletes and everyday movers, including breathing, reflection, and body awareness.</p></a>
+        <a class="card" href="/fuel-wellness/"><span class="pill orange">Nutrition</span><h3>Fuel & Wellness</h3><p>Evidence-based guidance on nutrition, sleep, stress, hydration, protein, and sustainable wellness habits.</p></a>
+      </div>
+    </div>
+  </section>
+  <section class="section alt">
+    <div class="container split">
+      <div>
+        <div class="eyebrow">Content hub</div>
+        <h2>SEO-friendly guides that support the app and the brand.</h2>
+        <p class="lead small">The site includes guides for corporate wellness, fitness apps, nutrition, recovery, ergonomics and all-in-one wellness topics. This gives the brand more search visibility while educating people before they enter the app.</p>
+        <a class="btn" href="/guides/fitness-nutrition-mental-health-recovery-app/">Read the main guide</a>
+      </div>
+      <div class="screen-grid stacked">
+        <img src="/images/app/screenshot-2.png" alt="Weekly training program in the app" />
+        <img src="/images/app/screenshot-4.png" alt="Mental performance body awareness plan in the app" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

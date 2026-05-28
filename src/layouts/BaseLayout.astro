@@ -1,0 +1,61 @@
+---
+import '../styles.css';
+const { title, description, canonical, image='/images/app/screenshot-1.png' } = Astro.props;
+const siteName = 'Everyone’s an Athlete';
+const pageTitle = title ? `${title} | ${siteName}` : siteName;
+const canonicalUrl = canonical ? new URL(canonical, Astro.site).toString() : new URL(Astro.url.pathname, Astro.site).toString();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={new URL(image, Astro.site).toString()} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context':'https://schema.org',
+      '@type':'Organization',
+      name:'Everyone’s an Athlete',
+      alternateName:'Health & Human Movement Inc.',
+      url:Astro.site?.toString(),
+      sameAs:['https://www.hhmovement.com/'],
+      description:'A fitness, nutrition, recovery and mental performance app built around sustainable health, movement quality, body care and behavior change.'
+    })}></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="/">Everyone’s an Athlete</a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="/training/">Training</a>
+          <a href="/body-care/">Body Care</a>
+          <a href="/mental-performance/">Mindset</a>
+          <a href="/fuel-wellness/">Fuel & Wellness</a>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+          <a class="nav-cta" href="https://app.hhmovement.com/">Open App</a>
+        </nav>
+      </div>
+    </header>
+    <main><slot /></main>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand footer-brand">Everyone’s an Athlete</div>
+          <p>Training the body intelligently, recovering proactively, building mental performance, and fueling everything with sound nutrition.</p>
+        </div>
+        <div>
+          <p><strong>Explore</strong></p>
+          <p><a href="/training/">Training</a> · <a href="/body-care/">Body Care</a> · <a href="/mental-performance/">Mindset</a> · <a href="/fuel-wellness/">Fuel & Wellness</a> · <a href="/content-calendar/">Content Calendar</a></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

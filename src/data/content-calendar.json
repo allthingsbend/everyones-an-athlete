@@ -1,0 +1,123 @@
+[
+  {
+    "cluster": "Corporate Wellness",
+    "contentType": "Pillar",
+    "targetKeyword": "corporate fitness and wellness",
+    "url": "/corporate-wellness/",
+    "intent": "Commercial",
+    "location": "National",
+    "funnelStage": "Mid",
+    "priority": "High",
+    "notes": "Corporate wellness app, employee fitness, nutrition, recovery, mental performance"
+  },
+  {
+    "cluster": "Corporate Wellness",
+    "contentType": "Local Page",
+    "targetKeyword": "corporate fitness and wellness in San Diego",
+    "url": "/corporate-wellness/san-diego/",
+    "intent": "Commercial",
+    "location": "San Diego",
+    "funnelStage": "Mid",
+    "priority": "High",
+    "notes": "Local landing page for companies and teams"
+  },
+  {
+    "cluster": "Corporate Wellness",
+    "contentType": "Local Page",
+    "targetKeyword": "corporate fitness and wellness in Austin",
+    "url": "/corporate-wellness/austin/",
+    "intent": "Commercial",
+    "location": "Austin",
+    "funnelStage": "Mid",
+    "priority": "Medium",
+    "notes": "Repeatable local template"
+  },
+  {
+    "cluster": "Fitness Apps",
+    "contentType": "Comparison",
+    "targetKeyword": "best fitness apps with nutrition",
+    "url": "/fitness-apps/best-fitness-apps-with-nutrition/",
+    "intent": "Commercial",
+    "location": "National",
+    "funnelStage": "Bottom",
+    "priority": "High",
+    "notes": "Comparison and buying-intent style content"
+  },
+  {
+    "cluster": "Fitness Apps",
+    "contentType": "Comparison",
+    "targetKeyword": "all in one physical and mental health app",
+    "url": "/fitness-apps/all-in-one-physical-mental-health-app/",
+    "intent": "Commercial",
+    "location": "National",
+    "funnelStage": "Bottom",
+    "priority": "High",
+    "notes": "Position app as combined body, mind, recovery and nutrition platform"
+  },
+  {
+    "cluster": "Fitness Apps",
+    "contentType": "Guide",
+    "targetKeyword": "fitness apps with workout videos",
+    "url": "/fitness-apps/workout-videos/",
+    "intent": "Commercial",
+    "location": "National",
+    "funnelStage": "Bottom",
+    "priority": "Medium",
+    "notes": "Video-led workouts and guided exercise library"
+  },
+  {
+    "cluster": "Workplace Wellness",
+    "contentType": "Guide",
+    "targetKeyword": "workplace ergonomics guide",
+    "url": "/workplace-wellness/workplace-ergonomics/",
+    "intent": "Informational",
+    "location": "National",
+    "funnelStage": "Top",
+    "priority": "Medium",
+    "notes": "Desk posture, movement breaks, recovery and injury prevention"
+  },
+  {
+    "cluster": "Nutrition",
+    "contentType": "Guide",
+    "targetKeyword": "why nutrition is important for athletes",
+    "url": "/nutrition/why-nutrition-is-important-for-athletes/",
+    "intent": "Informational",
+    "location": "National",
+    "funnelStage": "Top",
+    "priority": "High",
+    "notes": "Evidence-based nutrition education"
+  },
+  {
+    "cluster": "Recovery",
+    "contentType": "Guide",
+    "targetKeyword": "mobility and recovery routine after workouts",
+    "url": "/recovery/mobility-recovery-after-workouts/",
+    "intent": "Informational",
+    "location": "National",
+    "funnelStage": "Top",
+    "priority": "High",
+    "notes": "Body care, mobility, recovery habits"
+  },
+  {
+    "cluster": "Mental Performance",
+    "contentType": "Guide",
+    "targetKeyword": "mental performance training for athletes",
+    "url": "/mental-performance/mental-performance-training-for-athletes/",
+    "intent": "Informational",
+    "location": "National",
+    "funnelStage": "Top",
+    "priority": "High",
+    "notes": "Body awareness, breathing, reflection, confidence"
+  },
+  {
+    "cluster": "Guides",
+    "contentType": "Guide",
+    "targetKeyword": "fitness nutrition mental health recovery app guide",
+    "url": "/guides/fitness-nutrition-mental-health-recovery-app/",
+    "intent": "Commercial",
+    "location": "National",
+    "funnelStage": "Mid",
+    "priority": "High",
+    "notes": "Long-form hub style guide"
+  }
+]

@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ideas from '../data/content-calendar.json';
+const title='Content Calendar Database';
+const description='SEO content calendar database for Health & Human Movement topics including corporate wellness, fitness apps, nutrition, recovery and mental performance.';
+---
+<BaseLayout title={title} description={description}>
+<section class="page-hero"><div class="container"><div class="eyebrow">Content Database</div><h1>SEO content calendar and topic database.</h1><p class="lead">Use this as the starting point for planning guides, comparison pages, local pages, video ideas and supporting content.</p></div></section>
+<section class="content"><div class="container"><div class="table-wrap"><table><thead><tr><th>Cluster</th><th>Type</th><th>Target Keyword</th><th>URL</th><th>Intent</th><th>Priority</th></tr></thead><tbody>{ideas.map((idea)=><tr><td>{idea.cluster}</td><td>{idea.contentType}</td><td>{idea.targetKeyword}</td><td><a href={idea.url}>{idea.url}</a></td><td>{idea.intent}</td><td>{idea.priority}</td></tr>)}</tbody></table></div></div></section>
+</BaseLayout>
