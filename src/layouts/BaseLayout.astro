@@ -19,15 +19,6 @@ const canonicalUrl = canonical ? new URL(canonical, Astro.site).toString() : new
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={new URL(image, Astro.site).toString()} />
     <meta name="twitter:card" content="summary_large_image" />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      '@context':'https://schema.org',
-      '@type':'Organization',
-      name:'Everyone’s an Athlete',
-      alternateName:'Health & Human Movement Inc.',
-      url:Astro.site?.toString(),
-      sameAs:['https://www.hhmovement.com/'],
-      description:'A fitness, nutrition, recovery and mental performance app built around sustainable health, movement quality, body care and behavior change.'
-    })}></script>
   </head>
   <body>
     <header class="site-header">
@@ -38,22 +29,33 @@ const canonicalUrl = canonical ? new URL(canonical, Astro.site).toString() : new
           <a href="/body-care/">Body Care</a>
           <a href="/mental-performance/">Mindset</a>
           <a href="/fuel-wellness/">Fuel & Wellness</a>
+          <a href="/guides/">Guides</a>
           <a href="/about/">About</a>
           <a href="/contact/">Contact</a>
           <a class="nav-cta" href="https://app.hhmovement.com/">Open App</a>
         </nav>
       </div>
     </header>
+
     <main><slot /></main>
+
     <footer class="footer">
       <div class="container footer-grid">
         <div>
           <div class="brand footer-brand">Everyone’s an Athlete</div>
-          <p>Training the body intelligently, recovering proactively, building mental performance, and fueling everything with sound nutrition.</p>
+          <p>Training the body intelligently, recovering proactively, building mental performance, and fueling everything with practical nutrition and wellness habits.</p>
         </div>
         <div>
           <p><strong>Explore</strong></p>
-          <p><a href="/training/">Training</a> · <a href="/body-care/">Body Care</a> · <a href="/mental-performance/">Mindset</a> · <a href="/fuel-wellness/">Fuel & Wellness</a> · <a href="/content-calendar/">Content Calendar</a></p>
+          <p>
+            <a href="/training/">Training</a> ·
+            <a href="/body-care/">Body Care</a> ·
+            <a href="/mental-performance/">Mindset</a> ·
+            <a href="/fuel-wellness/">Fuel & Wellness</a> ·
+            <a href="/guides/">Guides</a> ·
+            <a href="/about/">About</a> ·
+            <a href="/contact/">Contact</a>
+          </p>
         </div>
       </div>
     </footer>
