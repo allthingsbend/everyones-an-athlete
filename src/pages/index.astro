@@ -47,6 +47,62 @@ const description = 'Everyone’s an Athlete is a simple fitness and wellness ap
   </section>
 
   <section class="section alt">
+    <div class="container">
+      <div class="eyebrow">Watch & Learn</div>
+      <h2>Exercise videos for building strength, movement skills, and confidence.</h2>
+      <p class="lead small">Watch simple exercise demonstrations from Everyone’s an Athlete, including strength training movements like deadlifts, step ups, and bench press.</p>
+
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/l2Usc4w8094"
+              title="Deadlift exercise demonstration"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <h3>Deadlift</h3>
+          <p>A simple strength movement demonstration focused on proper form and control.</p>
+        </div>
+
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/vUMOMFyQbLo"
+              title="Step ups exercise demonstration"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <h3>Step Ups</h3>
+          <p>A lower-body movement for building strength, balance, and single-leg control.</p>
+        </div>
+
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/x9FXYhM85jg"
+              title="Bench press exercise demonstration"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <h3>Bench Press</h3>
+          <p>An upper-body strength exercise demonstration for pressing mechanics and control.</p>
+        </div>
+      </div>
+
+      <div class="section-actions">
+        <a class="btn secondary" href="https://www.youtube.com/@everyonesanathlete">View More Videos on YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="container split">
       <div>
         <div class="eyebrow">Guides</div>
@@ -62,4 +118,55 @@ const description = 'Everyone’s an Athlete is a simple fitness and wellness ap
       </div>
     </div>
   </section>
+
+  <style>
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .video-card {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      background: #111827;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-card h3 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    .video-card p {
+      margin: 0;
+    }
+
+    .section-actions {
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </BaseLayout>
