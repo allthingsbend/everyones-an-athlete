@@ -1,0 +1,21 @@
+---
+import HipExplorer from '../../components/movement/HipExplorer.astro';
+import '../../styles/movement-manual.css';
+
+const title = 'The Movement Manual | Everyone’s an Athlete';
+const description = 'A visual-first guide to how the human body moves, starting with hips, mobility, muscles, and real-life movement problems.';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <main class="movement-manual">
+      <HipExplorer />
+    </main>
+  </body>
+</html>

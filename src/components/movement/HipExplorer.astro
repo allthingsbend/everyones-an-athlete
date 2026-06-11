@@ -1,0 +1,160 @@
+---
+import { hipModule } from '../../data/movementModules.js';
+const module = hipModule;
+---
+
+<section class="mm-hero">
+  <div>
+    <p class="mm-eyebrow">{module.eyebrow}</p>
+    <h1>{module.title}</h1>
+    <p class="mm-intro">{module.intro}</p>
+    <div class="mm-actions">
+      <a href="#explore-3d">Explore 3D</a>
+      <a href="#movement" class="secondary">Learn movements</a>
+    </div>
+  </div>
+  <div class="mm-hero-card">
+    <span>Start here</span>
+    <strong>Click hotspots. Toggle concepts. Take the quiz.</strong>
+    <p>No anatomy degree needed. This is built for normal people who want to understand why their body feels the way it does.</p>
+  </div>
+</section>
+
+<section class="mm-section" id="explore-3d">
+  <div class="mm-section-heading">
+    <p class="mm-eyebrow">Interactive</p>
+    <h2>Click around the hip</h2>
+    <p>Use this area for a free licensed 3D model. Until you pick the final model, this fallback diagram keeps the page usable.</p>
+  </div>
+
+  <div class="mm-explorer" data-hotspot-root>
+    <div class="mm-model-shell">
+      {module.model.embedUrl ? (
+        <iframe
+          title={module.model.title}
+          src={module.model.embedUrl}
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          allowfullscreen
+        ></iframe>
+      ) : (
+        <div class="mm-fallback-body" aria-label="Simple hip diagram placeholder">
+          <div class="pelvis"></div>
+          <div class="socket left"></div>
+          <div class="socket right"></div>
+          <div class="femur left"></div>
+          <div class="femur right"></div>
+          <div class="spine"></div>
+        </div>
+      )}
+      {module.hotspots.map((spot, index) => (
+        <button
+          class="mm-hotspot"
+          style={`left:${spot.x}%; top:${spot.y}%;`}
+          data-hotspot={index}
+          aria-label={`Learn about ${spot.label}`}
+        >
+          <span>{index + 1}</span>
+        </button>
+      ))}
+    </div>
+
+    <aside class="mm-hotspot-panel">
+      <p class="mm-eyebrow">Hotspot</p>
+      <h3 data-hotspot-title>{module.hotspots[0].label}</h3>
+      <p data-hotspot-text>{module.hotspots[0].text}</p>
+      <div class="mm-attribution">{module.model.attribution}</div>
+    </aside>
+  </div>
+</section>
+
+<section class="mm-section" id="movement">
+  <div class="mm-section-heading">
+    <p class="mm-eyebrow">Movement</p>
+    <h2>How the hip moves</h2>
+    <p>These are the basic directions your hip can move. This is the foundation for squatting, walking, hiking, running, and sitting.</p>
+  </div>
+  <div class="mm-grid">
+    {module.movements.map((move) => (
+      <article class="mm-card">
+        <h3>{move.name}</h3>
+        <p><strong>Plain English:</strong> {move.plain}</p>
+        <p><strong>Real life:</strong> {move.example}</p>
+        <p><strong>Muscles:</strong> {move.muscles}</p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<section class="mm-section mm-scenarios">
+  <div class="mm-section-heading">
+    <p class="mm-eyebrow">Real Life</p>
+    <h2>Why does my body feel like this?</h2>
+    <p>This is the part that makes the Movement Manual different from a normal anatomy app.</p>
+  </div>
+  <div class="mm-scenario-list">
+    {module.scenarios.map((scenario) => (
+      <article class="mm-scenario">
+        <h3>{scenario.title}</h3>
+        <ul>
+          {scenario.highlights.map((item) => <li>{item}</li>)}
+        </ul>
+        <p><strong>Try thinking about it this way:</strong> {scenario.try}</p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<section class="mm-section mm-quiz" data-quiz-root>
+  <div class="mm-section-heading">
+    <p class="mm-eyebrow">Quiz</p>
+    <h2>Check what you learned</h2>
+    <p>Quick, simple, and built to reinforce the movement concepts.</p>
+  </div>
+
+  {module.quiz.map((item, qIndex) => (
+    <div class="mm-question" data-question={qIndex} data-correct={item.correct}>
+      <h3>{item.question}</h3>
+      <div class="mm-answer-row">
+        {item.answers.map((answer, aIndex) => (
+          <button data-answer={aIndex}>{answer}</button>
+        ))}
+      </div>
+      <p class="mm-feedback" aria-live="polite"></p>
+    </div>
+  ))}
+</section>
+
+<script define:vars={{ hotspots: module.hotspots }}>
+  const root = document.querySelector('[data-hotspot-root]');
+  if (root) {
+    const title = root.querySelector('[data-hotspot-title]');
+    const text = root.querySelector('[data-hotspot-text]');
+    root.querySelectorAll('[data-hotspot]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const spot = hotspots[Number(button.dataset.hotspot)];
+        title.textContent = spot.label;
+        text.textContent = spot.text;
+        root.querySelectorAll('[data-hotspot]').forEach((btn) => btn.classList.remove('active'));
+        button.classList.add('active');
+      });
+    });
+  }
+
+  document.querySelectorAll('[data-question]').forEach((question) => {
+    const correct = Number(question.dataset.correct);
+    const feedback = question.querySelector('.mm-feedback');
+    question.querySelectorAll('[data-answer]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const picked = Number(button.dataset.answer);
+        question.querySelectorAll('[data-answer]').forEach((btn) => btn.classList.remove('correct', 'wrong'));
+        if (picked === correct) {
+          button.classList.add('correct');
+          feedback.textContent = 'Correct. Nice.';
+        } else {
+          button.classList.add('wrong');
+          feedback.textContent = 'Not quite. Try another one.';
+        }
+      });
+    });
+  });
+</script>
