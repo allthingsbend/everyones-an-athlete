@@ -3,153 +3,235 @@ import { hipModule } from '../../data/movementModules.js';
 const module = hipModule;
 ---
 
-<section class="mm-hero">
-  <div>
+<section class="mm-hero mm-shell">
+  <div class="mm-hero-copy">
     <p class="mm-eyebrow">{module.eyebrow}</p>
     <h1>{module.title}</h1>
-    <p class="mm-intro">{module.intro}</p>
-    <div class="mm-actions">
-      <a href="#explore-3d">Explore 3D</a>
-      <a href="#movement" class="secondary">Learn movements</a>
+    <p class="mm-subtitle">{module.subtitle}</p>
+    <div class="mm-hero-actions">
+      <a href="#visual-lab">Open visual lab</a>
+      <a href="#real-life" class="secondary">Why hips feel tight</a>
     </div>
   </div>
-  <div class="mm-hero-card">
-    <span>Start here</span>
-    <strong>Click hotspots. Toggle concepts. Take the quiz.</strong>
-    <p>No anatomy degree needed. This is built for normal people who want to understand why their body feels the way it does.</p>
+
+  <div class="mm-hero-preview" aria-label="Movement Manual preview card">
+    <div class="mm-preview-ring">
+      <span>3D</span>
+    </div>
+    <div>
+      <p>Visual-first anatomy</p>
+      <strong>Rotate the model. Learn the movement. Connect it to real life.</strong>
+    </div>
   </div>
 </section>
 
-<section class="mm-section" id="explore-3d">
-  <div class="mm-section-heading">
-    <p class="mm-eyebrow">Interactive</p>
-    <h2>Click around the hip</h2>
-    <p>Use this area for a free licensed 3D model. Until you pick the final model, this fallback diagram keeps the page usable.</p>
+<section class="mm-lab mm-shell" id="visual-lab" data-mm-lab>
+  <div class="mm-lab-topbar">
+    <div>
+      <p class="mm-eyebrow">Interactive visual lab</p>
+      <h2>Click, rotate, zoom, then learn what you’re seeing.</h2>
+    </div>
+    <div class="mm-status-pill">Real 3D model loaded</div>
   </div>
 
-  <div class="mm-explorer" data-hotspot-root>
-    <div class="mm-model-shell">
-      {module.model.embedUrl ? (
+  <div class="mm-lab-grid">
+    <div class="mm-viewer-card">
+      <div class="mm-viewer-toolbar">
+        <button class="is-active" data-mode="model">3D model</button>
+        <button data-mode="guide">Guided view</button>
+        <button data-mode="movement">Movement map</button>
+      </div>
+
+      <div class="mm-viewer-wrap" data-panel="model">
         <iframe
           title={module.model.title}
           src={module.model.embedUrl}
           allow="autoplay; fullscreen; xr-spatial-tracking"
           allowfullscreen
         ></iframe>
-      ) : (
-        <div class="mm-fallback-body" aria-label="Simple hip diagram placeholder">
-          <div class="pelvis"></div>
-          <div class="socket left"></div>
-          <div class="socket right"></div>
-          <div class="femur left"></div>
-          <div class="femur right"></div>
-          <div class="spine"></div>
+      </div>
+
+      <div class="mm-guide-overlay" data-panel="guide" hidden>
+        <div class="mm-mini-skeleton" aria-hidden="true">
+          <div class="mm-spine"></div>
+          <div class="mm-pelvis"></div>
+          <div class="mm-socket mm-left"></div>
+          <div class="mm-socket mm-right"></div>
+          <div class="mm-femur mm-left"></div>
+          <div class="mm-femur mm-right"></div>
         </div>
-      )}
-      {module.hotspots.map((spot, index) => (
-        <button
-          class="mm-hotspot"
-          style={`left:${spot.x}%; top:${spot.y}%;`}
-          data-hotspot={index}
-          aria-label={`Learn about ${spot.label}`}
-        >
-          <span>{index + 1}</span>
-        </button>
-      ))}
+        <div class="mm-guide-notes">
+          <h3>How to read the hip</h3>
+          <p>Start with the socket. The femur rotates in that socket. That rotation changes what your knee, pelvis, and low back have to do.</p>
+          <div class="mm-guide-legend">
+            <span>Pelvis</span>
+            <span>Hip socket</span>
+            <span>Femur</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mm-motion-stage" data-panel="movement" hidden>
+        <div class="mm-motion-figure">
+          <div class="mm-motion-torso"></div>
+          <div class="mm-motion-leg mm-back"></div>
+          <div class="mm-motion-leg mm-front"></div>
+          <div class="mm-motion-arrow"></div>
+        </div>
+        <div>
+          <h3>Movement first, anatomy second.</h3>
+          <p>Most people do not need to memorize every Latin name first. They need to understand what the joint is doing and which muscles help control it.</p>
+        </div>
+      </div>
+
+      <div class="mm-model-credit">
+        <p>{module.model.attributionText}</p>
+        <a href={module.model.sourceUrl} target="_blank" rel="noopener noreferrer">View source model</a>
+      </div>
     </div>
 
-    <aside class="mm-hotspot-panel">
-      <p class="mm-eyebrow">Hotspot</p>
-      <h3 data-hotspot-title>{module.hotspots[0].label}</h3>
-      <p data-hotspot-text>{module.hotspots[0].text}</p>
-      <div class="mm-attribution">{module.model.attribution}</div>
+    <aside class="mm-focus-card">
+      <p class="mm-eyebrow">What am I looking at?</p>
+      <h3 data-focus-title>{module.focusAreas[0].label}</h3>
+      <p class="mm-focus-plain" data-focus-plain>{module.focusAreas[0].plain}</p>
+      <div class="mm-focus-detail">
+        <span>Why it matters</span>
+        <p data-focus-why>{module.focusAreas[0].why}</p>
+      </div>
+      <div class="mm-focus-detail">
+        <span>Look for this</span>
+        <p data-focus-look>{module.focusAreas[0].lookFor}</p>
+      </div>
+
+      <div class="mm-focus-buttons">
+        {module.focusAreas.map((area, index) => (
+          <button class={index === 0 ? 'is-active' : ''} data-focus={index}>{area.label}</button>
+        ))}
+      </div>
     </aside>
   </div>
 </section>
 
-<section class="mm-section" id="movement">
+<section class="mm-section mm-shell" id="movement">
   <div class="mm-section-heading">
-    <p class="mm-eyebrow">Movement</p>
-    <h2>How the hip moves</h2>
-    <p>These are the basic directions your hip can move. This is the foundation for squatting, walking, hiking, running, and sitting.</p>
+    <p class="mm-eyebrow">Movement map</p>
+    <h2>The six hip movements that actually matter.</h2>
+    <p>These are the movements you see in squats, hiking, running, sitting, lunging, and basic daily life.</p>
   </div>
-  <div class="mm-grid">
+
+  <div class="mm-movement-grid">
     {module.movements.map((move) => (
-      <article class="mm-card">
+      <article class="mm-movement-card">
+        <div class="mm-movement-icon" aria-hidden="true"></div>
         <h3>{move.name}</h3>
         <p><strong>Plain English:</strong> {move.plain}</p>
-        <p><strong>Real life:</strong> {move.example}</p>
-        <p><strong>Muscles:</strong> {move.muscles}</p>
+        <p><strong>Real life:</strong> {move.everyday}</p>
+        <p><strong>Main players:</strong> {move.mainPlayers}</p>
+        <div class="mm-cue">{move.cue}</div>
       </article>
     ))}
   </div>
 </section>
 
-<section class="mm-section mm-scenarios">
+<section class="mm-section mm-shell" id="real-life">
   <div class="mm-section-heading">
-    <p class="mm-eyebrow">Real Life</p>
+    <p class="mm-eyebrow">Real-life mode</p>
     <h2>Why does my body feel like this?</h2>
-    <p>This is the part that makes the Movement Manual different from a normal anatomy app.</p>
+    <p>This is what makes the page more useful than a normal anatomy encyclopedia.</p>
   </div>
-  <div class="mm-scenario-list">
+
+  <div class="mm-scenario-grid">
     {module.scenarios.map((scenario) => (
-      <article class="mm-scenario">
+      <article class="mm-scenario-card">
         <h3>{scenario.title}</h3>
+        <p>{scenario.body}</p>
         <ul>
-          {scenario.highlights.map((item) => <li>{item}</li>)}
+          {scenario.quickMap.map((item) => <li>{item}</li>)}
         </ul>
-        <p><strong>Try thinking about it this way:</strong> {scenario.try}</p>
+        <div class="mm-starter"><strong>Starter idea:</strong> {scenario.starter}</div>
       </article>
     ))}
   </div>
 </section>
 
-<section class="mm-section mm-quiz" data-quiz-root>
+<section class="mm-section mm-shell mm-quiz" data-quiz-root>
   <div class="mm-section-heading">
-    <p class="mm-eyebrow">Quiz</p>
-    <h2>Check what you learned</h2>
-    <p>Quick, simple, and built to reinforce the movement concepts.</p>
+    <p class="mm-eyebrow">Quiz mode</p>
+    <h2>Make it stick.</h2>
+    <p>Quick checks so this becomes something you actually learn, not just scroll past.</p>
   </div>
 
-  {module.quiz.map((item, qIndex) => (
-    <div class="mm-question" data-question={qIndex} data-correct={item.correct}>
-      <h3>{item.question}</h3>
-      <div class="mm-answer-row">
-        {item.answers.map((answer, aIndex) => (
-          <button data-answer={aIndex}>{answer}</button>
-        ))}
+  <div class="mm-quiz-grid">
+    {module.quiz.map((item, qIndex) => (
+      <div class="mm-question" data-question={qIndex} data-correct={item.correct} data-explanation={item.explanation}>
+        <h3>{item.question}</h3>
+        <div class="mm-answer-row">
+          {item.answers.map((answer, aIndex) => (
+            <button data-answer={aIndex}>{answer}</button>
+          ))}
+        </div>
+        <p class="mm-feedback" aria-live="polite"></p>
       </div>
-      <p class="mm-feedback" aria-live="polite"></p>
-    </div>
-  ))}
+    ))}
+  </div>
 </section>
 
-<script define:vars={{ hotspots: module.hotspots }}>
-  const root = document.querySelector('[data-hotspot-root]');
-  if (root) {
-    const title = root.querySelector('[data-hotspot-title]');
-    const text = root.querySelector('[data-hotspot-text]');
-    root.querySelectorAll('[data-hotspot]').forEach((button) => {
+<section class="mm-section mm-shell mm-next-steps">
+  <p class="mm-eyebrow">Next upgrade</p>
+  <h2>This is now the right direction.</h2>
+  <p>The first version used a basic placeholder. This version uses a real 3D anatomy model. The next big jump is adding separate muscle-layer models and animations for squat, walking, and hip rotation.</p>
+</section>
+
+<script define:vars={{ focusAreas: module.focusAreas }}>
+  const lab = document.querySelector('[data-mm-lab]');
+
+  if (lab) {
+    const modeButtons = lab.querySelectorAll('[data-mode]');
+    const panels = lab.querySelectorAll('[data-panel]');
+
+    modeButtons.forEach((button) => {
       button.addEventListener('click', () => {
-        const spot = hotspots[Number(button.dataset.hotspot)];
-        title.textContent = spot.label;
-        text.textContent = spot.text;
-        root.querySelectorAll('[data-hotspot]').forEach((btn) => btn.classList.remove('active'));
-        button.classList.add('active');
+        const selected = button.dataset.mode;
+        modeButtons.forEach((btn) => btn.classList.remove('is-active'));
+        button.classList.add('is-active');
+        panels.forEach((panel) => {
+          panel.hidden = panel.dataset.panel !== selected;
+        });
+      });
+    });
+
+    const focusTitle = lab.querySelector('[data-focus-title]');
+    const focusPlain = lab.querySelector('[data-focus-plain]');
+    const focusWhy = lab.querySelector('[data-focus-why]');
+    const focusLook = lab.querySelector('[data-focus-look]');
+    const focusButtons = lab.querySelectorAll('[data-focus]');
+
+    focusButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const area = focusAreas[Number(button.dataset.focus)];
+        focusTitle.textContent = area.label;
+        focusPlain.textContent = area.plain;
+        focusWhy.textContent = area.why;
+        focusLook.textContent = area.lookFor;
+        focusButtons.forEach((btn) => btn.classList.remove('is-active'));
+        button.classList.add('is-active');
       });
     });
   }
 
   document.querySelectorAll('[data-question]').forEach((question) => {
     const correct = Number(question.dataset.correct);
+    const explanation = question.dataset.explanation;
     const feedback = question.querySelector('.mm-feedback');
+
     question.querySelectorAll('[data-answer]').forEach((button) => {
       button.addEventListener('click', () => {
         const picked = Number(button.dataset.answer);
         question.querySelectorAll('[data-answer]').forEach((btn) => btn.classList.remove('correct', 'wrong'));
+
         if (picked === correct) {
           button.classList.add('correct');
-          feedback.textContent = 'Correct. Nice.';
+          feedback.textContent = `Correct. ${explanation}`;
         } else {
           button.classList.add('wrong');
           feedback.textContent = 'Not quite. Try another one.';
