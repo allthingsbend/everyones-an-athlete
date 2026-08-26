@@ -1,12 +1,317 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const title = 'Corporate Fitness and Wellness Programs';
-const description = 'Corporate fitness and wellness programs that combine movement, recovery, nutrition, ergonomics and mental performance for healthier teams.';
----
-<BaseLayout title={title} description={description}>
-<section class="page-hero"><div class="container"><div class="eyebrow">Corporate Wellness</div><h1>Corporate fitness and wellness programs for healthier, more consistent teams.</h1><p class="lead">Workplace wellness works best when it is simple, repeatable and built around real human behavior. A strong program should support movement, recovery, nutrition, stress management and practical education employees can actually use.</p></div></section>
-<section class="content"><div class="container"><article>
 
-<h2>What corporate fitness and wellness should include</h2><p>A good workplace wellness program should be more than a gym discount or a one-time challenge. Employees need realistic tools that fit into the workday, support long-term habits and help them feel better physically and mentally.</p><ul><li>Short guided workouts for different ability levels.</li><li>Mobility and body care routines for desk workers and active employees.</li><li>Nutrition education focused on energy, protein, hydration and recovery.</li><li>Mental performance tools such as breathing, reflection and body awareness.</li><li>Ergonomics guidance for remote, hybrid and office teams.</li></ul><h2>Why companies invest in employee wellness</h2><p>Teams often struggle with stress, fatigue, inconsistent movement, low energy and aches from sitting. A structured wellness app gives employees one place to build better routines without needing a complicated program.</p><h2>Best-fit use cases</h2><p>This type of program can work for corporate offices, remote teams, schools, athletic departments, healthcare teams, first responders and organizations that want practical wellness support.</p><div class="callout"><strong>Content angle:</strong> This page should connect the topic back to the app naturally. Mention guided training, body care, nutrition education and mental performance where relevant without forcing a sales pitch.</div>
-</article></div></section>
+const title = 'Corporate Wellness Programs & Employee Fitness';
+const description = 'Build a practical corporate wellness program with employee fitness, mobility, nutrition, recovery, ergonomics and mental performance support.';
+
+const faqs = [
+  {
+    question: 'What should a corporate wellness program include?',
+    answer: 'A useful program can combine movement, strength, mobility, recovery, nutrition education, stress-management skills, ergonomics and organizational support. The right mix depends on employee needs, work demands, company size and available resources.'
+  },
+  {
+    question: 'How do you make employees participate in workplace wellness?',
+    answer: 'Participation improves when activities are convenient, inclusive, clearly communicated and supported by leadership. Offer short options at different ability levels, protect employee privacy and ask employees what would actually help them.'
+  },
+  {
+    question: 'Can corporate fitness work for remote and hybrid teams?',
+    answer: 'Yes. On-demand workouts, live virtual sessions, mobility breaks, educational resources and team challenges can reach employees across locations and schedules. Avoid making participation depend on access to a gym or being in one office.'
+  },
+  {
+    question: 'How should employers measure a wellness program?',
+    answer: 'Start with practical measures such as enrollment, repeat participation, completion, employee feedback and awareness. Depending on the program, employers can also evaluate changes in confidence, habits and perceived usefulness while protecting individual health information.'
+  },
+  {
+    question: 'Is corporate wellness the same as an employee fitness challenge?',
+    answer: 'No. A fitness challenge is one possible activity. A complete workplace wellness strategy also considers recovery, nutrition, stress, ergonomics, workplace policies, leadership support and the environment in which employees work.'
+  },
+  {
+    question: 'How long should a workplace wellness pilot run?',
+    answer: 'A pilot of eight to twelve weeks is often long enough to test communication, participation and program fit without requiring a large permanent commitment. Establish the goals and evaluation plan before the pilot begins.'
+  }
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      name: 'Corporate Wellness Programs and Employee Fitness',
+      description,
+      url: 'https://everyonesanathlete.app/corporate-wellness/',
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'Everyone’s an Athlete',
+        url: 'https://everyonesanathlete.app/'
+      },
+      dateModified: '2026-08-25'
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical="/corporate-wellness/">
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow">Corporate Wellness</div>
+      <h1>Corporate wellness and fitness programs employees can actually use.</h1>
+      <p class="lead">Help people move more, recover better and build sustainable health habits—without requiring everyone to be an athlete, use a gym or follow an extreme challenge.</p>
+      <div class="hero-actions">
+        <a class="btn" href="/contact/">Discuss a Corporate Program</a>
+        <a class="btn secondary" href="#program-framework">See the Program Framework</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <article>
+        <p><strong>Corporate wellness works when it fits the people and the workplace.</strong> A one-time step challenge may create a burst of attention, but lasting value usually comes from a repeatable system: accessible movement, practical education, supportive workplace norms and regular feedback.</p>
+
+        <nav class="callout" aria-label="On this page">
+          <strong>On this page:</strong>
+          <a href="#what-it-includes">What to include</a> ·
+          <a href="#program-framework">Program framework</a> ·
+          <a href="#ninety-day-plan">90-day pilot</a> ·
+          <a href="#measurement">Measurement</a> ·
+          <a href="#questions">Common questions</a>
+        </nav>
+
+        <h2 id="what-it-includes">What a strong corporate wellness program includes</h2>
+        <p>The best employee wellness program is not necessarily the one with the most features. It is the one employees understand, can access and can return to consistently. For most organizations, that means addressing more than exercise alone.</p>
+
+        <div class="grid two">
+          <div class="card">
+            <span class="pill">Movement</span>
+            <h3>Fitness for different starting points</h3>
+            <p>Short strength sessions, low-impact movement, walking, conditioning and beginner-friendly options help more employees find an appropriate entry point.</p>
+          </div>
+          <div class="card">
+            <span class="pill coral">Body Care</span>
+            <h3>Mobility and recovery</h3>
+            <p>Desk mobility, warmups, cooldowns and recovery routines address stiffness and help employees connect movement with how their bodies feel.</p>
+          </div>
+          <div class="card">
+            <span class="pill orange">Fuel</span>
+            <h3>Nutrition and hydration education</h3>
+            <p>Practical guidance can focus on balanced meals, protein, hydration, energy and recovery without promoting restrictive diets or personal medical advice.</p>
+          </div>
+          <div class="card">
+            <span class="pill purple">Mindset</span>
+            <h3>Stress and mental performance</h3>
+            <p>Breathing, awareness, reflection and behavior-change tools can support focus and consistency while complementing—not replacing—professional mental healthcare.</p>
+          </div>
+          <div class="card">
+            <span class="pill">Workday</span>
+            <h3>Ergonomics and movement breaks</h3>
+            <p>Workstation education and frequent changes in position help address the reality that many office and remote employees sit for long periods.</p>
+          </div>
+          <div class="card">
+            <span class="pill">Culture</span>
+            <h3>Organizational support</h3>
+            <p>Leadership participation, protected time, inclusive communication and policies that support healthy choices make individual resources easier to use.</p>
+          </div>
+        </div>
+
+        <h2>Why an app or digital hub can help</h2>
+        <p>Employees rarely share the same schedule, location, fitness level or goals. A digital wellness hub can make resources available when people need them rather than requiring attendance at one class or access to one facility.</p>
+        <p>Everyone’s an Athlete is built around the idea that an athlete is anyone working to become more capable and confident in human movement. In a workplace setting, that can translate into guided training, body care, nutrition and mental-performance resources that support different starting points.</p>
+
+        <div class="callout">
+          <strong>The goal is not to turn work into a fitness competition.</strong> It is to make useful health and movement support easier to access.
+        </div>
+
+        <h2 id="program-framework">A practical corporate wellness framework</h2>
+        <p>The <a href="https://www.cdc.gov/workplace-health-promotion/php/model/building.html">CDC Workplace Health Model</a> organizes program development into assessment, planning, implementation and evaluation. That sequence is a useful guardrail for companies of almost any size.</p>
+
+        <h3>1. Assess the workplace</h3>
+        <p>Start with employee needs, work demands and current resources. A short anonymous survey can identify preferred formats, scheduling barriers, common interests and whether people work on-site, remotely, in the field or across shifts.</p>
+        <ul>
+          <li>Ask what employees would use—not what leadership assumes they need.</li>
+          <li>Review existing benefits, wellness resources and safety programs.</li>
+          <li>Identify barriers such as time, equipment, language, schedule and accessibility.</li>
+          <li>Separate population-level planning from individual medical information.</li>
+        </ul>
+
+        <h3>2. Choose a small number of goals</h3>
+        <p>“Improve employee wellness” is too broad to guide a program. Choose specific initial goals, such as increasing access to short movement sessions, improving awareness of recovery resources or helping remote employees take more regular movement breaks.</p>
+
+        <h3>3. Build an inclusive program</h3>
+        <p>Offer multiple ways to participate. Fitness content should include easier and harder options, clear safety guidance and activities that do not require expensive equipment. Avoid public weigh-ins, forced disclosure or rewards that punish people with disabilities or health limitations.</p>
+
+        <h3>4. Make participation easy</h3>
+        <p>A 10-minute session employees can find quickly may deliver more practical value than a sophisticated resource buried in a benefits portal. Give the program a clear home, repeat the communication and show people exactly how to begin.</p>
+
+        <h3>5. Evaluate and improve</h3>
+        <p>Track whether people can access the program, return to it and find it useful. Use feedback to simplify what is confusing, retire what is not used and build on the activities employees value.</p>
+
+        <h2 id="ninety-day-plan">Example 90-day corporate wellness pilot</h2>
+        <p>A pilot creates enough time to test the program without pretending the first version will be perfect.</p>
+
+        <div class="grid two">
+          <div class="card">
+            <span class="pill">Weeks 1–2</span>
+            <h3>Listen and establish a baseline</h3>
+            <p>Survey employee interests, identify access needs, define two or three goals and document how participation will be measured.</p>
+          </div>
+          <div class="card">
+            <span class="pill">Weeks 3–4</span>
+            <h3>Launch simply</h3>
+            <p>Introduce the program with a short orientation, a beginner pathway and one clear place to find workouts and wellness resources.</p>
+          </div>
+          <div class="card">
+            <span class="pill">Weeks 5–8</span>
+            <h3>Build a repeatable rhythm</h3>
+            <p>Offer a weekly movement focus, one body-care session, one practical wellness lesson and optional team participation.</p>
+          </div>
+          <div class="card">
+            <span class="pill">Weeks 9–12</span>
+            <h3>Learn and refine</h3>
+            <p>Review participation patterns, collect anonymous feedback and decide what should continue, change or stop.</p>
+          </div>
+        </div>
+
+        <h2>Options for office, remote and active workforces</h2>
+
+        <h3>Office and desk-based teams</h3>
+        <p>Prioritize short movement breaks, workstation education, neck and shoulder mobility, hip movement, walking and strength sessions that can be completed before or after work. OSHA notes that even a good seated posture should not remain static all day and recommends changing position regularly.</p>
+
+        <h3>Remote and hybrid employees</h3>
+        <p>Create equal access regardless of location. On-demand sessions, minimal-equipment workouts and asynchronous challenges are often more inclusive than programming built around the headquarters gym.</p>
+
+        <h3>Healthcare, hospitality, manufacturing and field teams</h3>
+        <p>Employees with physically demanding jobs may not need more generic activity. Their program may place greater emphasis on recovery, movement quality, sleep, hydration and job-specific safety coordination. Occupational activity and recreational exercise should not be treated as interchangeable.</p>
+
+        <h3>Schools, teams and public-service organizations</h3>
+        <p>Programming can be adapted around shift schedules, seasonal demands, shared facilities and the different needs of staff, coaches, students or first responders.</p>
+
+        <h2>Make participation inclusive—not performative</h2>
+        <p>Wellness programs can lose trust when they feel compulsory, intrusive or designed only for already-active employees. A more inclusive approach:</p>
+        <ul>
+          <li>Uses opt-in participation and protects privacy</li>
+          <li>Provides beginner, low-impact and equipment-free options</li>
+          <li>Avoids weight-loss contests and public health rankings</li>
+          <li>Uses plain language instead of fitness jargon</li>
+          <li>Supports employees with different abilities and health circumstances</li>
+          <li>Makes clear that educational content is not individualized medical care</li>
+        </ul>
+
+        <h2 id="measurement">How to measure corporate wellness without overclaiming</h2>
+        <p>Do not promise that a short program will automatically reduce healthcare spending or transform productivity. Measure what the program can reasonably influence first.</p>
+
+        <h3>Reach</h3>
+        <ul>
+          <li>How many eligible employees heard about the program?</li>
+          <li>How many activated access or attended an orientation?</li>
+        </ul>
+
+        <h3>Engagement</h3>
+        <ul>
+          <li>How many employees returned after the first interaction?</li>
+          <li>Which sessions or resources were used repeatedly?</li>
+        </ul>
+
+        <h3>Experience</h3>
+        <ul>
+          <li>Did employees find the program useful and easy to navigate?</li>
+          <li>Did people feel the options respected their ability level and schedule?</li>
+        </ul>
+
+        <h3>Program improvement</h3>
+        <ul>
+          <li>Which communication channels worked?</li>
+          <li>What prevented participation?</li>
+          <li>What should be simplified or added in the next cycle?</li>
+        </ul>
+
+        <h2>Questions to ask a corporate wellness provider</h2>
+        <ul>
+          <li>How is the program adapted for different ability levels?</li>
+          <li>Can remote, hybrid and shift employees participate equally?</li>
+          <li>What equipment or space is required?</li>
+          <li>How is employee privacy protected?</li>
+          <li>What implementation support is included?</li>
+          <li>Which engagement data are available to the employer?</li>
+          <li>Does the content include clear medical and safety boundaries?</li>
+          <li>How often is the program reviewed and updated?</li>
+          <li>What happens after the initial challenge or pilot?</li>
+        </ul>
+
+        <h2>Corporate wellness in San Diego</h2>
+        <p>Looking for a locally focused program? See our guide to <a href="/corporate-wellness/san-diego/">corporate wellness and employee fitness in San Diego</a>, including ideas for the region’s office, biotech, healthcare, defense, hospitality and distributed teams.</p>
+
+        <h2 id="questions">Common questions</h2>
+        {faqs.map((item) => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+
+        <h2>Build a program around your actual team</h2>
+        <p>Everyone’s an Athlete brings training, recovery, nutrition and mental performance into one practical philosophy: meet people where they are and help them build skills they can sustain.</p>
+        <div class="hero-actions">
+          <a class="btn" href="/contact/">Discuss Corporate Wellness</a>
+          <a class="btn secondary" href="/guides/">Explore Wellness Guides</a>
+        </div>
+
+        <h2>Sources and further reading</h2>
+        <ul>
+          <li><a href="https://www.cdc.gov/workplace-health-promotion/php/model/building.html">CDC: Strategies for Building a Workplace Health Program</a></li>
+          <li><a href="https://www.cdc.gov/active-people-healthy-nation/php/tools/employers.html">CDC: Physical Activity Resources for Employers</a></li>
+          <li><a href="https://www.osha.gov/etools/computer-workstations/positions">OSHA: Computer Workstation Positions and Movement</a></li>
+          <li><a href="https://www.osha.gov/ergonomics">OSHA: Ergonomics Overview</a></li>
+        </ul>
+        <p><small>Last reviewed: August 25, 2026. This page is educational and does not replace medical, legal, benefits or workplace-safety advice.</small></p>
+      </article>
+    </div>
+  </section>
+
+  <style>
+    .content a:not(.btn):not(.card) {
+      color: var(--teal-dark);
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+
+    .content .grid {
+      margin: 1.5rem 0 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 0 18px;
+      margin: 12px 0;
+      background: #fff;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      font-weight: 800;
+      padding: 16px 0;
+      color: var(--ink);
+    }
+
+    .faq-item p {
+      margin: 0 0 18px;
+    }
+
+    small {
+      color: var(--muted);
+    }
+  </style>
 </BaseLayout>
