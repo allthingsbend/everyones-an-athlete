@@ -1,12 +1,36 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-const title = 'Mental Performance Training for Athletes';
-const description = 'Mental performance training for athletes, including body awareness, breathing, reflection, confidence and behavior change.';
+import SEOArticle from '../../../components/SEOArticle.astro';
+const faqs=[
+ {question:'What is mental performance training for athletes?',answer:'Mental performance training is deliberate practice of skills such as attention control, breathing, imagery, preparation, reflection, confidence and response to pressure.'},
+ {question:'Is mental performance training therapy?',answer:'No. Mental skills training may support performance, but it is not diagnosis or treatment for a mental-health condition. Athletes should have access to appropriately qualified mental-health care when needed.'},
+ {question:'How often should athletes practice mental skills?',answer:'Short, repeated practice is generally more useful than waiting for competition day. A few focused minutes connected to regular training can build familiarity.'},
+ {question:'Does visualization guarantee better performance?',answer:'No. Imagery is a practice tool, not a guarantee. It is most useful when specific, realistic and combined with physical preparation and feedback.'},
+ {question:'Can youth athletes use mental performance exercises?',answer:'Age-appropriate breathing, routines and reflection can be useful, but adults should avoid increasing pressure or treating normal emotions as performance failures.'}
+];
+const toc=[{id:'skills',label:'Core skills'},{id:'routine',label:'Weekly routine'},{id:'competition',label:'Competition plan'},{id:'boundaries',label:'Mental-health boundaries'},{id:'questions',label:'Common questions'}];
 ---
-<BaseLayout title={title} description={description}>
-<section class="page-hero"><div class="container"><div class="eyebrow">Mental Performance</div><h1>Mental performance training for athletes.</h1><p class="lead">Mental performance training helps athletes understand their body, regulate stress, build focus and create habits that support better performance.</p></div></section>
-<section class="content"><div class="container"><article>
-
-<h2>What mental performance training includes</h2><p>Mental performance is not only motivation. It includes awareness, attention, confidence, emotional regulation, reflection and routines that help athletes respond well under pressure.</p><h2>Simple tools that work</h2><ul><li>Body scans to build awareness.</li><li>Diaphragmatic breathing to support calm and focus.</li><li>Reflection prompts to understand patterns and progress.</li><li>Pre-training routines to prepare mentally and physically.</li><li>Post-training check-ins to reinforce learning.</li></ul><h2>Why this matters for everyday athletes</h2><p>Anyone trying to train consistently benefits from mental skills. Stress, self-talk, confidence and behavior change all influence whether someone sticks with a program.</p><h2>Content opportunity</h2><p>This page can become a strong authority asset because it connects sports psychology, body awareness, training consistency and app-based guidance.</p><div class="callout"><strong>Content angle:</strong> This page should connect the topic back to the app naturally. Mention guided training, body care, nutrition education and mental performance where relevant without forcing a sales pitch.</div>
-</article></div></section>
-</BaseLayout>
+<SEOArticle title="Mental Performance Training for Athletes: Practical Guide" description="Practice focus, breathing, confidence, imagery, routines and reflection with this practical mental performance training guide for athletes." canonical="/mental-performance/mental-performance-training-for-athletes/" eyebrow="Mental Performance" heading="Mental performance training athletes can practice—not just read about." lead="Mental skills improve through repetition. The goal is not to eliminate nerves or force constant confidence; it is to notice what is happening and respond with a useful next action." {faqs} {toc} secondaryLabel="Breathing Exercises" secondaryHref="/mental-performance/breathing-exercises-for-athletes/">
+ <p><strong>Performance is physical, technical, tactical and mental.</strong> Mental training works best as part of the overall preparation process rather than a speech delivered when an athlete is already under pressure.</p>
+ <h2 id="skills">Six mental performance skills</h2>
+ <div class="grid two">
+  <div class="card"><h3>Attention</h3><p>Direct attention toward the cue or decision that matters now, then practice returning when attention drifts.</p></div>
+  <div class="card"><h3>Breathing</h3><p>Use controlled breathing to create a repeatable pause and influence arousal before, during or after performance.</p></div>
+  <div class="card"><h3>Imagery</h3><p>Rehearse realistic situations using sights, sounds, sensations, timing and the decisions required.</p></div>
+  <div class="card"><h3>Self-talk</h3><p>Replace vague judgment with short, task-relevant language that directs the next action.</p></div>
+  <div class="card"><h3>Routines</h3><p>Create consistent sequences before training, competition or a specific skill to reduce unnecessary decisions.</p></div>
+  <div class="card"><h3>Reflection</h3><p>Review what happened, what was controllable and what one adjustment should be practiced next.</p></div>
+ </div>
+ <h2 id="routine">Example weekly mental training routine</h2>
+ <ul><li><strong>Monday:</strong> choose one task-relevant cue for the week.</li><li><strong>Tuesday:</strong> practice five minutes of diaphragmatic or paced breathing.</li><li><strong>Wednesday:</strong> rehearse one likely challenge using imagery.</li><li><strong>Thursday:</strong> test the pre-performance routine in training.</li><li><strong>Friday:</strong> write a short reflection: keep, change, next.</li><li><strong>Competition day:</strong> use the familiar routine rather than inventing a new strategy.</li></ul>
+ <h2 id="competition">Build a competition plan</h2>
+ <h3>Before</h3><p>Identify controllable preparation: arrival, equipment, warmup, fuel, one or two cues and how you will respond if nerves rise.</p>
+ <h3>During</h3><p>Use a reset that can happen quickly: exhale, release unnecessary tension, name the next task and act.</p>
+ <h3>After</h3><p>Allow emotion to settle before evaluating. Separate outcome from execution and identify a small number of useful lessons.</p>
+ <div class="callout"><strong>A useful reset:</strong> notice, breathe, choose one cue, return to the next controllable action.</div>
+ <h2>Confidence is not certainty</h2>
+ <p>Confidence can mean trusting your preparation enough to act while uncertainty is present. Athletes do not need to feel fearless before performing. Plans should make room for nerves rather than treating them as evidence of failure.</p>
+ <h2 id="boundaries">Mental performance and mental health</h2>
+ <p>Mental performance training addresses skills used in practice and competition. It should not be used to dismiss depression, anxiety, trauma, eating disorders, substance use or other mental-health concerns. Coaches and organizations need clear referral and emergency pathways.</p>
+ <h2>How the app can support practice</h2>
+ <p>Everyone’s an Athlete is being built to make breathing, body awareness, reflection and mental preparation easier to practice alongside <a href="/training/">physical training</a> and <a href="/body-care/">recovery</a>. Digital prompts can create repetition, but honest self-reflection and qualified human support still matter.</p>
+</SEOArticle>

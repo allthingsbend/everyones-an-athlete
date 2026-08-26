@@ -1,12 +1,43 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-const title = 'Best Fitness Apps with Nutrition Support';
-const description = 'A guide to choosing the best fitness apps with nutrition support, workout videos, recovery tools and habit-building features.';
+import SEOArticle from '../../../components/SEOArticle.astro';
+const faqs=[
+ {question:'What is the best fitness app with nutrition support?',answer:'The best choice depends on whether you primarily want guided workouts, detailed food logging, meal planning or a broader wellness system. Centr and FitOn combine workouts with meal-oriented content; MyFitnessPal is strongest as a food and nutrient log; Nike Training Club emphasizes training and wellness guidance.'},
+ {question:'Do I need to count calories to improve nutrition?',answer:'No. Tracking can help some people understand patterns, but balanced meals, protein, produce, hydration and consistent eating habits can be practiced without calorie counting.'},
+ {question:'Can a fitness app create a medical nutrition plan?',answer:'General apps can provide education and tools, but medical nutrition therapy and individualized care for health conditions require an appropriately qualified clinician or registered dietitian.'},
+ {question:'Should workout and nutrition data be in the same app?',answer:'It can reduce friction and help connect training with fueling and recovery. Separate apps may be better when you want deeper tracking or already have a workout system you like.'}
+];
+const toc=[{id:'quick-picks',label:'Quick picks'},{id:'comparison',label:'App comparison'},{id:'choose',label:'How to choose'},{id:'safety',label:'Healthy tracking'},{id:'questions',label:'Common questions'}];
+const sources=[
+ {name:'FitOn: Official App Features',url:'https://fitonapp.com/'},
+ {name:'MyFitnessPal: Free Features',url:'https://support.myfitnesspal.com/hc/en-us/articles/15457546881805-What-is-included-in-the-free-version'},
+ {name:'Nike: What the Nike Training Club App Offers',url:'https://www.nike.com/help/a/ntc-info'},
+ {name:'Centr: Official Website',url:'https://centr.com/'}
+];
 ---
-<BaseLayout title={title} description={description}>
-<section class="page-hero"><div class="container"><div class="eyebrow">Fitness App Guide</div><h1>Best fitness apps with nutrition support.</h1><p class="lead">The best fitness apps do more than count calories or list workouts. They help users train consistently, recover intelligently and understand the nutrition habits that support their goals.</p></div></section>
-<section class="content"><div class="container"><article>
-
-<h2>What to look for in a fitness and nutrition app</h2><p>A strong app should help users connect training with fuel, recovery and consistency. Fitness and nutrition are not separate systems. They work together to support energy, adaptation, body composition and long-term health.</p><h3>Key features to compare</h3><ul><li>Guided workout videos and clear exercise instructions.</li><li>Nutrition education that explains the why, not just the what.</li><li>Recovery and mobility routines for soreness and injury prevention.</li><li>Habit tracking that encourages consistency without perfection.</li><li>Mental performance tools for stress, confidence and motivation.</li></ul><h2>Who this type of app is best for</h2><p>This category works well for beginners, athletes, busy professionals and companies that want one platform for movement, nutrition and wellness education.</p><h2>Recommended positioning</h2><p>Use this page to explain why an all-in-one approach is better than using separate apps for workouts, food, stretching and mindset. Keep the tone helpful and educational.</p><div class="callout"><strong>Content angle:</strong> This page should connect the topic back to the app naturally. Mention guided training, body care, nutrition education and mental performance where relevant without forcing a sales pitch.</div>
-</article></div></section>
-</BaseLayout>
+<SEOArticle title="Best Fitness Apps with Nutrition Support (2026)" description="Compare fitness apps with nutrition support, including workouts, food logging, meal plans, recovery and wellness features. Updated for 2026." canonical="/fitness-apps/best-fitness-apps-with-nutrition/" eyebrow="Fitness App Comparison" heading="Best fitness apps with nutrition support in 2026." lead="Some apps lead with workouts and add recipes. Others lead with food tracking and connect exercise data. The right choice depends on whether you need instruction, logging, meal ideas or one simpler wellness system." {faqs} {toc} {sources} secondaryLabel="All-in-One App Guide" secondaryHref="/fitness-apps/all-in-one-physical-mental-health-app/">
+ <p><strong>Our approach:</strong> this guide compares publicly described features and does not use affiliate links. Features and subscription terms can change, so confirm current details before purchasing.</p>
+ <h2 id="quick-picks">Quick picks by need</h2>
+ <div class="grid two">
+  <div class="card"><span class="pill">Broad Lifestyle</span><h3>Centr</h3><p>A strong fit for people who want programmed workouts, meal content and mindfulness in a polished lifestyle platform.</p></div>
+  <div class="card"><span class="pill orange">Workout + Meals</span><h3>FitOn</h3><p>A useful option for guided workout variety, social features and meal plans or recipes through its premium offering.</p></div>
+  <div class="card"><span class="pill purple">Detailed Logging</span><h3>MyFitnessPal</h3><p>Best suited to users who prioritize a large food database, calorie and nutrient logging, recipes and connected exercise data.</p></div>
+  <div class="card"><span class="pill coral">Free Guided Training</span><h3>Nike Training Club</h3><p>A strong workout-first choice with trainer-led sessions, programs and broader guidance across mobility, mindfulness, nutrition and sleep.</p></div>
+ </div>
+ <h2 id="comparison">Fitness and nutrition app comparison</h2>
+ <h3>Centr</h3><p><strong>Best for:</strong> people who want workouts, meals and mindfulness presented as one lifestyle program.</p><p><strong>Consider:</strong> whether you prefer a curated program or detailed food logging. Meal plans and recipes are different from tracking everything you eat.</p>
+ <h3>FitOn</h3><p><strong>Best for:</strong> users who value guided classes and workout variety and may want premium meal planning and recipes.</p><p><strong>Consider:</strong> which nutrition features require the premium tier and whether class-style workouts fit how you like to train.</p>
+ <h3>MyFitnessPal</h3><p><strong>Best for:</strong> detailed food, calorie and macronutrient logging with exercise and partner-app connections.</p><p><strong>Consider:</strong> logging is a tool, not a complete training program. Detailed tracking can be useful for some people and unnecessarily consuming for others.</p>
+ <h3>Nike Training Club</h3><p><strong>Best for:</strong> free trainer-led strength, conditioning, yoga, mobility and home or gym workouts.</p><p><strong>Consider:</strong> nutrition is primarily educational guidance rather than the central tracking function.</p>
+ <h3>Everyone’s an Athlete</h3><p><strong>Status:</strong> coming soon. The planned approach connects guided training with body care, mental performance and practical nutrition and wellness education.</p><p><strong>Consider:</strong> it should not be treated as a finished-app recommendation until the product is publicly available and its final features can be tested.</p>
+ <h2 id="choose">How to choose the right app</h2>
+ <ol><li><strong>Name the primary problem.</strong> Do you need workout structure, food awareness, meal ideas, recovery support or fewer disconnected apps?</li><li><strong>Choose the nutrition style.</strong> Decide between education, recipes, meal planning or detailed food logging.</li><li><strong>Check workout depth.</strong> A list of exercises is different from a progressive training program.</li><li><strong>Review the free and paid tiers.</strong> Confirm which features require a subscription and how cancellation works.</li><li><strong>Examine privacy.</strong> Understand what health, food and activity data are collected and shared.</li><li><strong>Test the workflow.</strong> The app should make healthy actions easier, not turn the day into constant data entry.</li></ol>
+ <h2>Nutrition education vs. food tracking</h2>
+ <div class="grid two">
+  <div class="card"><h3>Education</h3><p>Helps users understand balanced meals, protein, hydration, recovery and decision-making without recording every item.</p></div>
+  <div class="card"><h3>Tracking</h3><p>Creates more detailed awareness of intake and nutrients but requires time and can create false precision when entries are inaccurate.</p></div>
+ </div>
+ <p>Neither approach is universally superior. Some people benefit from a short period of logging; others do better with meal structure and behavior-focused guidance.</p>
+ <h2 id="safety">Use nutrition tracking in a healthy way</h2>
+ <ul><li>Do not treat estimated calorie numbers as exact.</li><li>Choose goals that support health and training rather than punishment.</li><li>Take a break if logging increases guilt, anxiety or rigid eating.</li><li>Use professional guidance for eating disorders, medical conditions, pregnancy or complex nutrition needs.</li><li>Remember that sleep, stress, access to food and culture also shape eating habits.</li></ul>
+ <div class="callout"><strong>Bottom line:</strong> choose Centr or FitOn for an integrated workout-and-meal experience, MyFitnessPal for detailed logging, and Nike Training Club for a strong workout-first free option. Watch Everyone’s an Athlete as it develops a connected training, recovery, mindset and nutrition approach.</div>
+</SEOArticle>

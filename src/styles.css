@@ -323,6 +323,66 @@ a {
   margin: 26px 0;
 }
 
+.content a:not(.btn):not(.card) {
+  color: var(--teal-dark);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.content .grid {
+  margin: 1.5rem 0 2rem;
+}
+
+.article-meta,
+.source-note {
+  color: var(--muted);
+  font-size: 0.92rem !important;
+}
+
+.article-nav {
+  border-left: 5px solid var(--teal);
+  background: #f2fffc;
+  padding: 18px 20px;
+  border-radius: 16px;
+  margin: 0 0 30px;
+}
+
+.article-nav strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 0 18px;
+  margin: 12px 0;
+  background: #fff;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 800;
+  padding: 16px 0;
+  color: var(--ink);
+}
+
+.faq-item p {
+  margin: 0 0 18px;
+}
+
+.article-cta {
+  margin-top: 46px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: linear-gradient(135deg, #f2fffc, #ffffff);
+}
+
+.article-cta h2 {
+  margin-top: 0;
+}
+
 .coral-border {
   border-left-color: #ff6b63;
 }

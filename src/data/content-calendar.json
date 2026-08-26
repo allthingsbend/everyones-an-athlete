@@ -22,17 +22,6 @@
     "notes": "Local landing page for companies and teams"
   },
   {
-    "cluster": "Corporate Wellness",
-    "contentType": "Local Page",
-    "targetKeyword": "corporate fitness and wellness in Austin",
-    "url": "/corporate-wellness/austin/",
-    "intent": "Commercial",
-    "location": "Austin",
-    "funnelStage": "Mid",
-    "priority": "Medium",
-    "notes": "Repeatable local template"
-  },
-  {
     "cluster": "Fitness Apps",
     "contentType": "Comparison",
     "targetKeyword": "best fitness apps with nutrition",
@@ -110,14 +99,69 @@
     "notes": "Body awareness, breathing, reflection, confidence"
   },
   {
-    "cluster": "Guides",
+    "cluster": "Fitness Apps",
     "contentType": "Guide",
-    "targetKeyword": "fitness nutrition mental health recovery app guide",
-    "url": "/guides/fitness-nutrition-mental-health-recovery-app/",
+    "targetKeyword": "fitness nutrition mental health recovery app",
+    "url": "/fitness-apps/all-in-one-physical-mental-health-app/",
     "intent": "Commercial",
     "location": "National",
     "funnelStage": "Mid",
     "priority": "High",
-    "notes": "Long-form hub style guide"
+    "notes": "Definitive all-in-one wellness app guide"
+  },
+  {
+    "cluster": "Training",
+    "contentType": "Guide",
+    "targetKeyword": "beginner strength training program",
+    "url": "/training/beginner-strength-training-program/",
+    "intent": "Informational",
+    "location": "National",
+    "funnelStage": "Top",
+    "priority": "High",
+    "notes": "Practical two-day beginner program"
+  },
+  {
+    "cluster": "Recovery",
+    "contentType": "Guide",
+    "targetKeyword": "10 minute mobility routine",
+    "url": "/recovery/10-minute-mobility-routine/",
+    "intent": "Informational",
+    "location": "National",
+    "funnelStage": "Top",
+    "priority": "High",
+    "notes": "Short full-body mobility routine"
+  },
+  {
+    "cluster": "Mental Performance",
+    "contentType": "Guide",
+    "targetKeyword": "breathing exercises for athletes",
+    "url": "/mental-performance/breathing-exercises-for-athletes/",
+    "intent": "Informational",
+    "location": "National",
+    "funnelStage": "Top",
+    "priority": "High",
+    "notes": "Preparation, reset and recovery routines"
+  },
+  {
+    "cluster": "Corporate Wellness",
+    "contentType": "Guide",
+    "targetKeyword": "employee wellness app",
+    "url": "/corporate-wellness/employee-wellness-app/",
+    "intent": "Commercial",
+    "location": "National",
+    "funnelStage": "Mid",
+    "priority": "High",
+    "notes": "Buyer and implementation guide"
+  },
+  {
+    "cluster": "Workplace Wellness",
+    "contentType": "Guide",
+    "targetKeyword": "desk mobility routine",
+    "url": "/workplace-wellness/desk-mobility-routine/",
+    "intent": "Informational",
+    "location": "National",
+    "funnelStage": "Top",
+    "priority": "Medium",
+    "notes": "Short movement break for desk workers"
   }
 ]

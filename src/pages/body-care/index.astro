@@ -1,18 +1,36 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-const title = 'Body Care and Workout Recovery App';
-const description = 'Body care, mobility and recovery routines to support better movement, reduce soreness and build long-term consistency.';
+import SEOArticle from '../../components/SEOArticle.astro';
+const faqs = [
+  { question: 'What is a mobility and recovery app?', answer: 'It is a digital tool that guides stretching, mobility, breathing, cooldown or recovery sessions. The most useful apps organize routines by goal, body area, training context and available time.' },
+  { question: 'Is mobility the same as flexibility?', answer: 'Not exactly. Flexibility generally describes available range, while mobility includes the ability to control movement through a range. Both can matter, but the appropriate training depends on the person and activity.' },
+  { question: 'Should I do mobility before or after a workout?', answer: 'Before training, use movement that prepares you for the session. Afterward, lower-intensity mobility and breathing may help you transition into recovery. Long or aggressive stretching is not required after every workout.' },
+  { question: 'Can mobility work prevent every injury?', answer: 'No. Injury risk involves training load, fatigue, strength, technique, health history, environment and chance. Mobility can support movement options but should not be marketed as a guarantee against injury.' },
+  { question: 'How long should a recovery routine be?', answer: 'A focused routine can take 5 to 20 minutes. The best length is one you can perform consistently and that matches the purpose of the session.' }
+];
+const toc = [{id:'body-care',label:'What body care means'},{id:'routine-types',label:'Routine types'},{id:'choose',label:'How to choose a routine'},{id:'warning-signs',label:'When to get help'},{id:'questions',label:'Common questions'}];
 ---
-<BaseLayout title={title} description={description}>
-<section class="page-hero coral-bg"><div class="container"><div class="eyebrow coral-text">Body Care</div><h1>Recovery and mobility work to keep people moving well.</h1><p class="lead">Body Care is the recovery side of the app. It gives users simple routines that can be completed after training, before training, or on rest days.</p></div></section>
-<section class="content"><div class="container"><article>
-<h2>Why body care matters</h2><p>Training creates stress. Recovery helps the body adapt to that stress. Body Care connects the two by giving users practical mobility and recovery routines that support better movement quality, less stiffness, and more consistent training.</p>
-<p>This pillar is especially important because many people only think about exercise when they are working hard. The body also needs lower-intensity work that restores range of motion, calms the nervous system, and helps users stay connected to how they feel.</p>
-<div class="callout coral-border">Recovery is not separate from training. It is part of the system that helps training work.</div>
-<h2>What Body Care can include</h2>
-<h3>Mobility routines</h3><p>Mobility work helps joints move through comfortable ranges of motion. Short routines can be used before workouts, after workouts, or on rest days to help users feel prepared and less restricted.</p>
-<h3>Cooldown and recovery sessions</h3><p>After training, simple recovery work can help users transition out of high-effort movement. This might include breathing, gentle mobility, low-intensity stretching, or targeted work for areas that feel tight.</p>
-<h3>Body awareness</h3><p>Body awareness helps users notice tension, fatigue, soreness, and movement patterns. This matters because the best training plan is the one a person can adjust to their actual body and schedule.</p>
-<h2>Related guides</h2><div class="grid two"><a class="card" href="/recovery/mobility-recovery-after-workouts/"><h3>Mobility and Recovery After Workouts</h3><p>How to use short recovery routines after strength training or conditioning.</p></a><a class="card" href="/workplace-wellness/workplace-ergonomics/"><h3>Workplace Ergonomics Guide</h3><p>Simple ways to reduce stiffness and improve movement during the workday.</p></a><a class="card" href="/mental-performance/mental-performance-training-for-athletes/"><h3>Mental Performance Training</h3><p>How breathing and awareness can support recovery and focus.</p></a><a class="card" href="/guides/fitness-nutrition-mental-health-recovery-app/"><h3>All-in-One Wellness App Guide</h3><p>How body care fits with training, mindset, and fuel.</p></a></div>
-</article></div></section>
-</BaseLayout>
+<SEOArticle title="Mobility and Workout Recovery App" description="Explore mobility, stretching, body care and workout recovery routines for warmups, cooldowns, rest days and everyday stiffness." canonical="/body-care/" eyebrow="Body Care" heading="A mobility and recovery app for moving—and recovering—better." lead="Body care is the bridge between training sessions. Guided mobility, breathing and recovery routines can help people prepare, downshift and stay aware of how their bodies respond to exercise and daily life." {faqs} {toc} secondaryLabel="Try a 10-Minute Routine" secondaryHref="/recovery/10-minute-mobility-routine/">
+  <p><strong>Recovery is not the absence of training.</strong> It is the process that allows the body to respond to training. Sleep, nutrition, stress, time and appropriately dosed movement all affect that process.</p>
+  <h2 id="body-care">What “body care” means</h2>
+  <p>Body care is a practical category for the lower-intensity work that supports movement and recovery. It can include mobility, gentle stretching, breathing, easy circulation work, warmups, cooldowns and self-assessment.</p>
+  <div class="grid two">
+    <div class="card"><h3>Prepare</h3><p>Use targeted movement to raise temperature, explore the ranges needed for training and practice upcoming patterns.</p></div>
+    <div class="card"><h3>Recover</h3><p>Use lower-intensity movement and breathing to transition after training or on an easier day.</p></div>
+    <div class="card"><h3>Restore options</h3><p>Work gradually on comfortable range and control where daily habits or training have left you feeling restricted.</p></div>
+    <div class="card"><h3>Build awareness</h3><p>Notice soreness, fatigue, tension and changes in movement so you can make better training decisions.</p></div>
+  </div>
+  <h2 id="routine-types">Four useful types of mobility and recovery routines</h2>
+  <h3>Pre-workout movement preparation</h3><p>Choose movements related to the session ahead. A lower-body day might include ankle, hip and squat-pattern preparation; an upper-body session may focus on shoulders, upper back and pressing or pulling patterns.</p>
+  <h3>Post-workout cooldown</h3><p>A cooldown can be simple: walk until breathing settles, use a few comfortable movements and avoid turning recovery into another hard workout.</p>
+  <h3>Rest-day mobility</h3><p>Use rest-day routines to explore range without chasing fatigue. Easy walking, joint movement and breathing can help people feel better without creating significant additional training stress.</p>
+  <h3>Workday body care</h3><p>Changing position regularly is often more useful than searching for one perfect posture. Short routines for the hips, upper back, shoulders, hands and neck can interrupt long periods of stillness.</p>
+  <h2 id="choose">How to choose the right routine</h2>
+  <ul><li><strong>Start with the purpose:</strong> preparation, cooldown, range, relaxation or a workday break.</li><li><strong>Choose the relevant area:</strong> whole body, hips, ankles, shoulders, upper back or another region.</li><li><strong>Match the available time:</strong> five focused minutes can be more useful than skipping a 30-minute plan.</li><li><strong>Use an appropriate intensity:</strong> mobility does not need to be painful to be productive.</li><li><strong>Reassess:</strong> notice whether the routine changed comfort, control or readiness.</li></ul>
+  <div class="callout"><strong>Use the minimum effective routine.</strong> More stretching is not automatically better. Choose the smallest amount that helps you prepare or recover, then return to the activities you care about.</div>
+  <h2>What a good recovery app should do</h2>
+  <ul><li>Organize sessions by goal and duration</li><li>Show the movement clearly from useful angles</li><li>Explain where a movement should be felt</li><li>Offer alternatives instead of forcing one range</li><li>Connect recovery recommendations to training</li><li>Avoid promising to cure pain or prevent every injury</li></ul>
+  <h2 id="warning-signs">When a routine is not enough</h2>
+  <p>General mobility content is not an assessment or treatment plan. Seek appropriate medical or rehabilitation guidance for severe pain, traumatic injury, progressive weakness, loss of sensation, swelling, symptoms that interrupt sleep or problems that persist or worsen.</p>
+  <h2>How Body Care fits the larger system</h2>
+  <p>Everyone’s an Athlete connects body care with <a href="/training/">guided strength training</a>, <a href="/fuel-wellness/">nutrition and lifestyle habits</a> and <a href="/mental-performance/">breathing and mental performance</a>. The goal is not endless recovery work—it is helping people return to meaningful movement with better information.</p>
+</SEOArticle>

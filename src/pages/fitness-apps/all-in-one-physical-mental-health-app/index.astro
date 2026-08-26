@@ -1,12 +1,41 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-const title = 'All-in-One Physical and Mental Health App';
-const description = 'Learn what to look for in an all-in-one physical and mental health app that supports workouts, recovery, nutrition and mindset.';
+import SEOArticle from '../../../components/SEOArticle.astro';
+const faqs=[
+ {question:'What is an all-in-one wellness app?',answer:'An all-in-one wellness app brings multiple areas—such as exercise, recovery, nutrition, sleep habits, stress management or mental performance—into one connected experience.'},
+ {question:'Is one wellness app better than several specialist apps?',answer:'It depends. One app can reduce friction and connect habits, while a specialist app may provide greater depth in one area. Choose based on the problem you most need to solve and how much complexity you will actually use.'},
+ {question:'Should a wellness app provide medical advice?',answer:'General wellness education should maintain clear boundaries. Diagnosis, treatment and individualized medical or nutrition care require appropriately qualified professionals.'},
+ {question:'What data should a wellness app collect?',answer:'Only data necessary for the experience should be collected, explained and protected. Review privacy practices, account controls, integrations and whether personal data are shared or used for advertising.'},
+ {question:'How do I know if a wellness app will be useful?',answer:'Define your main goal, required features, available equipment and preferred level of tracking. Test whether the app makes the next action clearer and whether you return after the first week.'}
+];
+const toc=[{id:'four-pillars',label:'Four connected pillars'},{id:'features',label:'Feature checklist'},{id:'one-vs-many',label:'One app vs. several'},{id:'evaluate',label:'How to evaluate'},{id:'questions',label:'Common questions'}];
 ---
-<BaseLayout title={title} description={description}>
-<section class="page-hero"><div class="container"><div class="eyebrow">All-in-One Wellness App</div><h1>What makes a strong all-in-one physical and mental health app?</h1><p class="lead">Physical health and mental health are connected. The right app should help people train their bodies, manage stress, recover well and build habits that support a healthier lifestyle.</p></div></section>
-<section class="content"><div class="container"><article>
-
-<h2>Why physical and mental health belong together</h2><p>Training is not only about muscles and workouts. Stress, sleep, confidence, nutrition, recovery and daily routines all affect how someone feels and performs. An all-in-one app gives users a simpler way to manage the pieces together.</p><h2>Useful app features</h2><ul><li>Weekly training plans that are easy to follow.</li><li>Mindset sessions such as breathing, body scans and reflection.</li><li>Nutrition foundations that support energy and recovery.</li><li>Body care routines that reduce stiffness and support mobility.</li><li>A library users can search by body part, muscle, level and equipment.</li></ul><h2>How this helps users stay consistent</h2><p>People are more likely to stick with wellness habits when the plan is simple. Combining training, nutrition, recovery and mental performance reduces decision fatigue and makes healthy routines easier to repeat.</p><div class="callout"><strong>Content angle:</strong> This page should connect the topic back to the app naturally. Mention guided training, body care, nutrition education and mental performance where relevant without forcing a sales pitch.</div>
-</article></div></section>
-</BaseLayout>
+<SEOArticle title="All-in-One Fitness, Nutrition, Recovery & Mindset App" description="Learn how to choose an all-in-one wellness app that connects fitness, nutrition, mobility, recovery and mental performance without unnecessary complexity." canonical="/fitness-apps/all-in-one-physical-mental-health-app/" eyebrow="All-in-One Wellness" heading="One wellness app for fitness, nutrition, recovery and mindset." lead="Health habits interact. Training affects recovery, sleep affects performance, stress affects consistency and nutrition supports the whole system. An all-in-one app should make those relationships clearer—not bury users under more tracking." {faqs} {toc} secondaryLabel="Compare Nutrition Apps" secondaryHref="/fitness-apps/best-fitness-apps-with-nutrition/">
+ <p><strong>The value of an all-in-one wellness app is connection.</strong> If it merely places unrelated workouts, recipes and meditations in the same menu, it has combined content without creating a useful system.</p>
+ <h2 id="four-pillars">The four connected pillars</h2>
+ <div class="grid two">
+  <div class="card"><span class="pill">Training</span><h3>Build capacity</h3><p>Structured strength, conditioning and movement practice should clarify what to do and how to progress.</p></div>
+  <div class="card"><span class="pill coral">Body Care</span><h3>Prepare and recover</h3><p>Mobility, warmups, cooldowns and recovery sessions should relate to training and daily demands.</p></div>
+  <div class="card"><span class="pill purple">Mental Performance</span><h3>Practice awareness</h3><p>Breathing, focus and reflection can help users manage attention and build more consistent behaviors.</p></div>
+  <div class="card"><span class="pill orange">Fuel & Wellness</span><h3>Support the system</h3><p>Practical nutrition, hydration, sleep and stress education provide context for how people feel and perform.</p></div>
+ </div>
+ <h2 id="features">All-in-one wellness app feature checklist</h2>
+ <h3>Essential</h3>
+ <ul><li>A clear onboarding path based on goals and experience</li><li>Structured workouts rather than only a searchable library</li><li>High-quality demonstrations and written instructions</li><li>Recovery and mobility that connect to training</li><li>Practical nutrition education with appropriate boundaries</li><li>Progress history that serves a decision</li><li>Accessibility and easier or harder options</li><li>Transparent privacy and subscription terms</li></ul>
+ <h3>Useful for some people</h3>
+ <ul><li>Wearable or health-platform integrations</li><li>Food logging and nutrient tracking</li><li>Live coaching or messaging</li><li>Team and employer programs</li><li>Downloadable sessions for offline use</li><li>Custom exercise substitutions</li></ul>
+ <h3>Features that can become noise</h3>
+ <ul><li>Daily scores with no explanation of what to do differently</li><li>Large content libraries without a starting path</li><li>Constant notifications unrelated to the user’s goal</li><li>Streaks that punish reasonable rest</li><li>Overly precise health claims based on limited information</li></ul>
+ <h2 id="one-vs-many">One wellness app vs. several specialist apps</h2>
+ <div class="grid two">
+  <div class="card"><h3>Choose one connected app when…</h3><p>You want fewer subscriptions, a simpler routine and one place to connect training, recovery and education.</p></div>
+  <div class="card"><h3>Choose specialist apps when…</h3><p>You need deep food tracking, sport-specific programming, rehabilitation, clinical mental healthcare or another specialized function.</p></div>
+ </div>
+ <p>A hybrid approach is reasonable. Use one app as the main system and a specialist tool only where it adds genuine value.</p>
+ <h2>Physical and mental wellness belong together—but are not the same thing</h2>
+ <p>Exercise, sleep and stress can influence how people feel, but a fitness app is not therapy. “Mental performance” should be described accurately: skills such as breathing, attention, reflection and preparation. Apps should clearly direct users toward appropriate professional or emergency help when needed.</p>
+ <h2 id="evaluate">A seven-day app evaluation</h2>
+ <ol><li><strong>Day 1:</strong> complete onboarding and see whether the starting recommendation makes sense.</li><li><strong>Day 2:</strong> try one training session and evaluate instruction quality.</li><li><strong>Day 3:</strong> find a short recovery or mobility option.</li><li><strong>Day 4:</strong> review the nutrition and wellness guidance for practicality and tone.</li><li><strong>Day 5:</strong> test any mental-performance or breathing content.</li><li><strong>Day 6:</strong> check whether progress history helps plan the next session.</li><li><strong>Day 7:</strong> decide whether the app reduced decisions or created more work.</li></ol>
+ <div class="callout"><strong>The best app is not the one you explore once.</strong> It is the one that helps you take an appropriate next step repeatedly.</div>
+ <h2>How Everyone’s an Athlete is different</h2>
+ <p>Everyone’s an Athlete is coming soon and is being built around these four pillars from the start. The aim is not to claim that one app replaces every coach or clinician. It is to help everyday people connect <a href="/training/">training</a>, <a href="/body-care/">body care</a>, <a href="/mental-performance/">mental performance</a> and <a href="/fuel-wellness/">fuel and wellness</a> in a system that is understandable and sustainable.</p>
+</SEOArticle>

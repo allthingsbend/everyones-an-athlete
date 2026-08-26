@@ -6,13 +6,6 @@ const description = 'Explore practical guides on training, body care, recovery, 
 
 const guides = [
   {
-    title: 'Fitness, Nutrition, Mental Health and Recovery App',
-    description: 'A complete guide to using one app for workouts, nutrition, recovery, mobility and mental performance.',
-    url: '/guides/fitness-nutrition-mental-health-recovery-app/',
-    category: 'All-in-One Wellness',
-    featured: true
-  },
-  {
     title: 'Best Fitness Apps with Nutrition Support',
     description: 'What to look for in a fitness app that combines workout guidance with nutrition education and healthier habits.',
     url: '/fitness-apps/best-fitness-apps-with-nutrition/',
@@ -33,6 +26,12 @@ const guides = [
     category: 'Training'
   },
   {
+    title: 'Beginner Strength Training Program',
+    description: 'A practical two-day full-body plan with beginner exercise options, progression guidance and recovery advice.',
+    url: '/training/beginner-strength-training-program/',
+    category: 'Training'
+  },
+  {
     title: 'Why Nutrition Is Important for Athletes',
     description: 'How protein, hydration, meal timing and everyday food choices support performance, recovery and long-term health.',
     url: '/nutrition/why-nutrition-is-important-for-athletes/',
@@ -45,10 +44,22 @@ const guides = [
     category: 'Body Care'
   },
   {
+    title: '10-Minute Full-Body Mobility Routine',
+    description: 'A simple equipment-free routine for ankles, hips, upper back and shoulders, with easy modifications.',
+    url: '/recovery/10-minute-mobility-routine/',
+    category: 'Body Care'
+  },
+  {
     title: 'Mental Performance Training for Athletes',
     description: 'A practical guide to focus, breathing, awareness, confidence and building the mindset behind better performance.',
     url: '/mental-performance/mental-performance-training-for-athletes/',
     category: 'Mindset'
+  },
+  {
+    title: 'Breathing Exercises for Athletes',
+    description: 'Three practical breathing routines for pre-performance focus, between-effort resets and post-training recovery.',
+    url: '/mental-performance/breathing-exercises-for-athletes/',
+    category: 'Mental Performance'
   },
   {
     title: 'Corporate Fitness and Wellness Programs',
@@ -57,9 +68,21 @@ const guides = [
     category: 'Corporate Wellness'
   },
   {
+    title: 'Employee Wellness App Guide',
+    description: 'What an employee wellness app should include, how to evaluate one and how to support meaningful participation.',
+    url: '/corporate-wellness/employee-wellness-app/',
+    category: 'Corporate Wellness'
+  },
+  {
     title: 'Workplace Ergonomics Guide',
     description: 'Desk setup, posture, movement breaks and simple body care habits for people who sit for long periods.',
     url: '/workplace-wellness/workplace-ergonomics/',
+    category: 'Workplace Wellness'
+  },
+  {
+    title: 'Desk Mobility Routine',
+    description: 'A short, adaptable movement break for the neck, shoulders, upper back, hips and ankles during the workday.',
+    url: '/workplace-wellness/desk-mobility-routine/',
     category: 'Workplace Wellness'
   }
 ];
@@ -75,7 +98,7 @@ const allGuides = guides.filter((guide) => !guide.featured);
       <h1>Fitness, nutrition, recovery and mental wellness guides.</h1>
       <p class="lead">Explore practical guides built around training, body care, mindset, and fuel. These articles are designed to help people move better, recover smarter, eat with more intention, and build healthier routines.</p>
       <div class="hero-actions">
-        <a class="btn" href="https://app.hhmovement.com/">Open the App</a>
+        <a class="btn" href="/contact/">Get Launch Updates</a>
         <a class="btn secondary" href="/about/">Learn About the Mission</a>
       </div>
     </div>

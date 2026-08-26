@@ -1,12 +1,33 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-const title = 'Mobility and Recovery After Workouts';
-const description = 'A guide to mobility and recovery after workouts, including body care routines, stretching, breathing and recovery habits.';
+import SEOArticle from '../../../components/SEOArticle.astro';
+const faqs=[
+ {question:'What should I do immediately after a workout?',answer:'Let breathing and heart rate settle, hydrate according to conditions and use easy movement if it feels helpful. A complicated cooldown is not required after every session.'},
+ {question:'Does stretching prevent muscle soreness?',answer:'Stretching may feel good and improve range over time, but it should not be promised as a reliable way to eliminate delayed-onset muscle soreness.'},
+ {question:'Should recovery mobility hurt?',answer:'No. Strong sensation is not proof that a routine is working. Use controlled, tolerable ranges and stop for sharp, radiating or worsening symptoms.'},
+ {question:'Is soreness required for progress?',answer:'No. Soreness can occur after unfamiliar or demanding training, but progress is better evaluated through performance, consistency, recovery and how the program advances over time.'},
+ {question:'What helps workout recovery most?',answer:'Appropriate training load, adequate sleep, sufficient food and protein, hydration, time and stress management generally matter more than any single recovery gadget.'}
+];
+const toc=[{id:'first-hour',label:'First hour'},{id:'routine',label:'Recovery routine'},{id:'soreness',label:'Soreness'},{id:'next-workout',label:'Next workout'},{id:'questions',label:'Common questions'}];
 ---
-<BaseLayout title={title} description={description}>
-<section class="page-hero"><div class="container"><div class="eyebrow">Recovery</div><h1>Mobility and recovery after workouts.</h1><p class="lead">Recovery is not a luxury. It is part of the training plan. The right mobility and body care work can help people move better, feel better and stay consistent.</p></div></section>
-<section class="content"><div class="container"><article>
-
-<h2>What recovery actually means</h2><p>Recovery is the process that helps the body adapt after training. It includes sleep, nutrition, hydration, stress management, light movement and mobility work.</p><h2>When to do mobility work</h2><p>Mobility and body care can be done after training, on rest days or during short breaks. The goal is not to force flexibility. The goal is to restore comfortable movement and reduce unnecessary tension.</p><h2>Helpful recovery routine structure</h2><ul><li>Start with breathing to bring the body down after training.</li><li>Use gentle mobility for hips, shoulders, spine and ankles.</li><li>Include light activation work if certain areas feel inactive.</li><li>Keep the routine short enough to repeat consistently.</li><li>Pair recovery with protein, hydration and quality sleep.</li></ul><h2>How an app can help</h2><p>Most users skip recovery because they are not sure what to do. A guided body care section gives users a clear plan after training or on rest days.</p><div class="callout"><strong>Content angle:</strong> This page should connect the topic back to the app naturally. Mention guided training, body care, nutrition education and mental performance where relevant without forcing a sales pitch.</div>
-</article></div></section>
-</BaseLayout>
+<SEOArticle title="Mobility and Recovery After Workouts: Practical Guide" description="Learn what to do after a workout with a simple cooldown, mobility routine, hydration, nutrition, sleep and soreness-management guidance." canonical="/recovery/mobility-recovery-after-workouts/" eyebrow="Workout Recovery" heading="Mobility and recovery after workouts—without the complicated rituals." lead="Most recovery comes from getting the training dose right, then giving the body enough time, sleep and nutrition to adapt. Mobility can support the process, but it does not need to become a second workout." {faqs} {toc} secondaryLabel="10-Minute Mobility Routine" secondaryHref="/recovery/10-minute-mobility-routine/">
+ <h2 id="first-hour">The first hour after a workout</h2>
+ <ol><li><strong>Downshift:</strong> use easy walking or movement until breathing is comfortable.</li><li><strong>Notice:</strong> distinguish normal fatigue from sharp or unusual symptoms.</li><li><strong>Hydrate:</strong> replace fluids based on heat, sweat and session length.</li><li><strong>Eat normally:</strong> include protein and carbohydrate in a meal or snack appropriate to your needs.</li><li><strong>Record useful details:</strong> note loads, repetitions and anything that should change next time.</li></ol>
+ <h2 id="routine">A simple post-workout mobility routine</h2>
+ <p>Choose movements that match the session rather than stretching every muscle. Spend about 30 to 60 comfortable seconds on each area and repeat only where useful.</p>
+ <div class="grid two">
+  <div class="card"><h3>Breathing reset</h3><p>Use a comfortable position and slow the exhale. Let unnecessary tension decrease.</p></div>
+  <div class="card"><h3>Hips and ankles</h3><p>After lower-body work, explore gentle hip rotation, hip-flexor range and ankle movement.</p></div>
+  <div class="card"><h3>Upper back and shoulders</h3><p>After pressing or pulling, use controlled upper-back rotation and shoulder movement.</p></div>
+  <div class="card"><h3>Easy whole-body movement</h3><p>Walk, reach and move through comfortable ranges instead of forcing a deep stretch while fatigued.</p></div>
+ </div>
+ <h2 id="soreness">How to respond to muscle soreness</h2>
+ <p>Delayed-onset muscle soreness commonly appears after unfamiliar movements, higher volume or greater eccentric loading. It often peaks after the workout rather than immediately.</p>
+ <ul><li>Use easy movement if it improves how you feel.</li><li>Train a different area or reduce load and volume when needed.</li><li>Avoid repeatedly testing the sore area with aggressive stretching.</li><li>Progress new exercises gradually.</li><li>Seek care for severe swelling, weakness, dark urine or symptoms that seem disproportionate.</li></ul>
+ <h2>Recovery priorities in order</h2>
+ <ol><li>Appropriate program and training load</li><li>Consistent sleep opportunity</li><li>Sufficient overall food and protein</li><li>Hydration appropriate to conditions</li><li>Time between demanding sessions</li><li>Low-intensity movement and mobility</li><li>Optional tools based on preference</li></ol>
+ <div class="callout"><strong>Do not major in the minors.</strong> A massage gun cannot compensate for a program that repeatedly exceeds your ability to recover.</div>
+ <h2 id="next-workout">Deciding what to do in the next workout</h2>
+ <p>Use multiple signals rather than soreness alone: energy, sleep, warmup performance, technique, motivation and the purpose of the training block. Mild soreness does not always require rest; worsening pain or meaningful loss of function deserves more caution.</p>
+ <h2>Connect recovery with training</h2>
+ <p>The coming Everyone’s an Athlete app is designed to place <a href="/body-care/">body care</a> next to <a href="/training/">structured training</a>, not in a disconnected library. The goal is to help users choose a relevant routine and return to training more informed.</p>
+</SEOArticle>

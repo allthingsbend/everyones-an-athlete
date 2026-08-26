@@ -1,21 +1,65 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-const title = 'Training and Weightlifting App';
-const description = 'Guided training and weightlifting support with structured weekly workouts, exercise videos, and simple strength routines.';
+import SEOArticle from '../../components/SEOArticle.astro';
+
+const faqs = [
+  { question: 'What should a strength training app include?', answer: 'Look for clear exercise demonstrations, structured weekly plans, progression guidance, easier and harder options, workout history and realistic recovery expectations. More exercises do not automatically make an app more useful.' },
+  { question: 'Can beginners use a weightlifting app?', answer: 'Yes, if the app explains technique, starts with manageable volume and gives users a way to adjust exercises and resistance. Beginners should prioritize movement quality and consistency over testing maximum strength.' },
+  { question: 'How many days per week should a beginner strength train?', answer: 'Many beginners can make progress with two or three full-body sessions each week. The appropriate schedule depends on experience, goals, other activity, recovery and health circumstances.' },
+  { question: 'Do I need a full gym?', answer: 'No. Useful programs can be built around bodyweight, resistance bands, dumbbells or a complete gym. The app should make equipment requirements clear before a workout begins.' },
+  { question: 'Can an app replace a personal trainer?', answer: 'An app can provide structure and demonstrations, but it cannot fully observe technique, diagnose pain or make every individual adjustment. Some users benefit from in-person coaching, especially when learning complex lifts or returning from injury.' }
+];
+
+const toc = [
+  { id: 'what-to-look-for', label: 'What to look for' },
+  { id: 'weekly-plan', label: 'Example weekly plan' },
+  { id: 'progression', label: 'How to progress' },
+  { id: 'videos', label: 'Using exercise videos' },
+  { id: 'questions', label: 'Common questions' }
+];
 ---
-<BaseLayout title={title} description={description}>
-<section class="page-hero"><div class="container"><div class="eyebrow">Training</div><h1>Guided strength training built for consistency.</h1><p class="lead">The Training pillar helps users follow structured workouts, build strength, and move with better confidence. It is designed to feel simple, while still being grounded in smart coaching.</p></div></section>
-<section class="content"><div class="container"><article>
-<h2>What training means inside Everyone’s an Athlete</h2>
-<p>Training is the movement engine of the app. It gives users a clear weekly structure so they do not have to guess what to do next. A good training program should help people build strength, practice quality movement, and stay consistent without feeling overwhelmed.</p>
-<p>The app experience is built around simple weekly sessions, guided exercise videos, and practical routines that meet people where they are. Someone might start with a full body foundation day, then move into lower body and core work, upper body and core work, conditioning, and targeted plans as they progress.</p>
-<div class="callout">The goal is not random workouts. The goal is repeatable training that helps people build durable strength over time.</div>
-<h2>Who this helps</h2>
-<ul><li>Beginners who want a simple plan to follow.</li><li>Busy adults who need efficient workouts.</li><li>Athletes who want foundational strength and movement quality.</li><li>Workplace wellness users who need approachable training options.</li><li>People returning to exercise who want structure without complexity.</li></ul>
-<h2>Core training topics</h2>
-<h3>Strength foundations</h3><p>Strength training starts with repeatable basics: squats, hinges, presses, pulls, carries, core control, and full-body coordination. These movement patterns help people build strength that carries into sport, work, and everyday life.</p>
-<h3>Exercise videos and coaching cues</h3><p>Follow-along exercise videos make training easier to understand. Instead of reading a long explanation and hoping it makes sense, users can see the movement, watch the setup, and follow simple cues.</p>
-<h3>Weekly structure</h3><p>A consistent weekly plan helps users avoid decision fatigue. Three well-built sessions can be enough to create momentum, especially when paired with body care, nutrition, and mindset support.</p>
-<h2>Related guides</h2><div class="grid two"><a class="card" href="/fitness-apps/workout-videos/"><h3>Fitness Apps with Workout Videos</h3><p>How guided video workouts help people train with more confidence.</p></a><a class="card" href="/fitness-apps/best-fitness-apps-with-nutrition/"><h3>Best Fitness Apps with Nutrition</h3><p>What to look for in apps that combine workouts and nutrition support.</p></a><a class="card" href="/corporate-wellness/"><h3>Corporate Fitness and Wellness</h3><p>How training can fit into a broader workplace wellness program.</p></a><a class="card" href="/guides/fitness-nutrition-mental-health-recovery-app/"><h3>All-in-One Wellness App Guide</h3><p>Why training works best when recovery, mindset, and nutrition are included.</p></a></div>
-</article></div></section>
-</BaseLayout>
+
+<SEOArticle
+  title="Strength Training App with Guided Workouts"
+  description="A practical guide to choosing and using a strength training app with guided workouts, exercise videos, weekly plans, progression and recovery support."
+  canonical="/training/"
+  eyebrow="Training"
+  heading="Guided strength training built for real-life consistency."
+  lead="A useful strength training app should do more than display a library of exercises. It should help you know what to do today, how to perform it, when to progress and how training fits with recovery."
+  {faqs}
+  {toc}
+  secondaryLabel="Watch Exercise Videos"
+  secondaryHref="/fitness-apps/workout-videos/"
+>
+  <p><strong>Strength improves through repeated, appropriately challenging practice.</strong> The difficult part for many people is not finding an exercise—it is turning hundreds of possible exercises into a plan they can follow for months.</p>
+  <h2 id="what-to-look-for">What to look for in a strength training app</h2>
+  <div class="grid two">
+    <div class="card"><h3>Structured weekly training</h3><p>The app should connect individual workouts into a schedule, explain the purpose of each session and make rest days visible.</p></div>
+    <div class="card"><h3>Clear exercise videos</h3><p>Demonstrations should show setup, movement and control—not just a fast clip with no explanation.</p></div>
+    <div class="card"><h3>Progression guidance</h3><p>Users need practical direction for increasing weight, repetitions, sets or movement difficulty.</p></div>
+    <div class="card"><h3>Exercise alternatives</h3><p>A good plan offers substitutions for equipment, experience and comfortable range of motion without turning every workout into guesswork.</p></div>
+    <div class="card"><h3>Useful tracking</h3><p>Workout history should help users repeat and progress their training rather than reward activity for its own sake.</p></div>
+    <div class="card"><h3>Recovery context</h3><p>Training load, soreness, mobility, sleep and stress affect performance. The plan should leave room to adjust.</p></div>
+  </div>
+  <h2>Strength training for different starting points</h2>
+  <h3>New to strength training</h3><p>Begin with repeatable full-body sessions and a small number of movements. Learn how to squat, hinge, push, pull, carry and stabilize using variations appropriate for your experience.</p>
+  <h3>Returning after time away</h3><p>Do less than you remember being capable of. Previous experience can return faster than brand-new skill, but joints, connective tissue and work capacity still need time to readapt.</p>
+  <h3>Experienced lifters</h3><p>More experienced users may need flexible exercise selection, detailed load tracking and enough control to adjust volume. A rigid beginner plan can become limiting even if its individual workouts are good.</p>
+  <h2 id="weekly-plan">Example beginner weekly strength plan</h2>
+  <p>This example shows structure, not an individualized prescription.</p>
+  <div class="grid two">
+    <div class="card"><span class="pill">Monday</span><h3>Full Body A</h3><p>Squat pattern, horizontal push, row, hip hinge and carry. Keep the first week deliberately manageable.</p></div>
+    <div class="card"><span class="pill coral">Tuesday</span><h3>Body Care</h3><p>Easy walking, breathing and a short mobility routine for areas that feel stiff.</p></div>
+    <div class="card"><span class="pill">Thursday</span><h3>Full Body B</h3><p>Split squat or step-up, overhead or angled push, pull, glute-focused movement and trunk control.</p></div>
+    <div class="card"><span class="pill orange">Weekend</span><h3>Optional Movement</h3><p>Recreational activity, an easy conditioning session or recovery based on energy and goals.</p></div>
+  </div>
+  <p>Two consistent sessions are more valuable than an ambitious five-day plan that repeatedly collapses. Add training only when the current schedule is sustainable.</p>
+  <h2 id="progression">How to progress without rushing</h2>
+  <p>Progressive overload means gradually asking the body to do more. It does not mean adding weight every workout regardless of technique or recovery.</p>
+  <ul><li>Repeat the same movement long enough to learn it.</li><li>Complete the target repetitions with controlled technique.</li><li>Increase one variable at a time: load, repetitions, sets, range or exercise difficulty.</li><li>Use small increases rather than dramatic jumps.</li><li>Reduce volume when fatigue is accumulating faster than recovery.</li></ul>
+  <div class="callout"><strong>A simple progression rule:</strong> when every prescribed set is completed with stable technique and a few repetitions still possible, consider a small increase next time.</div>
+  <h2 id="videos">How to use workout and exercise videos well</h2>
+  <p>Watch the demonstration before the working set. Identify the starting position, direction of movement and finishing position. Then use an appropriate load and compare how the movement feels—not only how it looks.</p>
+  <p>A video cannot determine whether pain is safe or identify an injury. Stop when a movement causes sharp, worsening or unusual symptoms and seek appropriate professional guidance.</p>
+  <h2>How Everyone’s an Athlete approaches training</h2>
+  <p>Everyone’s an Athlete is being built to connect guided strength work with <a href="/body-care/">mobility and recovery</a>, <a href="/mental-performance/">mental performance</a> and <a href="/fuel-wellness/">nutrition and wellness</a>. That matters because a training plan does not exist separately from the person performing it.</p>
+</SEOArticle>

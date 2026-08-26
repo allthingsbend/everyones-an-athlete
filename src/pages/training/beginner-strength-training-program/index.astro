@@ -1,0 +1,84 @@
+---
+import SEOArticle from '../../../components/SEOArticle.astro';
+
+const faqs = [
+  { question: 'How many days a week should a beginner strength train?', answer: 'Two or three nonconsecutive full-body sessions are a practical starting point for many adults. The right frequency depends on health, schedule, recovery and other activity.' },
+  { question: 'Do beginners need a gym?', answer: 'No. A beginner can build strength with bodyweight, resistance bands, dumbbells or household equipment, provided the exercises can be performed safely and progressed over time.' },
+  { question: 'How heavy should the weights feel?', answer: 'Use a load that allows controlled repetitions and leaves several good repetitions in reserve. Technique should remain steady; beginners do not need to train to failure.' },
+  { question: 'When should I increase the weight?', answer: 'Increase resistance gradually after you can complete the top of the suggested repetition range with consistent control across every set.' },
+  { question: 'Is soreness required for progress?', answer: 'No. Mild soreness can happen, especially after a new activity, but it is not the goal or a reliable measure of workout quality.' }
+];
+
+const toc = [
+  { id: 'principles', label: 'Beginner principles' },
+  { id: 'program', label: 'Two-day program' },
+  { id: 'progress', label: 'How to progress' },
+  { id: 'schedule', label: 'Weekly schedule' },
+  { id: 'questions', label: 'Common questions' }
+];
+---
+
+<SEOArticle
+  title="Beginner Strength Training Program: A Simple 2-Day Plan"
+  description="Start strength training with a practical two-day full-body beginner program, exercise options, progression guidance and realistic recovery advice."
+  canonical="/training/beginner-strength-training-program/"
+  eyebrow="Beginner Strength Training"
+  heading="A simple beginner strength training program."
+  lead="This two-day full-body plan teaches the basic movement patterns, leaves room for recovery and gives you a clear way to progress without turning every workout into a test."
+  {faqs}
+  {toc}
+  secondaryLabel="Explore Training"
+  secondaryHref="/training/"
+>
+  <p>You do not need a complicated split or a perfect gym routine to begin. A useful first program should be repeatable, adaptable to your equipment and challenging enough to improve without overwhelming your recovery.</p>
+
+  <h2 id="principles">Five principles for a strong start</h2>
+  <div class="grid two">
+    <div class="card"><h3>Practice whole-body patterns</h3><p>Include a squat, hinge, push, pull, carry or core-stability exercise across the week.</p></div>
+    <div class="card"><h3>Keep repetitions controlled</h3><p>Choose ranges and resistance that let you move steadily without rushing or losing position.</p></div>
+    <div class="card"><h3>Stop before form breaks down</h3><p>Finishing with two or three good repetitions left is an effective place for many beginners to work.</p></div>
+    <div class="card"><h3>Repeat before adding complexity</h3><p>Learning a small set of movements usually works better than changing the entire workout every session.</p></div>
+  </div>
+  <p>Allow at least one day between these sessions. Before each workout, spend five to ten minutes walking, cycling or moving through easy versions of the exercises you plan to perform.</p>
+
+  <h2 id="program">The two-day beginner program</h2>
+  <h3>Workout A</h3>
+  <ol>
+    <li><strong>Goblet squat or chair squat:</strong> 2 sets of 8–12 repetitions</li>
+    <li><strong>Dumbbell Romanian deadlift or supported hip hinge:</strong> 2 sets of 8–12</li>
+    <li><strong>Incline push-up or dumbbell chest press:</strong> 2 sets of 8–12</li>
+    <li><strong>One-arm dumbbell row or band row:</strong> 2 sets of 8–12 per side</li>
+    <li><strong>Suitcase carry or standing march:</strong> 2 rounds of 20–40 seconds per side</li>
+  </ol>
+
+  <h3>Workout B</h3>
+  <ol>
+    <li><strong>Step-up or supported split squat:</strong> 2 sets of 6–10 per side</li>
+    <li><strong>Glute bridge or kettlebell deadlift:</strong> 2 sets of 8–12</li>
+    <li><strong>Standing dumbbell press or elevated push-up:</strong> 2 sets of 8–12</li>
+    <li><strong>Band pulldown or another supported row:</strong> 2 sets of 8–12</li>
+    <li><strong>Dead bug or wall plank:</strong> 2 controlled rounds</li>
+  </ol>
+
+  <div class="callout"><strong>Choose the version that fits today.</strong> Exercise names are options, not requirements. Use the variation that matches your current control, comfort, equipment and training experience.</div>
+
+  <h2 id="progress">How to progress without guessing</h2>
+  <p>Start near the lower end of each repetition range. When you can complete every set at the top of the range with steady technique, add a small amount of resistance or use a slightly harder variation. Then return to the lower end of the range.</p>
+  <p>Change one variable at a time. Adding repetitions, weight, range of motion and an extra set all at once makes it difficult to know what your body is responding to. A simple training log can record the exercise, resistance, repetitions and how the final set felt.</p>
+  <p>After two to four weeks of consistent training, a third set may be useful for selected exercises. More volume is only helpful when you can recover from it.</p>
+
+  <h2 id="schedule">A realistic weekly schedule</h2>
+  <div class="grid two">
+    <div class="card"><h3>Monday: Workout A</h3><p>Full-body strength followed by an easy cooldown.</p></div>
+    <div class="card"><h3>Tuesday: Easy activity</h3><p>Walk, cycle or use a short mobility routine.</p></div>
+    <div class="card"><h3>Thursday: Workout B</h3><p>Full-body strength with the same controlled effort.</p></div>
+    <div class="card"><h3>Weekend: Move by choice</h3><p>Recreation, recovery or another easy activity that fits your life.</p></div>
+  </div>
+  <p>Sleep, nutrition and stress can change how a workout feels. Adjust the load or number of sets when recovery is limited rather than treating the written plan as a rule that cannot change.</p>
+
+  <h2>When to get individual guidance</h2>
+  <p>Seek qualified medical or exercise guidance if you have symptoms with activity, a recent injury or procedure, significant balance concerns, or a health condition that changes how you should exercise. Stop a movement that causes sharp, radiating or worsening pain, dizziness, chest discomfort or unusual shortness of breath.</p>
+
+  <h2>Build the rest of your routine</h2>
+  <p>Use the <a href="/recovery/10-minute-mobility-routine/">10-minute mobility routine</a> on an easy day, or learn how guided demonstrations can support practice in our <a href="/fitness-apps/workout-videos/">workout video guide</a>.</p>
+</SEOArticle>

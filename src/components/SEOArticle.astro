@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const {
+  title,
+  description,
+  canonical,
+  eyebrow,
+  heading,
+  lead,
+  faqs = [],
+  toc = [],
+  sources = [],
+  ctaLabel = 'Get Launch Updates',
+  ctaHref = '/contact/',
+  secondaryLabel = 'Explore All Guides',
+  secondaryHref = '/guides/',
+  reviewed = 'August 25, 2026'
+} = Astro.props;
+
+const pageUrl = new URL(canonical, Astro.site).toString();
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      name: heading,
+      description,
+      url: pageUrl,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'Everyone’s an Athlete',
+        url: 'https://everyonesanathlete.app/'
+      },
+      dateModified: '2026-08-25'
+    },
+    ...(faqs.length ? [{
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer }
+      }))
+    }] : [])
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow">{eyebrow}</div>
+      <h1>{heading}</h1>
+      <p class="lead">{lead}</p>
+      <div class="hero-actions">
+        <a class="btn" href={ctaHref}>{ctaLabel}</a>
+        <a class="btn secondary" href={secondaryHref}>{secondaryLabel}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <article>
+        <p class="article-meta">Last reviewed: {reviewed}</p>
+
+        {toc.length > 0 && (
+          <nav class="article-nav" aria-label="On this page">
+            <strong>On this page</strong>
+            <div>
+              {toc.map((item, index) => (
+                <>
+                  <a href={`#${item.id}`}>{item.label}</a>{index < toc.length - 1 ? <span aria-hidden="true"> · </span> : null}
+                </>
+              ))}
+            </div>
+          </nav>
+        )}
+
+        <slot />
+
+        {faqs.length > 0 && (
+          <section id="questions">
+            <h2>Common questions</h2>
+            {faqs.map((item) => (
+              <details class="faq-item">
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))}
+          </section>
+        )}
+
+        {sources.length > 0 && (
+          <section id="sources">
+            <h2>Sources and further reading</h2>
+            <ul>
+              {sources.map((source) => (
+                <li><a href={source.url} rel="noopener noreferrer">{source.name}</a></li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <div class="article-cta">
+          <h2>Keep building sustainable health.</h2>
+          <p>Everyone’s an Athlete is coming soon. Follow the launch or reach out about corporate wellness and partnership opportunities.</p>
+          <div class="hero-actions">
+            <a class="btn" href={ctaHref}>{ctaLabel}</a>
+            <a class="btn secondary" href={secondaryHref}>{secondaryLabel}</a>
+          </div>
+        </div>
+
+        <p class="source-note">Educational content only. This page does not replace individualized medical, nutrition, mental-health or workplace-safety advice.</p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
