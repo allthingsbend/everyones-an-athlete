@@ -1,12 +1,333 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-const title = 'Corporate Fitness and Wellness in San Diego';
-const description = 'Corporate fitness and wellness in San Diego for companies that want practical employee movement, nutrition, recovery and mental performance support.';
----
-<BaseLayout title={title} description={description}>
-<section class="page-hero"><div class="container"><div class="eyebrow">San Diego Corporate Wellness</div><h1>Corporate fitness and wellness in San Diego.</h1><p class="lead">San Diego companies have a strong opportunity to build healthier teams with programs that combine movement, recovery, nutrition education and mental performance support.</p></div></section>
-<section class="content"><div class="container"><article>
 
-<h2>A wellness program built for active San Diego teams</h2><p>San Diego has a health-conscious culture, but many employees still spend most of the day sitting, commuting or working under stress. A corporate wellness program should help people move better, recover better and build habits that last.</p><h2>Program ideas for San Diego companies</h2><ul><li>Weekly guided workouts employees can complete at home, outside or in a small office gym.</li><li>Mobility sessions for desk posture, hips, shoulders and back care.</li><li>Nutrition education around energy, protein, hydration and recovery.</li><li>Mental performance practices that support focus, confidence and stress management.</li><li>Team wellness challenges that encourage consistency without being extreme.</li></ul><h2>Local content angle</h2><p>This page can be expanded with examples for San Diego tech companies, schools, athletic teams, healthcare groups and hybrid workplaces. Add a local call-to-action once the business model is ready.</p><div class="callout"><strong>Content angle:</strong> This page should connect the topic back to the app naturally. Mention guided training, body care, nutrition education and mental performance where relevant without forcing a sales pitch.</div>
-</article></div></section>
+const title = 'Corporate Wellness Programs in San Diego, CA';
+const description = 'Corporate wellness and employee fitness programs for San Diego companies, including movement, recovery, nutrition, ergonomics and hybrid-team support.';
+
+const faqs = [
+  {
+    question: 'What types of San Diego companies can use a corporate wellness program?',
+    answer: 'Corporate wellness can be adapted for life sciences, technology, healthcare, defense, manufacturing, hospitality, education, professional services and public-sector teams. The program should reflect whether employees work at desks, in labs, on their feet, in the field or remotely.'
+  },
+  {
+    question: 'Can a San Diego wellness program support multiple offices or remote employees?',
+    answer: 'Yes. A hybrid format can combine on-demand resources, live virtual sessions, optional on-site events and consistent communication so employees can participate across San Diego County or from other locations.'
+  },
+  {
+    question: 'What should a San Diego corporate fitness program include?',
+    answer: 'Useful components may include beginner-friendly strength and movement, desk mobility, recovery, nutrition and hydration education, ergonomics, stress-management skills and team activities. Start with employee needs rather than a generic package.'
+  },
+  {
+    question: 'Can workplace wellness include outdoor activities in San Diego?',
+    answer: 'Outdoor walks or movement sessions can be useful optional activities when weather, air quality, sun exposure, hydration, accessibility and work schedules are considered. An indoor or on-demand alternative should always be available.'
+  },
+  {
+    question: 'How should a company choose a corporate wellness provider in San Diego?',
+    answer: 'Compare program design, instructor qualifications, inclusivity, privacy, delivery options, implementation support, measurement and the exact services included. Ask how the provider will adapt the program to your workforce instead of offering the same challenge to every company.'
+  },
+  {
+    question: 'How long does it take to launch an employee wellness program?',
+    answer: 'A focused pilot can often be planned in a few weeks and run for eight to twelve weeks. Timing depends on company approvals, employee communication, technology setup, on-site scheduling and whether baseline feedback is collected.'
+  }
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      name: 'Corporate Wellness Programs in San Diego, California',
+      description,
+      url: 'https://everyonesanathlete.app/corporate-wellness/san-diego/',
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'Everyone’s an Athlete',
+        url: 'https://everyonesanathlete.app/'
+      },
+      about: [
+        { '@type': 'Thing', name: 'Corporate wellness' },
+        { '@type': 'Thing', name: 'Employee fitness' },
+        { '@type': 'Place', name: 'San Diego, California' }
+      ],
+      dateModified: '2026-08-25'
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical="/corporate-wellness/san-diego/">
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow">San Diego Corporate Wellness</div>
+      <h1>Corporate wellness and fitness programs for San Diego teams.</h1>
+      <p class="lead">Build an employee wellness program around how your people actually work—from offices and home workstations to labs, hospitals, hotels, manufacturing floors and field operations.</p>
+      <div class="hero-actions">
+        <a class="btn" href="/contact/">Discuss a San Diego Program</a>
+        <a class="btn secondary" href="#local-framework">Explore the Local Framework</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <article>
+        <p><strong>San Diego may be known for an active lifestyle, but location alone does not make a workforce healthy.</strong> Employees still face long periods of sitting or standing, demanding shifts, commutes, screen time, stress and inconsistent access to fitness and recovery resources.</p>
+        <p>A useful corporate wellness program meets those realities with flexible movement, practical education and organizational support. It should work for the employee beginning with five minutes of mobility as well as the person who already trains regularly.</p>
+
+        <nav class="callout" aria-label="On this page">
+          <strong>On this page:</strong>
+          <a href="#san-diego-workforce">San Diego workforce needs</a> ·
+          <a href="#local-framework">Program framework</a> ·
+          <a href="#delivery">Delivery options</a> ·
+          <a href="#pilot">12-week pilot</a> ·
+          <a href="#questions">Common questions</a>
+        </nav>
+
+        <h2 id="san-diego-workforce">Corporate wellness for San Diego’s diverse workforce</h2>
+        <p>The <a href="https://www.sandiegobusiness.org/about-the-region/">San Diego Regional Economic Development Corporation</a> identifies major regional strengths that include life sciences, defense, technology, manufacturing, tourism and other innovation-driven industries. Those employees do not all need the same wellness program.</p>
+
+        <div class="grid two">
+          <div class="card">
+            <span class="pill">Life Sciences & Tech</span>
+            <h3>Desk, lab and hybrid work</h3>
+            <p>Programs can combine workstation habits, mobility breaks, accessible strength training and recovery resources for employees moving between focused screen work, labs and remote schedules.</p>
+          </div>
+          <div class="card">
+            <span class="pill purple">Healthcare</span>
+            <h3>Shift-based, high-demand teams</h3>
+            <p>Short recovery sessions, movement quality, hydration, sleep education and flexible access may be more realistic than scheduled midday fitness classes.</p>
+          </div>
+          <div class="card">
+            <span class="pill coral">Defense & Manufacturing</span>
+            <h3>Physical and operational demands</h3>
+            <p>Programs should complement workplace safety and job-specific training, with attention to recovery, mobility and the difference between occupational exertion and voluntary exercise.</p>
+          </div>
+          <div class="card">
+            <span class="pill orange">Hospitality & Tourism</span>
+            <h3>Standing, service and irregular schedules</h3>
+            <p>Mobile-friendly resources and brief sessions can serve employees who are on their feet, work changing shifts or have limited access to a desk during the workday.</p>
+          </div>
+          <div class="card">
+            <span class="pill">Education & Public Service</span>
+            <h3>Multiple roles and locations</h3>
+            <p>Teachers, administrators, coaches, first responders and public employees may need different pathways within one shared program.</p>
+          </div>
+          <div class="card">
+            <span class="pill">Professional Services</span>
+            <h3>Focus, stress and prolonged sitting</h3>
+            <p>Movement breaks, guided training, ergonomics and mental-performance tools can help employees build healthier patterns around concentrated knowledge work.</p>
+          </div>
+        </div>
+
+        <h2 id="local-framework">A practical San Diego corporate wellness framework</h2>
+        <p>The strongest local program begins with the same principle as any effective workplace-health effort: assess the employees and the work environment before choosing activities. The CDC recommends an ongoing process of assessment, planning, implementation and evaluation.</p>
+
+        <h3>1. Map where and how employees work</h3>
+        <p>Document the workforce rather than treating “San Diego employees” as one group.</p>
+        <ul>
+          <li>Which employees are in an office, lab, clinic, hotel, warehouse or field setting?</li>
+          <li>Who works remotely or across several locations?</li>
+          <li>Which shifts make live programming difficult?</li>
+          <li>What languages, accessibility needs and equipment limitations should be considered?</li>
+          <li>Which health, safety or benefits resources already exist?</li>
+        </ul>
+
+        <h3>2. Ask employees what would be useful</h3>
+        <p>A short anonymous needs-and-interest survey can uncover preferred session length, delivery format and topics. Ask about barriers to participation as well as interests. Time and scheduling may matter more than adding another feature.</p>
+
+        <h3>3. Select a few connected program elements</h3>
+        <p>Rather than launching unrelated challenges, connect the content around a simple purpose: help employees move, recover and make practical health decisions more consistently.</p>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>Guided movement</h3>
+            <p>Short strength, mobility, walking and low-impact sessions with options for different starting points.</p>
+          </div>
+          <div class="card">
+            <h3>Body care and recovery</h3>
+            <p>Routines for hips, shoulders, back, feet and whole-body recovery that can fit before, during or after work.</p>
+          </div>
+          <div class="card">
+            <h3>Nutrition and hydration</h3>
+            <p>Education about balanced meals, protein, hydration and energy without restrictive challenges or individualized medical claims.</p>
+          </div>
+          <div class="card">
+            <h3>Mental performance</h3>
+            <p>Breathing, reflection, awareness and behavior-change practices that support focus and stress management.</p>
+          </div>
+          <div class="card">
+            <h3>Ergonomics</h3>
+            <p>Workstation setup and regular changes in posture for office and home environments, consistent with OSHA guidance.</p>
+          </div>
+          <div class="card">
+            <h3>Team connection</h3>
+            <p>Optional challenges or shared activities that reward consistency and participation rather than body weight or athletic performance.</p>
+          </div>
+        </div>
+
+        <h3>4. Create an indoor and asynchronous alternative</h3>
+        <p>San Diego’s climate creates opportunities for optional outdoor walks or movement sessions, but a credible program still plans for heat, sun, air quality, accessibility, scheduling and employees outside the region. Every outdoor or on-site activity should have an inclusive alternative.</p>
+
+        <h3>5. Measure and improve</h3>
+        <p>Review enrollment, repeat participation, employee feedback and which resources are used. Avoid claiming success based only on how many people attended a launch event.</p>
+
+        <h2 id="delivery">On-site, virtual or hybrid corporate fitness?</h2>
+
+        <h3>On-site programming</h3>
+        <p>Live sessions can create visibility and connection at a central workplace. They work best when there is suitable space, a realistic schedule and a plan for employees who cannot attend.</p>
+
+        <h3>Virtual programming</h3>
+        <p>Virtual delivery can reach employees across the county and beyond. Live sessions provide interaction; on-demand resources provide flexibility. Clear organization matters so employees can find an appropriate starting point quickly.</p>
+
+        <h3>Hybrid programming</h3>
+        <p>For many San Diego employers, a hybrid model is the most practical: a digital foundation available to everyone, supported by selected live or on-site moments. That prevents the wellness program from becoming a headquarters-only benefit.</p>
+
+        <div class="callout">
+          <strong>Local does not have to mean limited to one office.</strong> A San Diego-based strategy can still serve employees in Carlsbad, Sorrento Valley, UTC and La Jolla, Downtown, Kearny Mesa, Mission Valley, South Bay or fully remote locations.
+        </div>
+
+        <h2 id="pilot">Example 12-week San Diego wellness pilot</h2>
+
+        <h3>Weeks 1–2: Assess and prepare</h3>
+        <ul>
+          <li>Survey employee needs and preferred formats</li>
+          <li>Choose two or three program goals</li>
+          <li>Confirm privacy, accessibility and communication plans</li>
+          <li>Establish baseline participation measures</li>
+        </ul>
+
+        <h3>Weeks 3–4: Launch a clear starting pathway</h3>
+        <ul>
+          <li>Host a short orientation</li>
+          <li>Provide beginner-friendly movement and mobility options</li>
+          <li>Introduce one central digital resource hub</li>
+          <li>Give managers language that supports participation without pressure</li>
+        </ul>
+
+        <h3>Weeks 5–8: Build consistency</h3>
+        <ul>
+          <li>Offer one weekly movement theme</li>
+          <li>Add a short recovery or ergonomics focus</li>
+          <li>Share one practical nutrition or hydration lesson</li>
+          <li>Use optional team prompts that work across locations</li>
+        </ul>
+
+        <h3>Weeks 9–12: Evaluate and refine</h3>
+        <ul>
+          <li>Review repeat engagement rather than launch enrollment alone</li>
+          <li>Collect anonymous employee feedback</li>
+          <li>Identify scheduling and access barriers</li>
+          <li>Decide what to continue, change or remove</li>
+        </ul>
+
+        <h2>Corporate wellness should support—not replace—workplace health and safety</h2>
+        <p>A movement app or wellness challenge does not correct unsafe job design, excessive workloads or a poorly configured workstation. OSHA describes ergonomics as fitting the job to the person and recommends changing working positions throughout the day rather than holding even a good posture for too long.</p>
+        <p>Coordinate corporate fitness with human resources, benefits and occupational-safety responsibilities. Employees with symptoms, injuries or medical conditions should use the appropriate professional resources rather than relying on general wellness content.</p>
+
+        <h2>What to ask a San Diego wellness provider</h2>
+        <ul>
+          <li>How will you learn about our employee population before recommending activities?</li>
+          <li>Can you support office, remote, shift and field employees?</li>
+          <li>Which services are on-site, live virtual or on demand?</li>
+          <li>How do you accommodate different abilities and fitness experience?</li>
+          <li>What space or equipment does the company need to provide?</li>
+          <li>How is individual employee information protected?</li>
+          <li>What implementation and communication support is included?</li>
+          <li>Which measures will be reported to the employer?</li>
+          <li>How do you coordinate fitness content with safety and medical boundaries?</li>
+          <li>What happens after the pilot?</li>
+        </ul>
+
+        <h2>Common mistakes to avoid</h2>
+        <ul>
+          <li>Choosing activities before asking employees what they need</li>
+          <li>Building the entire program around a gym or one office</li>
+          <li>Offering only high-intensity workouts</li>
+          <li>Using weight loss as the primary measure of success</li>
+          <li>Scheduling everything during one shift</li>
+          <li>Collecting more personal health data than necessary</li>
+          <li>Launching once without a plan for continued communication</li>
+          <li>Promising healthcare savings or productivity gains without appropriate evidence</li>
+        </ul>
+
+        <h2>How Everyone’s an Athlete fits</h2>
+        <p>Everyone’s an Athlete is built around four connected areas: training, body care and recovery, mental performance, and fuel and wellness. The philosophy is deliberately inclusive—an athlete is anyone working to become more capable and confident in movement and life.</p>
+        <p>For employers, that creates a foundation for practical education and guided resources without defining wellness as athletic performance. Learn more in our complete guide to <a href="/corporate-wellness/">corporate wellness programs and employee fitness</a>.</p>
+
+        <h2 id="questions">Common questions</h2>
+        {faqs.map((item) => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+
+        <h2>Plan a program for your San Diego team</h2>
+        <p>Whether your workforce is concentrated in one office or spread across San Diego County and remote locations, begin with employee needs and a manageable pilot. Build the program around participation, accessibility and useful habits—not a short-lived competition.</p>
+        <div class="hero-actions">
+          <a class="btn" href="/contact/">Discuss a San Diego Program</a>
+          <a class="btn secondary" href="/training/">Explore Training</a>
+        </div>
+
+        <h2>Sources and further reading</h2>
+        <ul>
+          <li><a href="https://www.cdc.gov/workplace-health-promotion/php/model/building.html">CDC: Strategies for Building a Workplace Health Program</a></li>
+          <li><a href="https://www.cdc.gov/active-people-healthy-nation/php/tools/employers.html">CDC: Physical Activity Resources for Employers</a></li>
+          <li><a href="https://www.osha.gov/ergonomics">OSHA: Ergonomics Overview</a></li>
+          <li><a href="https://www.osha.gov/etools/computer-workstations/positions">OSHA: Computer Workstation Positions and Movement</a></li>
+          <li><a href="https://www.sandiegobusiness.org/about-the-region/">San Diego Regional EDC: About the Region and Key Industries</a></li>
+          <li><a href="https://www.sandiegobusiness.org/about-the-region/life-sciences/">San Diego Regional EDC: Life Sciences</a></li>
+        </ul>
+        <p><small>Last reviewed: August 25, 2026. This page is educational and does not replace medical, legal, benefits or workplace-safety advice.</small></p>
+      </article>
+    </div>
+  </section>
+
+  <style>
+    .content a:not(.btn):not(.card) {
+      color: var(--teal-dark);
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+
+    .content .grid {
+      margin: 1.5rem 0 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 0 18px;
+      margin: 12px 0;
+      background: #fff;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      font-weight: 800;
+      padding: 16px 0;
+      color: var(--ink);
+    }
+
+    .faq-item p {
+      margin: 0 0 18px;
+    }
+
+    small {
+      color: var(--muted);
+    }
+  </style>
 </BaseLayout>
