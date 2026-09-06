@@ -10,6 +10,7 @@ const {
 
 const siteName = 'Everyone’s an Athlete';
 const pageTitle = title ? `${title} | ${siteName}` : siteName;
+const year = new Date().getFullYear();
 
 const canonicalUrl = canonical
   ? new URL(canonical, Astro.site).toString()
@@ -41,7 +42,7 @@ const socialImageUrl = new URL(image, Astro.site).toString();
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#0f9b8e" />
+    <meta name="theme-color" content="#0b2928" />
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteName} />
@@ -58,7 +59,10 @@ const socialImageUrl = new URL(image, Astro.site).toString();
   <body>
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="/" aria-label="Everyone’s an Athlete home">Everyone’s an Athlete</a>
+        <a class="brand" href="/" aria-label="Everyone’s an Athlete home">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <span class="brand-name">Everyone’s an Athlete</span>
+        </a>
 
         <button
           class="menu-toggle"
@@ -75,9 +79,9 @@ const socialImageUrl = new URL(image, Astro.site).toString();
           <a href="/recovery/">Recovery</a>
           <a href="/nutrition/">Nutrition</a>
           <a href="/mental-performance/">Mindset</a>
-          <a href="/fitness-apps/">Fitness Apps</a>
+          <a href="/fitness-apps/">The App</a>
           <a href="/corporate-wellness/">Corporate</a>
-          <a class="btn" href="/contact/">Launch Updates</a>
+          <a class="btn nav-button" href="/contact/">Launch Updates</a>
         </nav>
       </div>
     </header>
@@ -87,28 +91,45 @@ const socialImageUrl = new URL(image, Astro.site).toString();
     </main>
 
     <footer class="footer">
-      <div class="container footer-grid">
-        <div>
-          <div class="brand footer-brand">Everyone’s an Athlete</div>
-          <p>
-            Practical training, recovery, nutrition and mental-performance guidance for everyday athletes, plus a connected wellness app in development.
-          </p>
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-intro">
+            <a class="brand footer-brand" href="/">
+              <span class="brand-mark" aria-hidden="true"><span></span></span>
+              <span class="brand-name">Everyone’s an Athlete</span>
+            </a>
+            <p>Training, recovery, nutrition and mental performance built around real life.</p>
+            <a class="footer-status" href="/contact/"><span></span> App in development</a>
+          </div>
+
+          <nav class="footer-group" aria-label="Explore">
+            <strong>Explore</strong>
+            <a href="/training/">Training</a>
+            <a href="/recovery/">Recovery</a>
+            <a href="/nutrition/">Nutrition</a>
+            <a href="/mental-performance/">Mental Performance</a>
+          </nav>
+
+          <nav class="footer-group" aria-label="Resources">
+            <strong>Resources</strong>
+            <a href="/fitness-apps/">The App</a>
+            <a href="/guides/">All Guides</a>
+            <a href="/workplace-wellness/">Workplace Wellness</a>
+            <a href="/movement-manual/">Movement Manual</a>
+          </nav>
+
+          <nav class="footer-group" aria-label="Company">
+            <strong>Company</strong>
+            <a href="/corporate-wellness/">Corporate Wellness</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+            <a href="https://www.youtube.com/@everyonesanathlete" rel="noopener noreferrer">YouTube</a>
+          </nav>
         </div>
 
-        <div>
-          <p><strong>Explore</strong></p>
-          <p>
-            <a href="/training/">Training</a> ·
-            <a href="/recovery/">Recovery</a> ·
-            <a href="/nutrition/">Nutrition</a> ·
-            <a href="/mental-performance/">Mental Performance</a> ·
-            <a href="/fitness-apps/">Fitness Apps</a> ·
-            <a href="/workplace-wellness/">Workplace Wellness</a> ·
-            <a href="/corporate-wellness/">Corporate Wellness</a> ·
-            <a href="/guides/">All Guides</a> ·
-            <a href="/about/">About</a> ·
-            <a href="/contact/">Contact</a>
-          </p>
+        <div class="footer-bottom">
+          <span>© {year} Health &amp; Human Movement Inc.</span>
+          <span>Move well. Get stronger. Keep going.</span>
         </div>
       </div>
     </footer>
