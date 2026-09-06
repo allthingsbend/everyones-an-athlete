@@ -50,44 +50,68 @@ const schema = {
 <BaseLayout title={title} description={description} canonical={canonical}>
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
-  <section class="page-hero">
-    <div class="container">
-      <div class="eyebrow">{eyebrow}</div>
-      <h1>{heading}</h1>
-      <p class="lead">{lead}</p>
-      <div class="hero-actions">
-        <a class="btn" href={ctaHref}>{ctaLabel}</a>
-        <a class="btn secondary" href={secondaryHref}>{secondaryLabel}</a>
+  <section class="article-hero">
+    <div class="container article-hero-grid">
+      <div class="article-hero-copy">
+        <div class="eyebrow">{eyebrow}</div>
+        <h1>{heading}</h1>
+        <p class="lead">{lead}</p>
+        <div class="hero-actions">
+          <a class="btn" href={ctaHref}>{ctaLabel}</a>
+          <a class="btn secondary" href={secondaryHref}>{secondaryLabel}</a>
+        </div>
       </div>
+
+      <aside class="guide-preview" aria-label="Guide overview">
+        <div class="guide-preview-top">
+          <span class="guide-preview-label">Everyone’s an Athlete Guide</span>
+          <span class="guide-preview-dot" aria-hidden="true"></span>
+        </div>
+        <strong>Built to use, not just read.</strong>
+        <div class="guide-preview-items">
+          {(toc.length ? toc.slice(0, 4) : [
+            { label: 'Clear guidance' },
+            { label: 'Practical next steps' },
+            { label: 'Simple structure' }
+          ]).map((item, index) => (
+            <span><b>{String(index + 1).padStart(2, '0')}</b>{item.label}</span>
+          ))}
+        </div>
+        <small>Reviewed {reviewed}</small>
+      </aside>
     </div>
   </section>
 
-  <section class="content">
-    <div class="container">
-      <article>
-        <p class="article-meta">Last reviewed: {reviewed}</p>
-
-        {toc.length > 0 && (
-          <nav class="article-nav" aria-label="On this page">
-            <strong>On this page</strong>
-            <div>
-              {toc.map((item, index) => (
-                <>
-                  <a href={`#${item.id}`}>{item.label}</a>{index < toc.length - 1 ? <span aria-hidden="true"> · </span> : null}
-                </>
+  <section class="content article-content">
+    <div class="container article-layout">
+      <aside class="article-aside">
+        <div class="article-aside-inner">
+          <span class="article-aside-kicker">In this guide</span>
+          {toc.length > 0 && (
+            <nav class="article-nav" aria-label="On this page">
+              {toc.map((item) => (
+                <a href={`#${item.id}`}>{item.label}</a>
               ))}
-            </div>
-          </nav>
-        )}
+            </nav>
+          )}
+          <div class="article-aside-meta">
+            <span>Last reviewed</span>
+            <strong>{reviewed}</strong>
+          </div>
+          <a class="aside-cta" href={ctaHref}>Get launch updates <span>→</span></a>
+        </div>
+      </aside>
 
+      <article class="article-body">
         <slot />
 
         {faqs.length > 0 && (
-          <section id="questions">
+          <section id="questions" class="faq-section">
+            <span class="section-label">Quick answers</span>
             <h2>Common questions</h2>
             {faqs.map((item) => (
               <details class="faq-item">
-                <summary>{item.question}</summary>
+                <summary>{item.question}<span aria-hidden="true">+</span></summary>
                 <p>{item.answer}</p>
               </details>
             ))}
@@ -106,8 +130,11 @@ const schema = {
         )}
 
         <div class="article-cta">
-          <h2>Keep building sustainable health.</h2>
-          <p>Everyone’s an Athlete is coming soon. Follow the launch or reach out about corporate wellness and partnership opportunities.</p>
+          <div>
+            <span class="section-label">What’s next</span>
+            <h2>Keep building sustainable health.</h2>
+            <p>Explore more practical guides now, or follow the app as it moves toward launch.</p>
+          </div>
           <div class="hero-actions">
             <a class="btn" href={ctaHref}>{ctaLabel}</a>
             <a class="btn secondary" href={secondaryHref}>{secondaryLabel}</a>
