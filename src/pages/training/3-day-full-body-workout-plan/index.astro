@@ -1,0 +1,98 @@
+---
+import SEOArticle from '../../../components/SEOArticle.astro';
+
+const faqs = [
+  { question: 'Is a 3-day full-body workout enough?', answer: 'For many people, yes. Three well-structured full-body sessions can provide enough weekly practice and training volume for strength and muscle development while leaving recovery days between sessions.' },
+  { question: 'Should I train Monday, Wednesday and Friday?', answer: 'That schedule works well because it separates sessions with rest days, but the exact days are flexible. The main goal is to avoid stacking every hard session together if recovery suffers.' },
+  { question: 'Can beginners do a 3-day full-body program?', answer: 'Yes, but beginners may benefit from starting with lower volume and fewer exercises. Two days per week can also be an effective starting point if three sessions feels difficult to sustain.' },
+  { question: 'How long should each workout take?', answer: 'A focused full-body workout can often be completed in about 45 to 70 minutes depending on warmup, rest periods, exercise selection and equipment availability.' }
+];
+
+const toc = [
+  { id: 'schedule', label: 'Weekly schedule' },
+  { id: 'workouts', label: 'Three workouts' },
+  { id: 'progression', label: 'Progression' },
+  { id: 'recovery', label: 'Recovery' },
+  { id: 'questions', label: 'Common questions' }
+];
+---
+
+<SEOArticle
+  title="3-Day Full-Body Workout Plan for Strength"
+  description="Follow a simple 3-day full-body workout plan built around squats, hinges, pushes, pulls and carries, with progression and recovery guidance."
+  canonical="/training/3-day-full-body-workout-plan/"
+  eyebrow="Strength Training"
+  heading="A 3-day full-body workout plan for steady strength progress."
+  lead="Three full-body sessions per week can be a practical middle ground: enough training to make progress, with enough space between workouts to recover and stay consistent."
+  {faqs}
+  {toc}
+  secondaryLabel="Dumbbell-Only Plan"
+  secondaryHref="/training/dumbbell-only-workout-plan/"
+>
+  <p><strong>A good three-day plan does not need three completely different workouts.</strong> The goal is to repeat the major movement patterns often enough to improve while varying exercises or emphasis enough to manage fatigue.</p>
+
+  <h2 id="schedule">Example 3-day full-body schedule</h2>
+  <div class="grid three">
+    <div class="card"><span class="pill">Monday</span><h3>Workout A</h3><p>Squat emphasis, horizontal push and pull, hip hinge and carry.</p></div>
+    <div class="card"><span class="pill coral">Wednesday</span><h3>Workout B</h3><p>Single-leg emphasis, overhead push, vertical or angled pull, glutes and trunk.</p></div>
+    <div class="card"><span class="pill orange">Friday</span><h3>Workout C</h3><p>Moderate full-body work with a different squat, press and row variation.</p></div>
+  </div>
+
+  <p>Tuesday, Thursday and the weekend can be used for rest, walking, mobility, recreational activity or easier conditioning depending on your goals.</p>
+
+  <h2 id="workouts">The three workouts</h2>
+
+  <h3>Workout A</h3>
+  <ul>
+    <li>Goblet squat or back squat: 3 sets of 6 to 10</li>
+    <li>Bench press or dumbbell floor press: 3 sets of 6 to 10</li>
+    <li>One-arm dumbbell row or cable row: 3 sets of 8 to 12</li>
+    <li>Romanian deadlift: 2 to 3 sets of 8 to 10</li>
+    <li>Farmer carry: 3 short carries</li>
+  </ul>
+
+  <h3>Workout B</h3>
+  <ul>
+    <li>Reverse lunge or split squat: 3 sets of 6 to 10 per side</li>
+    <li>Standing dumbbell press: 3 sets of 6 to 10</li>
+    <li>Lat pulldown or assisted pull-up: 3 sets of 8 to 12</li>
+    <li>Hip bridge or hip thrust: 3 sets of 8 to 15</li>
+    <li>Side plank or suitcase carry: 3 rounds</li>
+  </ul>
+
+  <h3>Workout C</h3>
+  <ul>
+    <li>Front squat, leg press or goblet squat: 3 sets of 8 to 12</li>
+    <li>Incline dumbbell press or push-up: 3 sets of 8 to 12</li>
+    <li>Chest-supported row: 3 sets of 8 to 12</li>
+    <li>Dumbbell deadlift or kettlebell hinge: 2 to 3 sets of 8 to 12</li>
+    <li>Optional curls, triceps or calves: 2 sets each</li>
+  </ul>
+
+  <div class="callout"><strong>Do not confuse variety with progress.</strong> Keep the main exercises in place for several weeks so you can compare performance from session to session.</div>
+
+  <h2 id="progression">How to progress the plan</h2>
+  <p>Use a load that allows stable technique through the target range. When you can complete all prescribed sets near the top of the range with a few repetitions still possible, make a small increase in load or difficulty.</p>
+
+  <p>A simple progression sequence is:</p>
+  <ol>
+    <li>Learn the movement and establish a repeatable starting load.</li>
+    <li>Add repetitions until you reach the top of the target range.</li>
+    <li>Increase the load slightly.</li>
+    <li>Return to the lower end of the repetition range.</li>
+    <li>Repeat while technique and recovery remain stable.</li>
+  </ol>
+
+  <h2>How hard should the sets feel?</h2>
+  <p>Most working sets do not need to reach complete muscular failure. Especially for beginners, stopping with a few good repetitions left can make technique easier to maintain and recovery more predictable.</p>
+
+  <p>If performance drops sharply across several workouts, sleep is poor, soreness is lingering or motivation is consistently low, consider reducing volume before adding more exercises.</p>
+
+  <h2 id="recovery">Recovery between full-body workouts</h2>
+  <p>A three-day schedule works partly because there is usually a lower-stress day between lifting sessions. Recovery still depends on sleep, nutrition, total life stress and the amount of other activity you do.</p>
+
+  <p>Use easy movement when it helps you feel better. A short <a href="/recovery/10-minute-mobility-routine/">mobility routine</a> or walk can fit well on non-lifting days without turning recovery into another demanding session.</p>
+
+  <h2>When two days may be better</h2>
+  <p>If your schedule is unpredictable, you are brand new to lifting or three workouts repeatedly get skipped, a two-day plan may be the better program. Consistency matters more than choosing the theoretically perfect weekly split. Our <a href="/training/beginner-strength-training-program/">beginner strength training program</a> is built around that simpler starting point.</p>
+</SEOArticle>
