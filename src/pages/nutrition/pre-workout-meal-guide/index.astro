@@ -1,0 +1,82 @@
+---
+import SEOArticle from '../../../components/SEOArticle.astro';
+
+const faqs = [
+  { question: 'What should I eat before a workout?', answer: 'A practical pre-workout meal usually includes a carbohydrate source for energy, some protein and foods you digest comfortably. The exact amount and timing depend on the person, meal size, workout type and how much time you have before training.' },
+  { question: 'How long before a workout should I eat?', answer: 'A larger meal is often easier to tolerate a few hours before training, while a smaller snack may work closer to the session. Individual digestion varies, so use your own experience rather than forcing one timing rule.' },
+  { question: 'Should I eat fat before a workout?', answer: 'Fat can be part of a normal meal, but very high-fat meals can feel heavy for some people close to training because they digest more slowly.' },
+  { question: 'Do I need a pre-workout snack for every workout?', answer: 'No. If you ate a balanced meal recently and feel energized, another snack may not be necessary. Pre-workout food is a tool, not a requirement.' }
+];
+
+const toc = [
+  { id: 'basics', label: 'Pre-workout basics' },
+  { id: 'timing', label: 'Meal timing' },
+  { id: 'examples', label: 'Meal ideas' },
+  { id: 'early', label: 'Early workouts' },
+  { id: 'questions', label: 'Common questions' }
+];
+---
+
+<SEOArticle
+  title="Pre-Workout Meal Guide: What to Eat Before Training"
+  description="Use this simple pre-workout meal guide to choose practical foods before strength training, cardio or recreational exercise without overcomplicating timing."
+  canonical="/nutrition/pre-workout-meal-guide/"
+  eyebrow="Nutrition"
+  heading="What to eat before a workout without overthinking it."
+  lead="A good pre-workout meal should help you arrive at training fueled, comfortable and ready to move. You do not need a perfect formula to get there."
+  {faqs}
+  {toc}
+  secondaryLabel="Nutrition Guide"
+  secondaryHref="/nutrition/"
+>
+  <p><strong>Pre-workout nutrition is mostly about practicality.</strong> Choose foods you tolerate well, give yourself enough time to digest and make the meal fit the rest of your day.</p>
+
+  <h2 id="basics">The basics of a pre-workout meal</h2>
+  <p>For many workouts, a useful meal includes three simple pieces:</p>
+  <div class="grid three">
+    <div class="card"><span class="pill">Carbohydrate</span><h3>Energy</h3><p>Rice, oats, bread, fruit, potatoes, cereal or other carbohydrate foods can help support training.</p></div>
+    <div class="card"><span class="pill coral">Protein</span><h3>Daily recovery support</h3><p>Eggs, yogurt, poultry, tofu, milk, cottage cheese or another protein source can contribute to your overall daily intake.</p></div>
+    <div class="card"><span class="pill orange">Comfort</span><h3>Foods you tolerate</h3><p>A nutritionally perfect meal is not useful if it leaves you feeling overly full, bloated or sluggish during training.</p></div>
+  </div>
+
+  <p>Hydration matters too. Start the session reasonably hydrated rather than trying to drink a huge amount immediately before exercise.</p>
+
+  <h2 id="timing">How meal timing changes what you eat</h2>
+  <h3>About 2 to 4 hours before training</h3>
+  <p>You usually have room for a normal balanced meal. Examples include rice with chicken and vegetables, oatmeal with yogurt and fruit, or a sandwich with fruit and milk.</p>
+
+  <h3>About 1 to 2 hours before training</h3>
+  <p>A smaller meal or snack may feel better. Think yogurt with fruit, toast with eggs, cereal with milk or a banana with a modest amount of nut butter.</p>
+
+  <h3>Less than an hour before training</h3>
+  <p>If you need food, keep it simple and easy to digest. Fruit, a small granola bar, toast or a small amount of a familiar sports drink may be easier than a large mixed meal.</p>
+
+  <div class="callout"><strong>Use your own digestion as feedback.</strong> If a meal consistently feels heavy, reduce the portion, move it earlier or simplify the food choices.</div>
+
+  <h2 id="examples">Simple pre-workout meal ideas</h2>
+  <ul>
+    <li>Oatmeal, Greek yogurt and berries</li>
+    <li>Eggs, toast and fruit</li>
+    <li>Rice, lean protein and cooked vegetables</li>
+    <li>Turkey sandwich with fruit</li>
+    <li>Yogurt, cereal and banana</li>
+    <li>Cottage cheese with toast and fruit</li>
+    <li>Tofu and rice bowl</li>
+    <li>Smoothie with milk or yogurt, fruit and oats</li>
+  </ul>
+
+  <h2>What about coffee or pre-workout supplements?</h2>
+  <p>Caffeine can improve alertness and performance for some people, but it can also affect sleep, anxiety, heart rate and digestion. More is not automatically better, and late-day caffeine can interfere with recovery if it disrupts sleep.</p>
+
+  <p>You do not need a branded pre-workout supplement to have a productive session. Food, fluids, sleep and a sensible training plan matter more.</p>
+
+  <h2 id="early">What if you train early in the morning?</h2>
+  <p>Some people feel fine training after a small snack or without a full meal; others perform better after eating. If a large breakfast is unrealistic, try a smaller option such as a banana, toast, yogurt or a simple smoothie and eat a larger meal afterward.</p>
+
+  <p>The best routine is the one that supports your training without creating unnecessary stress around food.</p>
+
+  <h2>Pre-workout food is only one part of nutrition</h2>
+  <p>Your total daily intake matters more than one perfectly timed meal. Consistent meals, adequate energy, protein, hydration and overall food quality all contribute to training and recovery.</p>
+
+  <p>For a broader overview, read <a href="/nutrition/why-nutrition-is-important-for-athletes/">why nutrition is important for athletes</a>.</p>
+</SEOArticle>
