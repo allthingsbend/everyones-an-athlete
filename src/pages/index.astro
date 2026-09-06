@@ -6,17 +6,20 @@ const description = 'Everyone’s an Athlete connects strength training, mobilit
 
 const videos = [
   {
-    name: 'Deadlift Exercise Demonstration',
+    name: 'Deadlift',
+    schemaName: 'Deadlift Exercise Demonstration',
     description: 'A strength movement demonstration focused on controlled deadlift setup and execution.',
     id: 'l2Usc4w8094'
   },
   {
-    name: 'Step Ups Exercise Demonstration',
+    name: 'Step Ups',
+    schemaName: 'Step Ups Exercise Demonstration',
     description: 'A lower-body movement demonstration for strength, balance and single-leg control.',
     id: 'vUMOMFyQbLo'
   },
   {
-    name: 'Bench Press Exercise Demonstration',
+    name: 'Bench Press',
+    schemaName: 'Bench Press Exercise Demonstration',
     description: 'An upper-body strength demonstration focused on pressing mechanics and control.',
     id: 'x9FXYhM85jg'
   }
@@ -33,7 +36,7 @@ const schema = {
     },
     ...videos.map((video) => ({
       '@type': 'VideoObject',
-      name: video.name,
+      name: video.schemaName,
       description: video.description,
       thumbnailUrl: `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`,
       embedUrl: `https://www.youtube.com/embed/${video.id}`,
@@ -49,113 +52,163 @@ const schema = {
   <section class="home-hero">
     <div class="container home-hero-grid">
       <div class="hero-copy">
-        <div class="eyebrow">Everyone’s an Athlete</div>
-        <h1>Train better. Recover smarter. Build health that lasts.</h1>
-        <p class="lead">A practical wellness system connecting strength training, mobility, recovery, nutrition and mental performance. The app is coming soon. The guides and movement education are here now.</p>
+        <div class="launch-pill"><span></span> App in development</div>
+        <h1>Training, recovery, nutrition and mindset. <em>Finally connected.</em></h1>
+        <p class="hero-lead">One practical system for getting stronger, moving better and building health that holds up in real life.</p>
         <div class="hero-actions">
-          <a class="btn" href="/fitness-apps/">Explore the App Approach</a>
+          <a class="btn hero-primary" href="/fitness-apps/">Explore the App</a>
           <a class="btn secondary" href="/guides/">Browse the Guides</a>
         </div>
-        <div class="hero-points" aria-label="Core areas">
-          <span>Strength</span>
-          <span>Recovery</span>
-          <span>Nutrition</span>
-          <span>Mental Performance</span>
+        <div class="hero-mini-nav" aria-label="Explore core topics">
+          <a href="/training/">Training <span>↗</span></a>
+          <a href="/recovery/">Recovery <span>↗</span></a>
+          <a href="/nutrition/">Nutrition <span>↗</span></a>
+          <a href="/mental-performance/">Mindset <span>↗</span></a>
         </div>
       </div>
 
-      <div class="app-preview" aria-label="Everyone’s an Athlete app preview">
-        <div class="preview-topline">
-          <span class="status-dot"></span>
-          <strong>App in development</strong>
-        </div>
-        <div class="phone-stack">
-          <img class="phone-main" src="/images/app/screenshot-1.png" alt="Everyone’s an Athlete app preview" loading="eager" />
-          <img class="phone-side" src="/images/app/screenshot-2.png" alt="Everyone’s an Athlete training screen preview" loading="lazy" />
-        </div>
-        <p>One place for guided training, movement education and sustainable wellness habits.</p>
-        <a href="/contact/">Get launch updates →</a>
+      <div class="product-stage" aria-label="Everyone’s an Athlete app preview">
+        <div class="stage-grid" aria-hidden="true"></div>
+        <div class="stage-label stage-label-one">Train</div>
+        <div class="stage-label stage-label-two">Recover</div>
+        <div class="stage-label stage-label-three">Build consistency</div>
+        <img class="stage-phone stage-phone-main" src="/images/app/screenshot-1.png" alt="Everyone’s an Athlete app home screen" loading="eager" />
+        <img class="stage-phone stage-phone-left" src="/images/app/screenshot-2.png" alt="Everyone’s an Athlete training screen" loading="eager" />
+        <img class="stage-phone stage-phone-right" src="/images/app/screenshot-3.png" alt="Everyone’s an Athlete wellness screen" loading="eager" />
       </div>
     </div>
   </section>
 
-  <section class="section pillars-section">
+  <div class="signal-bar">
+    <div class="container signal-inner">
+      <span>Strength</span><i></i>
+      <span>Movement</span><i></i>
+      <span>Recovery</span><i></i>
+      <span>Nutrition</span><i></i>
+      <span>Mental Performance</span>
+    </div>
+  </div>
+
+  <section class="section system-section">
     <div class="container">
-      <div class="section-heading-row">
+      <div class="section-intro">
         <div>
-          <div class="eyebrow">Core pillars</div>
-          <h2>Start with what you need today.</h2>
+          <div class="eyebrow">The system</div>
+          <h2>Four parts. One healthier you.</h2>
         </div>
-        <p>Each pillar stands on its own, but the real value comes from connecting them instead of treating fitness, recovery and health as separate projects.</p>
+        <p>You do not need four disconnected plans. Start where you need help and build from there.</p>
       </div>
 
-      <div class="pillar-cards">
-        <a class="pillar-card" href="/training/">
-          <span class="pillar-number">01</span>
-          <div>
+      <div class="system-grid">
+        <a class="system-card training-card" href="/training/">
+          <div class="system-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M8 19v10M14 15v18M34 15v18M40 19v10M14 24h20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+          </div>
+          <div class="system-card-copy">
+            <span>01</span>
             <h3>Training</h3>
-            <p>Strength plans, exercise technique, progression and movement skills.</p>
-            <span class="text-link">Explore training →</span>
+            <p>Get stronger with clear structure and movement guidance.</p>
           </div>
+          <b>↗</b>
         </a>
 
-        <a class="pillar-card" href="/recovery/">
-          <span class="pillar-number">02</span>
-          <div>
+        <a class="system-card recovery-card" href="/recovery/">
+          <div class="system-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M10 30c6-16 15-20 28-13-3 13-12 20-27 17M14 31c7-5 13-9 22-12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="system-card-copy">
+            <span>02</span>
             <h3>Recovery</h3>
-            <p>Mobility, warmups, cooldowns and practical recovery routines.</p>
-            <span class="text-link">Explore recovery →</span>
+            <p>Move, reset and recover without turning it into another workout.</p>
           </div>
+          <b>↗</b>
         </a>
 
-        <a class="pillar-card" href="/nutrition/">
-          <span class="pillar-number">03</span>
-          <div>
+        <a class="system-card nutrition-card" href="/nutrition/">
+          <div class="system-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 39c9-5 14-13 12-25-8 1-14 5-17 12-2 5-1 9 5 13ZM24 39c-1-10 2-18 10-24M12 13c5 1 9 4 11 8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="system-card-copy">
+            <span>03</span>
             <h3>Nutrition</h3>
-            <p>Protein, hydration, sleep and everyday habits that support training.</p>
-            <span class="text-link">Explore nutrition →</span>
+            <p>Fuel training and daily life with practical habits that make sense.</p>
           </div>
+          <b>↗</b>
         </a>
 
-        <a class="pillar-card" href="/mental-performance/">
-          <span class="pillar-number">04</span>
-          <div>
-            <h3>Mental Performance</h3>
-            <p>Breathing, awareness, reflection, focus and consistency skills.</p>
-            <span class="text-link">Explore mindset →</span>
+        <a class="system-card mindset-card" href="/mental-performance/">
+          <div class="system-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M17 35c-5-3-8-8-8-14 0-8 6-14 15-14s15 6 15 14c0 6-3 11-8 14M17 35h14M20 41h8M18 20c2-3 4-4 7-4s5 1 7 4" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
+          <div class="system-card-copy">
+            <span>04</span>
+            <h3>Mindset</h3>
+            <p>Build awareness, focus and the consistency behind better habits.</p>
+          </div>
+          <b>↗</b>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="section route-section">
-    <div class="container route-grid">
-      <article class="route-card route-dark">
-        <div class="eyebrow light-eyebrow">For individuals</div>
-        <h2>Looking for one fitness and wellness app?</h2>
-        <p>See how training, recovery, nutrition and mental performance can work together in a simpler system.</p>
-        <a class="btn light-button" href="/fitness-apps/">Explore Fitness Apps</a>
-      </article>
+  <section class="showcase-section">
+    <div class="container showcase-shell">
+      <div class="showcase-copy">
+        <div class="eyebrow showcase-eyebrow">Inside the app</div>
+        <h2>Less searching. More doing.</h2>
+        <p>Training and wellness guidance organized around the next useful action.</p>
+        <a href="/fitness-apps/">See the app approach <span>→</span></a>
+      </div>
 
-      <article class="route-card">
-        <div class="eyebrow">For organizations</div>
-        <h2>Building a healthier workplace?</h2>
-        <p>Explore practical corporate wellness programs, employee fitness and digital support for office, remote and hybrid teams.</p>
-        <a class="btn" href="/corporate-wellness/">Corporate Wellness</a>
-        <a class="route-secondary" href="/workplace-wellness/">Or browse workplace wellness guides →</a>
-      </article>
+      <div class="screen-showcase">
+        <figure class="screen screen-one"><img src="/images/app/screenshot-4.png" alt="Everyone’s an Athlete app screen" loading="lazy" /></figure>
+        <figure class="screen screen-two"><img src="/images/app/screenshot-5.png" alt="Everyone’s an Athlete app feature screen" loading="lazy" /></figure>
+        <figure class="screen screen-three"><img src="/images/app/screenshot-6.png" alt="Everyone’s an Athlete app wellness screen" loading="lazy" /></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section path-section">
+    <div class="container">
+      <div class="section-intro compact-intro">
+        <div>
+          <div class="eyebrow">Choose your path</div>
+          <h2>Built for people. Useful for teams.</h2>
+        </div>
+      </div>
+
+      <div class="path-grid">
+        <a class="path-card path-personal" href="/fitness-apps/">
+          <div class="path-top"><span>For you</span><b>↗</b></div>
+          <div>
+            <h3>A connected fitness and wellness app.</h3>
+            <p>Training, recovery, nutrition and mindset in one place.</p>
+          </div>
+          <div class="path-orbit" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        </a>
+
+        <a class="path-card path-corporate" href="/corporate-wellness/">
+          <div class="path-top"><span>For teams</span><b>↗</b></div>
+          <div>
+            <h3>Corporate wellness people can actually use.</h3>
+            <p>Practical support for office, remote and hybrid teams.</p>
+          </div>
+          <div class="team-visual" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 
   <section class="section video-section">
     <div class="container">
-      <div class="section-heading-row">
+      <div class="section-intro">
         <div>
-          <div class="eyebrow">Watch & learn</div>
-          <h2>Movement makes more sense when you can see it.</h2>
+          <div class="eyebrow">Watch &amp; learn</div>
+          <h2>See the movement.</h2>
         </div>
-        <p>Simple exercise demonstrations from Everyone’s an Athlete. More movement education will be added as the library grows.</p>
+        <a class="section-link" href="https://www.youtube.com/@everyonesanathlete" rel="noopener noreferrer">YouTube channel →</a>
       </div>
 
       <div class="video-grid">
@@ -164,302 +217,619 @@ const schema = {
             <div class="video-wrapper">
               <iframe
                 src={`https://www.youtube.com/embed/${video.id}`}
-                title={video.name}
+                title={video.schemaName}
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>
               </iframe>
             </div>
-            <h3>{video.name.replace(' Exercise Demonstration', '')}</h3>
-            <p>{video.description}</p>
+            <div class="video-title"><h3>{video.name}</h3><span>Watch ↗</span></div>
           </article>
         ))}
-      </div>
-
-      <div class="section-actions">
-        <a class="btn secondary" href="https://www.youtube.com/@everyonesanathlete" rel="noopener noreferrer">View the YouTube Channel</a>
-        <a class="text-link standalone" href="/fitness-apps/workout-videos/">How to use workout videos well →</a>
       </div>
     </div>
   </section>
 
-  <section class="section guide-section">
-    <div class="container guide-grid">
-      <div>
-        <div class="eyebrow">Practical guides</div>
-        <h2>Useful now, before the app launches.</h2>
-        <p class="lead small">The site’s deeper content lives in topic clusters, so you can go straight to the question you are trying to solve without cluttering the main experience.</p>
-        <div class="hero-actions">
-          <a class="btn" href="/guides/">Browse All Guides</a>
-          <a class="btn secondary" href="/about/">About the Mission</a>
+  <section class="section guides-section">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <div class="eyebrow">Useful right now</div>
+          <h2>Start with a practical guide.</h2>
         </div>
+        <a class="section-link" href="/guides/">View all guides →</a>
       </div>
-      <div class="guide-links">
-        <a href="/training/beginner-strength-training-program/"><strong>Beginner Strength Training Program</strong><span>Build a simple two-day strength plan.</span></a>
-        <a href="/recovery/10-minute-mobility-routine/"><strong>10-Minute Mobility Routine</strong><span>A practical full-body movement break.</span></a>
-        <a href="/nutrition/why-nutrition-is-important-for-athletes/"><strong>Nutrition for Athletes</strong><span>Protein, hydration and performance basics.</span></a>
-        <a href="/workplace-wellness/desk-mobility-routine/"><strong>Desk Mobility Routine</strong><span>Move more during long workdays.</span></a>
+
+      <div class="guide-tiles">
+        <a href="/training/beginner-strength-training-program/">
+          <span>Training</span>
+          <strong>Beginner Strength Training Program</strong>
+          <b>01</b>
+        </a>
+        <a href="/recovery/10-minute-mobility-routine/">
+          <span>Recovery</span>
+          <strong>10-Minute Full-Body Mobility Routine</strong>
+          <b>02</b>
+        </a>
+        <a href="/nutrition/why-nutrition-is-important-for-athletes/">
+          <span>Nutrition</span>
+          <strong>Why Nutrition Is Important for Athletes</strong>
+          <b>03</b>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container final-cta-inner">
+      <div>
+        <span class="eyebrow final-eyebrow">Everyone’s an Athlete</span>
+        <h2>Health is something you practice.</h2>
+      </div>
+      <div class="final-actions">
+        <a class="btn final-button" href="/contact/">Get Launch Updates</a>
+        <a href="/about/">Why we’re building it →</a>
       </div>
     </div>
   </section>
 
   <style>
     .home-hero {
-      padding: 74px 0 82px;
-      background:
-        radial-gradient(circle at 82% 12%, rgba(15, 155, 142, 0.14), transparent 30%),
-        radial-gradient(circle at 10% 86%, rgba(245, 158, 11, 0.11), transparent 28%),
-        #fbfdfd;
+      position: relative;
       overflow: hidden;
+      padding: 76px 0 82px;
+      background:
+        radial-gradient(circle at 76% 16%, rgba(16,153,141,0.13), transparent 25%),
+        radial-gradient(circle at 8% 92%, rgba(233,155,47,0.10), transparent 22%),
+        #f8faf8;
+    }
+
+    .home-hero::before {
+      content: "";
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      border: 1px solid rgba(16,153,141,0.10);
+      border-radius: 50%;
+      right: -240px;
+      top: -250px;
     }
 
     .home-hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+      grid-template-columns: minmax(0, 0.98fr) minmax(440px, 1.02fr);
       gap: 64px;
       align-items: center;
     }
 
-    .hero-copy h1 {
-      font-size: clamp(3rem, 6.5vw, 5.8rem);
-      line-height: 0.96;
-      letter-spacing: -0.065em;
-      margin: 0.55rem 0 1.2rem;
-      max-width: 900px;
-    }
-
-    .hero-copy .lead {
-      max-width: 720px;
-      font-size: 1.2rem;
-    }
-
-    .hero-points {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 30px;
-    }
-
-    .hero-points span {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.78);
-      border-radius: 999px;
-      padding: 0.48rem 0.72rem;
-      color: #475467;
-      font-weight: 750;
-      font-size: 0.88rem;
-    }
-
-    .app-preview {
-      background: #0d1f25;
-      color: #fff;
-      border-radius: 30px;
-      padding: 26px;
-      box-shadow: 0 32px 80px rgba(15, 23, 42, 0.18);
-      position: relative;
-    }
-
-    .preview-topline {
-      display: flex;
+    .launch-pill {
+      display: inline-flex;
       align-items: center;
       gap: 9px;
-      color: #d7efeb;
-      font-size: 0.9rem;
-      margin-bottom: 18px;
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.75);
+      font-weight: 780;
+      font-size: 0.82rem;
+      color: #526264;
     }
 
-    .status-dot {
-      width: 9px;
-      height: 9px;
-      background: #7dd3c7;
+    .launch-pill span {
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      box-shadow: 0 0 0 5px rgba(125, 211, 199, 0.12);
+      background: var(--teal);
+      box-shadow: 0 0 0 5px rgba(16,153,141,0.09);
     }
 
-    .phone-stack {
-      height: 390px;
+    .hero-copy h1 {
+      font-size: clamp(3.4rem, 6.4vw, 6.4rem);
+      line-height: 0.92;
+      letter-spacing: -0.072em;
+      margin: 22px 0 22px;
+      max-width: 820px;
+    }
+
+    .hero-copy h1 em {
+      display: block;
+      color: var(--teal-dark);
+      font-style: normal;
+    }
+
+    .hero-lead {
+      max-width: 640px;
+      color: #566668;
+      font-size: 1.18rem;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .hero-primary {
+      background: var(--teal-deep);
+    }
+
+    .hero-mini-nav {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px 20px;
+    }
+
+    .hero-mini-nav a {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 0.84rem;
+      font-weight: 760;
+      color: #586769;
+    }
+
+    .hero-mini-nav span {
+      color: var(--teal);
+    }
+
+    .product-stage {
       position: relative;
+      height: 610px;
+      border-radius: 38px;
+      background: #0b2928;
+      box-shadow: 0 40px 90px rgba(11,41,40,0.2);
       overflow: hidden;
-      border-radius: 22px;
-      background: linear-gradient(145deg, #17333b, #10252c);
+      isolation: isolate;
     }
 
-    .phone-stack img {
+    .product-stage::before {
+      content: "";
       position: absolute;
-      width: 54%;
-      border-radius: 22px;
-      border: 6px solid #fff;
-      box-shadow: 0 24px 45px rgba(0,0,0,0.28);
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: rgba(70,196,182,0.15);
+      filter: blur(20px);
+      right: -80px;
+      top: -100px;
     }
 
-    .phone-main {
-      left: 12%;
-      top: 28px;
-      transform: rotate(-4deg);
-      z-index: 2;
+    .product-stage::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(233,155,47,0.13);
+      filter: blur(12px);
+      left: -90px;
+      bottom: -90px;
     }
 
-    .phone-side {
-      right: 4%;
-      top: 76px;
-      transform: rotate(6deg);
-      opacity: 0.88;
+    .stage-grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.1;
+      background-image:
+        linear-gradient(rgba(255,255,255,.25) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.25) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(to bottom, #000, transparent 90%);
     }
 
-    .app-preview p {
-      color: #c9d8dc;
-      margin: 22px 0 8px;
+    .stage-phone {
+      position: absolute;
+      width: 43%;
+      border-radius: 28px;
+      border: 6px solid rgba(255,255,255,0.94);
+      box-shadow: 0 28px 62px rgba(0,0,0,0.34);
+      z-index: 3;
     }
 
-    .app-preview > a {
-      color: #fff;
-      font-weight: 800;
+    .stage-phone-main {
+      width: 49%;
+      left: 25%;
+      top: 52px;
+      z-index: 5;
     }
 
-    .section-heading-row {
+    .stage-phone-left {
+      left: -5%;
+      top: 165px;
+      transform: rotate(-7deg);
+    }
+
+    .stage-phone-right {
+      right: -5%;
+      top: 174px;
+      transform: rotate(7deg);
+    }
+
+    .stage-label {
+      position: absolute;
+      z-index: 7;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.10);
+      backdrop-filter: blur(12px);
+      color: #e7f3f1;
+      border-radius: 999px;
+      padding: 8px 11px;
+      font-size: 0.76rem;
+      font-weight: 780;
+    }
+
+    .stage-label-one { left: 7%; top: 42px; }
+    .stage-label-two { right: 8%; top: 78px; }
+    .stage-label-three { right: 10%; bottom: 28px; }
+
+    .signal-bar {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .signal-inner {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      color: #5a696b;
+      font-size: 0.82rem;
+      font-weight: 780;
+      letter-spacing: 0.015em;
+    }
+
+    .signal-inner i {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #b8c7c4;
+    }
+
+    .section-intro {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 40px;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 0.55fr);
+      gap: 48px;
       align-items: end;
-      margin-bottom: 30px;
+      margin-bottom: 34px;
     }
 
-    .section-heading-row h2 {
-      margin-top: 0.35rem;
+    .section-intro h2 {
+      margin-top: 8px;
       margin-bottom: 0;
     }
 
-    .section-heading-row > p {
+    .section-intro > p {
       color: var(--muted);
       margin: 0;
-      max-width: 560px;
+      max-width: 480px;
       justify-self: end;
     }
 
-    .pillar-cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      border-top: 1px solid var(--line);
+    .compact-intro {
+      grid-template-columns: 1fr;
     }
 
-    .pillar-card {
-      display: grid;
-      grid-template-columns: 56px 1fr;
-      gap: 20px;
-      padding: 30px 26px;
-      border-bottom: 1px solid var(--line);
-      transition: transform 160ms ease, background 160ms ease;
+    .system-section {
+      background: #fff;
     }
 
-    .pillar-card:nth-child(odd) {
-      border-right: 1px solid var(--line);
-    }
-
-    .pillar-card:hover {
-      background: #f8fbfa;
-      transform: translateY(-2px);
-    }
-
-    .pillar-number {
-      color: var(--teal);
-      font-weight: 850;
-      font-size: 0.82rem;
-      letter-spacing: 0.08em;
-    }
-
-    .pillar-card h3 {
-      font-size: 1.45rem;
-      margin: 0 0 6px;
-    }
-
-    .pillar-card p {
-      color: var(--muted);
-      margin: 0 0 12px;
-    }
-
-    .text-link {
-      color: var(--teal-dark);
-      font-weight: 800;
-    }
-
-    .route-section {
-      background: var(--bg);
-    }
-
-    .route-grid {
+    .system-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 22px;
+      gap: 14px;
     }
 
-    .route-card {
-      background: #fff;
+    .system-card {
+      position: relative;
+      min-height: 240px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 92px 1fr auto;
+      gap: 20px;
+      align-items: end;
       border: 1px solid var(--line);
       border-radius: 26px;
-      padding: 34px;
-      min-height: 335px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      padding: 26px;
+      background: #f7faf8;
+      transition: transform 180ms ease, box-shadow 180ms ease;
     }
 
-    .route-card h2 {
-      margin-top: 0.55rem;
-      max-width: 520px;
+    .system-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
     }
 
-    .route-card p {
-      color: var(--muted);
-      max-width: 560px;
-      margin-bottom: 26px;
+    .system-card::after {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      right: -74px;
+      top: -90px;
+      border-radius: 50%;
+      border: 1px solid currentColor;
+      opacity: 0.08;
     }
 
-    .route-dark {
-      background: #101828;
-      border-color: #101828;
+    .system-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .system-icon svg {
+      width: 46px;
+      height: 46px;
+    }
+
+    .system-card-copy > span {
+      font-size: 0.7rem;
+      font-weight: 850;
+      letter-spacing: 0.09em;
+      color: #849391;
+    }
+
+    .system-card h3 {
+      font-size: 1.65rem;
+      line-height: 1;
+      letter-spacing: -0.035em;
+      margin: 7px 0 7px;
+    }
+
+    .system-card p {
+      color: #627173;
+      margin: 0;
+      max-width: 390px;
+      font-size: 0.94rem;
+    }
+
+    .system-card > b {
+      align-self: start;
+      font-size: 1.1rem;
+      font-weight: 500;
+      opacity: 0.62;
+    }
+
+    .training-card { color: #0c756e; background: #eff8f5; }
+    .recovery-card { color: #b85a54; background: #fff4f2; }
+    .nutrition-card { color: #a76a14; background: #fff7e8; }
+    .mindset-card { color: #6049bd; background: #f4f1ff; }
+
+    .showcase-section {
+      padding: 0 0 78px;
+      background: #fff;
+    }
+
+    .showcase-shell {
+      min-height: 620px;
+      position: relative;
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: 40px;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 34px;
+      padding: 54px;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(89,197,184,0.13), transparent 30%),
+        #0b2928;
       color: #fff;
     }
 
-    .route-dark p {
-      color: #cdd5df;
+    .showcase-copy {
+      position: relative;
+      z-index: 4;
+      max-width: 420px;
     }
 
-    .light-eyebrow {
-      color: #7dd3c7;
+    .showcase-eyebrow { color: #8ee0d5; }
+
+    .showcase-copy h2 {
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      line-height: 0.94;
+      letter-spacing: -0.06em;
+      margin: 12px 0 18px;
     }
 
-    .light-button {
+    .showcase-copy p {
+      color: #b8ccca;
+      max-width: 380px;
+      margin: 0 0 28px;
+    }
+
+    .showcase-copy a {
+      color: #fff;
+      font-weight: 820;
+    }
+
+    .showcase-copy a span { color: #8ee0d5; margin-left: 6px; }
+
+    .screen-showcase {
+      position: relative;
+      height: 520px;
+    }
+
+    .screen {
+      position: absolute;
+      margin: 0;
+      width: 42%;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 5px solid rgba(255,255,255,0.93);
+      box-shadow: 0 30px 65px rgba(0,0,0,0.32);
       background: #fff;
-      color: #101828;
-      box-shadow: none;
     }
 
-    .route-secondary {
-      margin-top: 16px;
+    .screen img { display: block; width: 100%; }
+    .screen-one { left: 0; top: 72px; transform: rotate(-6deg); }
+    .screen-two { left: 28%; top: 8px; z-index: 3; }
+    .screen-three { right: -2%; top: 86px; transform: rotate(7deg); }
+
+    .path-section {
+      background: var(--bg);
+    }
+
+    .path-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .path-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+      border-radius: 28px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--line);
+    }
+
+    .path-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      position: relative;
+      z-index: 3;
+      font-size: 0.78rem;
+      font-weight: 820;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .path-card > div:nth-child(2) {
+      position: relative;
+      z-index: 3;
+      max-width: 440px;
+    }
+
+    .path-card h3 {
+      font-size: clamp(2rem, 3.2vw, 3.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      margin: 0 0 12px;
+    }
+
+    .path-card p { margin: 0; }
+
+    .path-personal {
+      background: #0b2928;
+      color: #fff;
+      border-color: #0b2928;
+    }
+
+    .path-personal p { color: #b4c7c5; }
+    .path-personal .path-top { color: #8ee0d5; }
+
+    .path-corporate {
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .path-corporate p { color: var(--muted); }
+    .path-corporate .path-top { color: var(--teal-dark); }
+
+    .path-orbit {
+      position: absolute;
+      width: 290px;
+      height: 290px;
+      border: 1px solid rgba(142,224,213,0.18);
+      border-radius: 50%;
+      right: -80px;
+      top: -55px;
+    }
+
+    .path-orbit::before,
+    .path-orbit::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(142,224,213,0.14);
+      inset: 42px;
+    }
+
+    .path-orbit::after { inset: 92px; background: rgba(142,224,213,0.08); }
+
+    .path-orbit span {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #8ee0d5;
+      box-shadow: 0 0 0 8px rgba(142,224,213,0.07);
+    }
+
+    .path-orbit span:nth-child(1) { top: 48px; left: 45px; }
+    .path-orbit span:nth-child(2) { right: 18px; top: 130px; background: #f1b35d; }
+    .path-orbit span:nth-child(3) { bottom: 30px; left: 100px; background: #ef8b85; }
+    .path-orbit span:nth-child(4) { top: 115px; left: 115px; background: #b5a5f6; }
+
+    .team-visual {
+      position: absolute;
+      width: 280px;
+      height: 210px;
+      right: -20px;
+      top: 24px;
+    }
+
+    .team-visual span {
+      position: absolute;
+      border-radius: 50%;
+      background: #dcefeb;
+      border: 1px solid #c9e0dc;
+    }
+
+    .team-visual span::after {
+      content: "";
+      position: absolute;
+      width: 180%;
+      height: 90%;
+      left: -40%;
+      top: 110%;
+      border-radius: 50% 50% 28% 28%;
+      background: inherit;
+      border: 1px solid inherit;
+    }
+
+    .team-visual span:nth-child(1) { width: 54px; height: 54px; left: 108px; top: 18px; background: #b9e2dc; }
+    .team-visual span:nth-child(2) { width: 42px; height: 42px; left: 35px; top: 75px; background: #f6dec0; }
+    .team-visual span:nth-child(3) { width: 42px; height: 42px; right: 38px; top: 78px; background: #ddd6fb; }
+    .team-visual span:nth-child(4) { width: 34px; height: 34px; left: 5px; top: 24px; background: #f7d4d1; }
+    .team-visual span:nth-child(5) { width: 34px; height: 34px; right: 4px; top: 28px; background: #d6e8f7; }
+
+    .video-section { background: #fff; }
+
+    .section-link {
+      justify-self: end;
       color: var(--teal-dark);
-      font-weight: 750;
+      font-weight: 820;
+      align-self: end;
     }
 
     .video-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 14px;
     }
 
     .video-card {
       border: 1px solid var(--line);
       border-radius: 22px;
-      padding: 13px;
+      overflow: hidden;
       background: #fff;
+      box-shadow: var(--shadow-sm);
     }
 
     .video-wrapper {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%;
-      overflow: hidden;
-      border-radius: 14px;
-      background: #111827;
+      aspect-ratio: 16 / 10;
+      background: #102022;
     }
 
     .video-wrapper iframe {
@@ -470,98 +840,267 @@ const schema = {
       border: 0;
     }
 
-    .video-card h3 {
-      margin: 16px 8px 5px;
-    }
-
-    .video-card p {
-      margin: 0 8px 10px;
-      color: var(--muted);
-    }
-
-    .section-actions {
+    .video-title {
       display: flex;
-      gap: 18px;
       align-items: center;
-      flex-wrap: wrap;
-      margin-top: 26px;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 17px 18px;
     }
 
-    .standalone {
-      display: inline-block;
+    .video-title h3 {
+      margin: 0;
+      font-size: 1.04rem;
+      letter-spacing: -0.02em;
     }
 
-    .guide-section {
-      background: #f5fbf9;
+    .video-title span {
+      color: var(--teal-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
     }
 
-    .guide-grid {
+    .guides-section { background: var(--bg); }
+
+    .guide-tiles {
+      border-top: 1px solid var(--line-strong);
+    }
+
+    .guide-tiles a {
+      position: relative;
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 58px;
-      align-items: start;
+      grid-template-columns: 150px 1fr 56px;
+      gap: 24px;
+      align-items: center;
+      min-height: 112px;
+      border-bottom: 1px solid var(--line-strong);
+      transition: padding 160ms ease, background 160ms ease;
     }
 
-    .guide-links {
-      border-top: 1px solid #d7e9e4;
+    .guide-tiles a:hover {
+      padding-left: 14px;
+      background: rgba(255,255,255,0.58);
     }
 
-    .guide-links a {
+    .guide-tiles span {
+      color: var(--teal-dark);
+      font-size: 0.76rem;
+      font-weight: 820;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .guide-tiles strong {
+      font-size: clamp(1.2rem, 2vw, 1.75rem);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .guide-tiles b {
+      color: #9aaaa7;
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      justify-self: end;
+    }
+
+    .final-cta {
+      padding: 84px 0;
+      background: #102022;
+      color: #fff;
+    }
+
+    .final-cta-inner {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .final-eyebrow { color: #8ee0d5; }
+
+    .final-cta h2 {
+      font-size: clamp(3rem, 6vw, 5.8rem);
+      line-height: 0.92;
+      letter-spacing: -0.065em;
+      margin: 12px 0 0;
+      max-width: 760px;
+    }
+
+    .final-actions {
       display: grid;
-      gap: 4px;
-      padding: 19px 2px;
-      border-bottom: 1px solid #d7e9e4;
+      gap: 16px;
+      min-width: 190px;
     }
 
-    .guide-links strong {
-      font-size: 1.05rem;
+    .final-actions > a:not(.btn) {
+      color: #aec0be;
+      font-size: 0.86rem;
+      font-weight: 750;
+      text-align: center;
     }
 
-    .guide-links span {
-      color: var(--muted);
-      font-size: 0.95rem;
+    .final-button {
+      background: #fff;
+      color: #102022;
+      border-color: #fff;
+      box-shadow: none;
     }
 
-    @media (max-width: 900px) {
-      .home-hero-grid,
-      .section-heading-row,
-      .route-grid,
-      .guide-grid {
+    @media (max-width: 1000px) {
+      .home-hero-grid {
         grid-template-columns: 1fr;
       }
 
+      .hero-copy {
+        max-width: 780px;
+      }
+
+      .product-stage {
+        max-width: 680px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .showcase-shell {
+        grid-template-columns: 1fr;
+        padding-bottom: 0;
+      }
+
+      .showcase-copy {
+        max-width: 600px;
+      }
+
+      .screen-showcase {
+        width: min(100%, 720px);
+        justify-self: center;
+      }
+    }
+
+    @media (max-width: 820px) {
       .home-hero {
-        padding: 48px 0 54px;
+        padding: 54px 0 60px;
       }
 
-      .hero-copy h1 {
-        font-size: clamp(2.7rem, 13vw, 4.4rem);
+      .section-intro {
+        grid-template-columns: 1fr;
+        gap: 12px;
       }
 
-      .app-preview {
-        max-width: 560px;
-      }
-
-      .section-heading-row > p {
+      .section-intro > p,
+      .section-link {
         justify-self: start;
       }
 
+      .system-grid,
+      .path-grid,
       .video-grid {
         grid-template-columns: 1fr;
       }
+
+      .system-card {
+        min-height: 210px;
+      }
+
+      .path-card {
+        min-height: 370px;
+      }
+
+      .signal-inner {
+        gap: 12px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        white-space: nowrap;
+        padding: 0 4px;
+      }
+
+      .final-cta-inner {
+        display: grid;
+        align-items: start;
+      }
+
+      .final-actions {
+        width: max-content;
+      }
     }
 
-    @media (max-width: 650px) {
-      .pillar-cards {
-        grid-template-columns: 1fr;
+    @media (max-width: 620px) {
+      .hero-copy h1 {
+        font-size: clamp(3.1rem, 16vw, 4.7rem);
       }
 
-      .pillar-card:nth-child(odd) {
-        border-right: 0;
+      .hero-mini-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
       }
 
-      .phone-stack {
-        height: 320px;
+      .product-stage {
+        height: 470px;
+        border-radius: 28px;
+      }
+
+      .stage-phone-main { width: 58%; left: 21%; top: 48px; }
+      .stage-phone-left { width: 47%; left: -13%; top: 155px; }
+      .stage-phone-right { width: 47%; right: -13%; top: 165px; }
+      .stage-label-three { display: none; }
+
+      .system-card {
+        grid-template-columns: 70px 1fr auto;
+        padding: 20px;
+        gap: 14px;
+      }
+
+      .system-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 18px;
+      }
+
+      .system-icon svg { width: 38px; height: 38px; }
+
+      .showcase-section { padding-bottom: 58px; }
+
+      .showcase-shell {
+        min-height: 650px;
+        border-radius: 26px;
+        padding: 34px 24px 0;
+      }
+
+      .screen-showcase {
+        height: 430px;
+      }
+
+      .screen { width: 50%; }
+      .screen-one { left: -12%; top: 100px; }
+      .screen-two { left: 25%; top: 28px; }
+      .screen-three { right: -12%; top: 112px; }
+
+      .team-visual {
+        opacity: 0.7;
+        right: -95px;
+      }
+
+      .guide-tiles a {
+        grid-template-columns: 1fr 35px;
+        gap: 7px 16px;
+        padding: 18px 0;
+      }
+
+      .guide-tiles a:hover { padding-left: 0; }
+      .guide-tiles span { grid-column: 1; }
+      .guide-tiles strong { grid-column: 1; }
+      .guide-tiles b { grid-column: 2; grid-row: 1 / 3; }
+
+      .final-cta {
+        padding: 64px 0;
+      }
+
+      .final-cta h2 {
+        font-size: clamp(3rem, 15vw, 4.6rem);
+      }
+
+      .final-actions,
+      .final-button {
+        width: 100%;
       }
     }
   </style>
