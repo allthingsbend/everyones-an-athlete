@@ -1,149 +1,456 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = 'Fitness, Recovery & Wellness App — Coming Soon';
-const description = 'Everyone’s an Athlete is a coming-soon wellness app connecting strength training, mobility, recovery, mental performance and practical nutrition.';
+const title = 'Fitness, Recovery, Nutrition & Wellness App';
+const description = 'Everyone’s an Athlete connects strength training, mobility, recovery, mental performance and practical nutrition in one approachable wellness system.';
+
+const videos = [
+  {
+    name: 'Deadlift Exercise Demonstration',
+    description: 'A strength movement demonstration focused on controlled deadlift setup and execution.',
+    id: 'l2Usc4w8094'
+  },
+  {
+    name: 'Step Ups Exercise Demonstration',
+    description: 'A lower-body movement demonstration for strength, balance and single-leg control.',
+    id: 'vUMOMFyQbLo'
+  },
+  {
+    name: 'Bench Press Exercise Demonstration',
+    description: 'An upper-body strength demonstration focused on pressing mechanics and control.',
+    id: 'x9FXYhM85jg'
+  }
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      name: 'Everyone’s an Athlete',
+      url: new URL('/', Astro.site).toString(),
+      description
+    },
+    ...videos.map((video) => ({
+      '@type': 'VideoObject',
+      name: video.name,
+      description: video.description,
+      thumbnailUrl: `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`,
+      embedUrl: `https://www.youtube.com/embed/${video.id}`,
+      contentUrl: `https://www.youtube.com/watch?v=${video.id}`
+    }))
+  ]
+};
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Health & Human Movement Inc.</div>
-        <h1>Smarter training, recovery, nutrition and wellness in one simple app.</h1>
-        <p class="lead">Everyone’s an Athlete helps people build sustainable health through guided movement, strength training, recovery support, and practical nutrition education.</p>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <section class="home-hero">
+    <div class="container home-hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Everyone’s an Athlete</div>
+        <h1>Train better. Recover smarter. Build health that lasts.</h1>
+        <p class="lead">A practical wellness system connecting strength training, mobility, recovery, nutrition and mental performance. The app is coming soon. The guides and movement education are here now.</p>
         <div class="hero-actions">
-          <a class="btn" href="/contact/">Get Launch Updates</a>
-          <a class="btn secondary" href="/guides/">Check Out Our Guides</a>
+          <a class="btn" href="/fitness-apps/">Explore the App Approach</a>
+          <a class="btn secondary" href="/guides/">Browse the Guides</a>
+        </div>
+        <div class="hero-points" aria-label="Core areas">
+          <span>Strength</span>
+          <span>Recovery</span>
+          <span>Nutrition</span>
+          <span>Mental Performance</span>
         </div>
       </div>
 
-      <div class="coming-soon-card">
-        <div class="coming-soon-badge">Coming Soon</div>
-        <h2>Everyone’s an Athlete App</h2>
-        <p>Training, recovery, nutrition, and wellness tools are coming soon.</p>
+      <div class="app-preview" aria-label="Everyone’s an Athlete app preview">
+        <div class="preview-topline">
+          <span class="status-dot"></span>
+          <strong>App in development</strong>
+        </div>
+        <div class="phone-stack">
+          <img class="phone-main" src="/images/app/screenshot-1.png" alt="Everyone’s an Athlete app preview" loading="eager" />
+          <img class="phone-side" src="/images/app/screenshot-2.png" alt="Everyone’s an Athlete training screen preview" loading="lazy" />
+        </div>
+        <p>One place for guided training, movement education and sustainable wellness habits.</p>
+        <a href="/contact/">Get launch updates →</a>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section pillars-section">
     <div class="container">
-      <div class="eyebrow">Core pillars</div>
-      <h2>Built around sustainable health and performance.</h2>
-      <div class="grid two pillar-grid">
-        <a class="card" href="/training/">
-          <span class="pill">Training</span>
-          <h3>Training</h3>
-          <p>Structured strength sessions, follow-along exercise videos, weekly plans, and foundational movement skills.</p>
+      <div class="section-heading-row">
+        <div>
+          <div class="eyebrow">Core pillars</div>
+          <h2>Start with what you need today.</h2>
+        </div>
+        <p>Each pillar stands on its own, but the real value comes from connecting them instead of treating fitness, recovery and health as separate projects.</p>
+      </div>
+
+      <div class="pillar-cards">
+        <a class="pillar-card" href="/training/">
+          <span class="pillar-number">01</span>
+          <div>
+            <h3>Training</h3>
+            <p>Strength plans, exercise technique, progression and movement skills.</p>
+            <span class="text-link">Explore training →</span>
+          </div>
         </a>
 
-        <a class="card" href="/fuel-wellness/">
-          <span class="pill orange">Nutrition</span>
-          <h3>Fuel & Wellness</h3>
-          <p>Guidance on nutrition, sleep, hydration, protein, recovery, and sustainable wellness habits.</p>
+        <a class="pillar-card" href="/recovery/">
+          <span class="pillar-number">02</span>
+          <div>
+            <h3>Recovery</h3>
+            <p>Mobility, warmups, cooldowns and practical recovery routines.</p>
+            <span class="text-link">Explore recovery →</span>
+          </div>
         </a>
 
-        <a class="card" href="/body-care/">
-          <span class="pill">Recovery</span>
-          <h3>Body Care</h3>
-          <p>Mobility, recovery and movement routines designed to help people prepare, restore and keep moving comfortably.</p>
+        <a class="pillar-card" href="/nutrition/">
+          <span class="pillar-number">03</span>
+          <div>
+            <h3>Nutrition</h3>
+            <p>Protein, hydration, sleep and everyday habits that support training.</p>
+            <span class="text-link">Explore nutrition →</span>
+          </div>
         </a>
 
-        <a class="card" href="/mental-performance/">
-          <span class="pill">Mindset</span>
-          <h3>Mental Performance</h3>
-          <p>Practical breathing, awareness, reflection and focus skills for athletes in sport and everyday life.</p>
+        <a class="pillar-card" href="/mental-performance/">
+          <span class="pillar-number">04</span>
+          <div>
+            <h3>Mental Performance</h3>
+            <p>Breathing, awareness, reflection, focus and consistency skills.</p>
+            <span class="text-link">Explore mindset →</span>
+          </div>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="section alt">
+  <section class="section route-section">
+    <div class="container route-grid">
+      <article class="route-card route-dark">
+        <div class="eyebrow light-eyebrow">For individuals</div>
+        <h2>Looking for one fitness and wellness app?</h2>
+        <p>See how training, recovery, nutrition and mental performance can work together in a simpler system.</p>
+        <a class="btn light-button" href="/fitness-apps/">Explore Fitness Apps</a>
+      </article>
+
+      <article class="route-card">
+        <div class="eyebrow">For organizations</div>
+        <h2>Building a healthier workplace?</h2>
+        <p>Explore practical corporate wellness programs, employee fitness and digital support for office, remote and hybrid teams.</p>
+        <a class="btn" href="/corporate-wellness/">Corporate Wellness</a>
+        <a class="route-secondary" href="/workplace-wellness/">Or browse workplace wellness guides →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section video-section">
     <div class="container">
-      <div class="eyebrow">Watch & Learn</div>
-      <h2>Exercise videos for building strength, movement skills, and confidence.</h2>
-      <p class="lead small">Watch simple exercise demonstrations from Everyone’s an Athlete, including strength training movements like deadlifts, step ups, and bench press.</p>
+      <div class="section-heading-row">
+        <div>
+          <div class="eyebrow">Watch & learn</div>
+          <h2>Movement makes more sense when you can see it.</h2>
+        </div>
+        <p>Simple exercise demonstrations from Everyone’s an Athlete. More movement education will be added as the library grows.</p>
+      </div>
 
       <div class="video-grid">
-        <div class="video-card">
-          <div class="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/l2Usc4w8094"
-              title="Deadlift exercise demonstration"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <h3>Deadlift</h3>
-          <p>A simple strength movement demonstration focused on proper form and control.</p>
-        </div>
-
-        <div class="video-card">
-          <div class="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/vUMOMFyQbLo"
-              title="Step ups exercise demonstration"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <h3>Step Ups</h3>
-          <p>A lower-body movement for building strength, balance, and single-leg control.</p>
-        </div>
-
-        <div class="video-card">
-          <div class="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/x9FXYhM85jg"
-              title="Bench press exercise demonstration"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <h3>Bench Press</h3>
-          <p>An upper-body strength exercise demonstration for pressing mechanics and control.</p>
-        </div>
+        {videos.map((video) => (
+          <article class="video-card">
+            <div class="video-wrapper">
+              <iframe
+                src={`https://www.youtube.com/embed/${video.id}`}
+                title={video.name}
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <h3>{video.name.replace(' Exercise Demonstration', '')}</h3>
+            <p>{video.description}</p>
+          </article>
+        ))}
       </div>
 
       <div class="section-actions">
-        <a class="btn secondary" href="https://www.youtube.com/@everyonesanathlete.">View More Videos on YouTube</a>
+        <a class="btn secondary" href="https://www.youtube.com/@everyonesanathlete" rel="noopener noreferrer">View the YouTube Channel</a>
+        <a class="text-link standalone" href="/fitness-apps/workout-videos/">How to use workout videos well →</a>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container split">
+  <section class="section guide-section">
+    <div class="container guide-grid">
       <div>
-        <div class="eyebrow">Guides</div>
-        <h2>Helpful wellness guides focused on fitness, recovery, nutrition and long-term health.</h2>
-        <p class="lead small">Explore practical articles on fitness apps, workplace wellness, recovery, nutrition, ergonomics, and whole-person health.</p>
-        <a class="btn" href="/guides/">Check Out Our Guides</a>
+        <div class="eyebrow">Practical guides</div>
+        <h2>Useful now, before the app launches.</h2>
+        <p class="lead small">The site’s deeper content lives in topic clusters, so you can go straight to the question you are trying to solve without cluttering the main experience.</p>
+        <div class="hero-actions">
+          <a class="btn" href="/guides/">Browse All Guides</a>
+          <a class="btn secondary" href="/about/">About the Mission</a>
+        </div>
       </div>
-
-      <div class="coming-soon-card small-card">
-        <div class="coming-soon-badge">More Coming Soon</div>
-        <h2>New Guides & Tools</h2>
-        <p>Fresh resources for training, recovery, nutrition, and everyday wellness are on the way.</p>
+      <div class="guide-links">
+        <a href="/training/beginner-strength-training-program/"><strong>Beginner Strength Training Program</strong><span>Build a simple two-day strength plan.</span></a>
+        <a href="/recovery/10-minute-mobility-routine/"><strong>10-Minute Mobility Routine</strong><span>A practical full-body movement break.</span></a>
+        <a href="/nutrition/why-nutrition-is-important-for-athletes/"><strong>Nutrition for Athletes</strong><span>Protein, hydration and performance basics.</span></a>
+        <a href="/workplace-wellness/desk-mobility-routine/"><strong>Desk Mobility Routine</strong><span>Move more during long workdays.</span></a>
       </div>
     </div>
   </section>
 
   <style>
+    .home-hero {
+      padding: 74px 0 82px;
+      background:
+        radial-gradient(circle at 82% 12%, rgba(15, 155, 142, 0.14), transparent 30%),
+        radial-gradient(circle at 10% 86%, rgba(245, 158, 11, 0.11), transparent 28%),
+        #fbfdfd;
+      overflow: hidden;
+    }
+
+    .home-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(3rem, 6.5vw, 5.8rem);
+      line-height: 0.96;
+      letter-spacing: -0.065em;
+      margin: 0.55rem 0 1.2rem;
+      max-width: 900px;
+    }
+
+    .hero-copy .lead {
+      max-width: 720px;
+      font-size: 1.2rem;
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 30px;
+    }
+
+    .hero-points span {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.78);
+      border-radius: 999px;
+      padding: 0.48rem 0.72rem;
+      color: #475467;
+      font-weight: 750;
+      font-size: 0.88rem;
+    }
+
+    .app-preview {
+      background: #0d1f25;
+      color: #fff;
+      border-radius: 30px;
+      padding: 26px;
+      box-shadow: 0 32px 80px rgba(15, 23, 42, 0.18);
+      position: relative;
+    }
+
+    .preview-topline {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: #d7efeb;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      background: #7dd3c7;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(125, 211, 199, 0.12);
+    }
+
+    .phone-stack {
+      height: 390px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      background: linear-gradient(145deg, #17333b, #10252c);
+    }
+
+    .phone-stack img {
+      position: absolute;
+      width: 54%;
+      border-radius: 22px;
+      border: 6px solid #fff;
+      box-shadow: 0 24px 45px rgba(0,0,0,0.28);
+    }
+
+    .phone-main {
+      left: 12%;
+      top: 28px;
+      transform: rotate(-4deg);
+      z-index: 2;
+    }
+
+    .phone-side {
+      right: 4%;
+      top: 76px;
+      transform: rotate(6deg);
+      opacity: 0.88;
+    }
+
+    .app-preview p {
+      color: #c9d8dc;
+      margin: 22px 0 8px;
+    }
+
+    .app-preview > a {
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .section-heading-row {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+
+    .section-heading-row h2 {
+      margin-top: 0.35rem;
+      margin-bottom: 0;
+    }
+
+    .section-heading-row > p {
+      color: var(--muted);
+      margin: 0;
+      max-width: 560px;
+      justify-self: end;
+    }
+
+    .pillar-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .pillar-card {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 20px;
+      padding: 30px 26px;
+      border-bottom: 1px solid var(--line);
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .pillar-card:nth-child(odd) {
+      border-right: 1px solid var(--line);
+    }
+
+    .pillar-card:hover {
+      background: #f8fbfa;
+      transform: translateY(-2px);
+    }
+
+    .pillar-number {
+      color: var(--teal);
+      font-weight: 850;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+    }
+
+    .pillar-card h3 {
+      font-size: 1.45rem;
+      margin: 0 0 6px;
+    }
+
+    .pillar-card p {
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .text-link {
+      color: var(--teal-dark);
+      font-weight: 800;
+    }
+
+    .route-section {
+      background: var(--bg);
+    }
+
+    .route-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .route-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 34px;
+      min-height: 335px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .route-card h2 {
+      margin-top: 0.55rem;
+      max-width: 520px;
+    }
+
+    .route-card p {
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 26px;
+    }
+
+    .route-dark {
+      background: #101828;
+      border-color: #101828;
+      color: #fff;
+    }
+
+    .route-dark p {
+      color: #cdd5df;
+    }
+
+    .light-eyebrow {
+      color: #7dd3c7;
+    }
+
+    .light-button {
+      background: #fff;
+      color: #101828;
+      box-shadow: none;
+    }
+
+    .route-secondary {
+      margin-top: 16px;
+      color: var(--teal-dark);
+      font-weight: 750;
+    }
+
     .video-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
+      gap: 20px;
     }
 
     .video-card {
-      background: #ffffff;
-      border-radius: 1rem;
-      padding: 1rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 13px;
+      background: #fff;
     }
 
     .video-wrapper {
@@ -151,7 +458,7 @@ const description = 'Everyone’s an Athlete is a coming-soon wellness app conne
       width: 100%;
       padding-bottom: 56.25%;
       overflow: hidden;
-      border-radius: 0.75rem;
+      border-radius: 14px;
       background: #111827;
     }
 
@@ -164,20 +471,97 @@ const description = 'Everyone’s an Athlete is a coming-soon wellness app conne
     }
 
     .video-card h3 {
-      margin: 1rem 0 0.5rem;
+      margin: 16px 8px 5px;
     }
 
     .video-card p {
-      margin: 0;
+      margin: 0 8px 10px;
+      color: var(--muted);
     }
 
     .section-actions {
-      margin-top: 2rem;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .standalone {
+      display: inline-block;
+    }
+
+    .guide-section {
+      background: #f5fbf9;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 58px;
+      align-items: start;
+    }
+
+    .guide-links {
+      border-top: 1px solid #d7e9e4;
+    }
+
+    .guide-links a {
+      display: grid;
+      gap: 4px;
+      padding: 19px 2px;
+      border-bottom: 1px solid #d7e9e4;
+    }
+
+    .guide-links strong {
+      font-size: 1.05rem;
+    }
+
+    .guide-links span {
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
     @media (max-width: 900px) {
+      .home-hero-grid,
+      .section-heading-row,
+      .route-grid,
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .home-hero {
+        padding: 48px 0 54px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.7rem, 13vw, 4.4rem);
+      }
+
+      .app-preview {
+        max-width: 560px;
+      }
+
+      .section-heading-row > p {
+        justify-self: start;
+      }
+
       .video-grid {
         grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .pillar-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .pillar-card:nth-child(odd) {
+        border-right: 0;
+      }
+
+      .phone-stack {
+        height: 320px;
       }
     }
   </style>

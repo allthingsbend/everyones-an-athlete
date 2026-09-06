@@ -1,0 +1,70 @@
+---
+import SEOArticle from '../../components/SEOArticle.astro';
+
+const faqs = [
+  { question: 'What should an all-in-one fitness app include?', answer: 'A useful all-in-one app should connect workouts with recovery, nutrition and behavior support while keeping each area simple enough to use. Clear exercise instruction, progression, mobility, practical education and realistic tracking matter more than a huge feature list.' },
+  { question: 'Are fitness apps good for beginners?', answer: 'They can be, especially when they provide a clear starting pathway, technique demonstrations, manageable weekly structure and easier exercise options. Beginners should not have to build a program from a giant exercise library on day one.' },
+  { question: 'Should a fitness app include nutrition?', answer: 'Nutrition education can be useful when it supports training and recovery without replacing individualized medical or dietetic care. The best approach is practical, flexible and clear about its limits.' },
+  { question: 'Can a fitness app cover mental wellness too?', answer: 'It can include general tools such as breathing, reflection and performance mindset practices. Those features can complement training but should not be presented as a replacement for mental-health treatment.' }
+];
+
+const toc = [
+  { id: 'connected', label: 'Why connected tools matter' },
+  { id: 'compare', label: 'What to compare' },
+  { id: 'guides', label: 'Fitness app guides' },
+  { id: 'ea', label: 'Everyone’s an Athlete' },
+  { id: 'questions', label: 'Common questions' }
+];
+---
+
+<SEOArticle
+  title="Fitness Apps for Training, Nutrition, Recovery & Mindset"
+  description="Compare what to look for in fitness apps that combine guided workouts, nutrition, recovery, mobility, workout videos and mental-performance support."
+  canonical="/fitness-apps/"
+  eyebrow="Fitness Apps"
+  heading="A simpler way to think about all-in-one fitness and wellness apps."
+  lead="The best app is not the one with the longest feature list. It is the one that helps you know what to do, understand why it matters and keep the pieces of health working together."
+  {faqs}
+  {toc}
+  ctaLabel="Get App Launch Updates"
+  secondaryLabel="Browse All Guides"
+  secondaryHref="/guides/"
+>
+  <p><strong>Fitness rarely happens in isolation.</strong> Training affects recovery. Nutrition affects energy. Sleep and stress change how workouts feel. A useful app can connect those areas without forcing people to juggle separate systems for every part of health.</p>
+
+  <h2 id="connected">Why connected fitness and wellness tools matter</h2>
+  <p>Many apps are excellent at one narrow job. That can be useful. But people often need help turning separate information into a repeatable routine. A connected system can make it easier to see today’s workout, use a short recovery session, learn a practical nutrition concept and return to the plan tomorrow.</p>
+
+  <div class="grid two">
+    <div class="card"><span class="pill">Training</span><h3>Know what to do</h3><p>Structured workouts, exercise demonstrations, progression and alternatives create a clear path forward.</p></div>
+    <div class="card"><span class="pill coral">Recovery</span><h3>Know when to back off</h3><p>Mobility, warmups, cooldowns and lower-intensity sessions help put harder work in context.</p></div>
+    <div class="card"><span class="pill orange">Nutrition</span><h3>Support the work</h3><p>Practical fueling, hydration and recovery education can make training more sustainable.</p></div>
+    <div class="card"><span class="pill purple">Mindset</span><h3>Build consistency</h3><p>Breathing, awareness, reflection and behavior tools support the habits behind the program.</p></div>
+  </div>
+
+  <h2 id="compare">What to compare when choosing a fitness app</h2>
+  <ul>
+    <li><strong>Starting pathway:</strong> Can a new user tell what to do first?</li>
+    <li><strong>Workout structure:</strong> Are sessions connected into a plan or just listed in a library?</li>
+    <li><strong>Exercise instruction:</strong> Are movements demonstrated clearly with useful alternatives?</li>
+    <li><strong>Progression:</strong> Does the app explain how to increase difficulty over time?</li>
+    <li><strong>Recovery support:</strong> Can users find mobility or easier sessions that fit the training plan?</li>
+    <li><strong>Nutrition approach:</strong> Is the guidance practical and appropriately scoped?</li>
+    <li><strong>Mental-performance tools:</strong> Are they useful without overpromising?</li>
+    <li><strong>Tracking:</strong> Does data help people make decisions instead of simply creating more scores?</li>
+  </ul>
+
+  <h2 id="guides">Fitness app guides</h2>
+  <div class="grid two">
+    <a class="card" href="/fitness-apps/all-in-one-physical-mental-health-app/"><h3>All-in-One Physical and Mental Health App</h3><p>How physical and mental wellness tools can work together in one system.</p></a>
+    <a class="card" href="/fitness-apps/best-fitness-apps-with-nutrition/"><h3>Best Fitness Apps with Nutrition Support</h3><p>What to compare when workout guidance and nutrition education are connected.</p></a>
+    <a class="card" href="/fitness-apps/workout-videos/"><h3>Fitness Apps with Workout Videos</h3><p>How exercise demonstrations can support confidence, technique and consistency.</p></a>
+    <a class="card" href="/training/"><h3>Strength Training App Guide</h3><p>What guided strength programming should include for beginners and experienced users.</p></a>
+  </div>
+
+  <div class="callout"><strong>Do not choose an app by feature count alone.</strong> A smaller system you can understand and repeat is usually more useful than dozens of disconnected tools.</div>
+
+  <h2 id="ea">Where Everyone’s an Athlete is headed</h2>
+  <p>Everyone’s an Athlete is being built around four connected pillars: <a href="/training/">training</a>, <a href="/recovery/">recovery</a>, <a href="/nutrition/">nutrition</a> and <a href="/mental-performance/">mental performance</a>. The goal is to make those areas easier to use together while keeping the experience approachable for people at different starting points.</p>
+  <p>The app is still in development. In the meantime, the site’s guide library documents the approach, answers specific questions and provides practical movement education.</p>
+</SEOArticle>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://everyonesanathlete.app/sitemap-index.xml
+Sitemap: https://everyonesanathlete.com/sitemap-index.xml

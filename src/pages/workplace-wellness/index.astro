@@ -1,0 +1,67 @@
+---
+import SEOArticle from '../../components/SEOArticle.astro';
+
+const faqs = [
+  { question: 'What is workplace wellness for desk workers?', answer: 'For desk-based employees, workplace wellness can include workstation education, regular position changes, short movement breaks, walking, strength training outside the workday, recovery habits and practical stress-management tools.' },
+  { question: 'How often should I take a movement break at work?', answer: 'There is no single perfect schedule for everyone. The useful principle is to avoid staying in one position for long uninterrupted periods and to change position or move regularly throughout the day.' },
+  { question: 'Is perfect posture the goal?', answer: 'No. A comfortable setup matters, but even a good posture can become uncomfortable when held too long. Variety, movement and a workstation that fits the person are more practical goals.' },
+  { question: 'Is workplace wellness the same as corporate wellness?', answer: 'Not on this site. Workplace wellness is the informational resource hub for individual employees and everyday work habits. Corporate wellness is the employer-focused hub for organizations evaluating programs, vendors and employee wellness strategy.' }
+];
+
+const toc = [
+  { id: 'what-it-covers', label: 'What it covers' },
+  { id: 'desk-day', label: 'A healthier desk day' },
+  { id: 'guides', label: 'Workplace guides' },
+  { id: 'corporate', label: 'For employers' },
+  { id: 'questions', label: 'Common questions' }
+];
+---
+
+<SEOArticle
+  title="Workplace Wellness, Ergonomics & Desk Mobility"
+  description="Practical workplace wellness guidance for desk mobility, ergonomics, movement breaks, recovery and healthier workday habits."
+  canonical="/workplace-wellness/"
+  eyebrow="Workplace Wellness"
+  heading="A healthier workday is built around movement, not one perfect posture."
+  lead="Use practical ergonomics, short movement breaks and simple routines to interrupt long periods of sitting or standing and make the workday easier on your body."
+  {faqs}
+  {toc}
+  secondaryLabel="Desk Mobility Routine"
+  secondaryHref="/workplace-wellness/desk-mobility-routine/"
+>
+  <p><strong>Workplace wellness begins with the work itself.</strong> A desk, shift schedule or remote setup can shape how much people move, how long they stay in one position and how much energy they have left for exercise outside work.</p>
+
+  <h2 id="what-it-covers">What workplace wellness covers</h2>
+  <div class="grid two">
+    <div class="card"><h3>Ergonomics</h3><p>Set up the workstation so common tasks are comfortable and equipment fits the person using it.</p></div>
+    <div class="card"><h3>Movement breaks</h3><p>Change position, walk or use brief mobility sessions during long stretches of concentrated work.</p></div>
+    <div class="card"><h3>Strength and capacity</h3><p>A stronger body can make daily tasks more manageable. Workday movement is useful, but it does not need to replace a structured training plan.</p></div>
+    <div class="card"><h3>Recovery habits</h3><p>Sleep, stress, nutrition and time away from work all affect how the body handles both job demands and exercise.</p></div>
+  </div>
+
+  <h2 id="desk-day">Build a healthier desk day</h2>
+  <h3>Start with a workable setup</h3>
+  <p>Adjust the chair, desk, screen and input devices so you can perform common tasks without unnecessary reaching or awkward positions. The goal is a setup that supports the work, not a rigid pose you must hold all day.</p>
+
+  <h3>Change position regularly</h3>
+  <p>Alternate between sitting, standing and walking when possible. A short change in position can be more realistic than waiting for one long workout to undo an otherwise motionless day.</p>
+
+  <h3>Use short movement breaks</h3>
+  <p>A movement break can be simple: stand up, walk, move the upper back, reach overhead, shift the hips or move the ankles. If you want a guided option, use our <a href="/workplace-wellness/desk-mobility-routine/">desk mobility routine</a>.</p>
+
+  <h3>Train outside the workstation</h3>
+  <p>General strength, walking and recreational activity can support a body that is more capable across the whole week. Workplace wellness should complement meaningful exercise rather than turn every hour into a corrective routine.</p>
+
+  <div class="callout"><strong>Think variety, not perfection.</strong> The best posture is often the next comfortable position you can move into.</div>
+
+  <h2 id="guides">Workplace wellness guides</h2>
+  <div class="grid two">
+    <a class="card" href="/workplace-wellness/workplace-ergonomics/"><h3>Workplace Ergonomics Guide</h3><p>Desk setup, posture, movement breaks and practical workstation habits.</p></a>
+    <a class="card" href="/workplace-wellness/desk-mobility-routine/"><h3>Desk Mobility Routine</h3><p>A short adaptable routine for the neck, shoulders, upper back, hips and ankles.</p></a>
+    <a class="card" href="/recovery/"><h3>Recovery & Mobility</h3><p>Broader mobility and recovery guidance for training days, rest days and everyday stiffness.</p></a>
+    <a class="card" href="/training/"><h3>Strength Training</h3><p>Build structured movement outside the workday with guided strength principles.</p></a>
+  </div>
+
+  <h2 id="corporate">Looking at wellness from the employer side?</h2>
+  <p>This hub is intentionally focused on the individual workday. If you are an HR, benefits or people leader evaluating employee programs, implementation, participation or vendors, use our <a href="/corporate-wellness/">corporate wellness hub</a> instead.</p>
+</SEOArticle>

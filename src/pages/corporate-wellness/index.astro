@@ -31,6 +31,8 @@ const faqs = [
   }
 ];
 
+const pageUrl = new URL('/corporate-wellness/', Astro.site).toString();
+const siteUrl = new URL('/', Astro.site).toString();
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -38,11 +40,11 @@ const schema = {
       '@type': 'WebPage',
       name: 'Corporate Wellness Programs and Employee Fitness',
       description,
-      url: 'https://everyonesanathlete.app/corporate-wellness/',
+      url: pageUrl,
       isPartOf: {
         '@type': 'WebSite',
         name: 'Everyone’s an Athlete',
-        url: 'https://everyonesanathlete.app/'
+        url: siteUrl
       },
       dateModified: '2026-08-25'
     },

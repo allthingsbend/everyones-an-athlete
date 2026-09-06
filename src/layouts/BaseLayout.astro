@@ -23,7 +23,6 @@ const socialImageUrl = new URL(image, Astro.site).toString();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Analytics -->
     <script
       is:inline
       async
@@ -32,11 +31,9 @@ const socialImageUrl = new URL(image, Astro.site).toString();
 
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-
       function gtag() {
         window.dataLayer.push(arguments);
       }
-
       gtag('js', new Date());
       gtag('config', 'G-C63BJ31R52');
     </script>
@@ -44,6 +41,7 @@ const socialImageUrl = new URL(image, Astro.site).toString();
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0f9b8e" />
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteName} />
@@ -60,7 +58,7 @@ const socialImageUrl = new URL(image, Astro.site).toString();
   <body>
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="/">Everyone’s an Athlete</a>
+        <a class="brand" href="/" aria-label="Everyone’s an Athlete home">Everyone’s an Athlete</a>
 
         <button
           class="menu-toggle"
@@ -74,14 +72,12 @@ const socialImageUrl = new URL(image, Astro.site).toString();
 
         <nav class="nav-links" aria-label="Main navigation">
           <a href="/training/">Training</a>
-          <a href="/fuel-wellness/">Fuel &amp; Wellness</a>
-          <a href="/corporate-wellness/">Corporate Wellness</a>
-          <a href="/guides/">Guides</a>
-          <a href="/about/">About</a>
-          <a href="/contact/">Contact</a>
-          <a class="btn" href="/contact/">
-            Get Launch Updates
-          </a>
+          <a href="/recovery/">Recovery</a>
+          <a href="/nutrition/">Nutrition</a>
+          <a href="/mental-performance/">Mindset</a>
+          <a href="/fitness-apps/">Fitness Apps</a>
+          <a href="/corporate-wellness/">Corporate</a>
+          <a class="btn" href="/contact/">Launch Updates</a>
         </nav>
       </div>
     </header>
@@ -94,24 +90,22 @@ const socialImageUrl = new URL(image, Astro.site).toString();
       <div class="container footer-grid">
         <div>
           <div class="brand footer-brand">Everyone’s an Athlete</div>
-
           <p>
-            Training the body intelligently, recovering proactively, building
-            mental performance, and fueling everything with practical nutrition
-            and wellness habits.
+            Practical training, recovery, nutrition and mental-performance guidance for everyday athletes, plus a connected wellness app in development.
           </p>
         </div>
 
         <div>
           <p><strong>Explore</strong></p>
-
           <p>
             <a href="/training/">Training</a> ·
-            <a href="/body-care/">Body Care</a> ·
+            <a href="/recovery/">Recovery</a> ·
+            <a href="/nutrition/">Nutrition</a> ·
             <a href="/mental-performance/">Mental Performance</a> ·
-            <a href="/fuel-wellness/">Fuel &amp; Wellness</a> ·
+            <a href="/fitness-apps/">Fitness Apps</a> ·
+            <a href="/workplace-wellness/">Workplace Wellness</a> ·
             <a href="/corporate-wellness/">Corporate Wellness</a> ·
-            <a href="/guides/">Guides</a> ·
+            <a href="/guides/">All Guides</a> ·
             <a href="/about/">About</a> ·
             <a href="/contact/">Contact</a>
           </p>
@@ -125,9 +119,15 @@ const socialImageUrl = new URL(image, Astro.site).toString();
 
       toggle?.addEventListener('click', () => {
         nav?.classList.toggle('is-open');
-
         const isOpen = nav?.classList.contains('is-open');
         toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      nav?.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('is-open');
+          toggle?.setAttribute('aria-expanded', 'false');
+        });
       });
     </script>
   </body>

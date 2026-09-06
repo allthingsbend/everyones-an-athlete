@@ -1,21 +1,14 @@
 ---
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import HipExplorer from '../../components/movement/HipExplorer.astro';
 import '../../styles/movement-manual.css';
 
-const title = 'The Movement Manual | Everyone’s an Athlete';
+const title = 'The Movement Manual';
 const description = 'A visual-first guide to how the human body moves, starting with the hips, tightness, rotation, muscles, and real-life movement.';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-  </head>
-  <body>
-    <main class="movement-manual">
-      <HipExplorer />
-    </main>
-  </body>
-</html>
+<BaseLayout title={title} description={description} canonical="/movement-manual/">
+  <div class="movement-manual">
+    <HipExplorer />
+  </div>
+</BaseLayout>

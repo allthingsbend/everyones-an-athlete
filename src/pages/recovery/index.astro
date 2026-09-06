@@ -1,0 +1,93 @@
+---
+import SEOArticle from '../../components/SEOArticle.astro';
+
+const faqs = [
+  { question: 'What is a mobility and recovery app?', answer: 'It is a digital tool that guides mobility, warmup, cooldown, breathing or recovery sessions. The most useful apps organize routines by goal, body area, training context and available time.' },
+  { question: 'Is mobility the same as flexibility?', answer: 'Not exactly. Flexibility generally describes available range, while mobility includes the ability to control movement through a range. Both can matter, but the appropriate training depends on the person and activity.' },
+  { question: 'Should I do mobility before or after a workout?', answer: 'Before training, use movement that prepares you for the session. Afterward, lower-intensity mobility and breathing may help you transition into recovery. Long or aggressive stretching is not required after every workout.' },
+  { question: 'Can mobility work prevent every injury?', answer: 'No. Injury risk involves training load, fatigue, strength, technique, health history, environment and chance. Mobility can support movement options but should not be marketed as a guarantee against injury.' },
+  { question: 'How long should a recovery routine be?', answer: 'A focused routine can take 5 to 20 minutes. The best length is one you can perform consistently and that matches the purpose of the session.' }
+];
+
+const toc = [
+  { id: 'recovery-means', label: 'What recovery means' },
+  { id: 'routine-types', label: 'Routine types' },
+  { id: 'choose', label: 'How to choose a routine' },
+  { id: 'guides', label: 'Recovery guides' },
+  { id: 'warning-signs', label: 'When to get help' },
+  { id: 'questions', label: 'Common questions' }
+];
+---
+
+<SEOArticle
+  title="Mobility and Workout Recovery App"
+  description="Explore mobility, warmup, cooldown and workout recovery routines for training days, rest days and everyday stiffness."
+  canonical="/recovery/"
+  eyebrow="Recovery"
+  heading="Mobility and recovery that support the training you actually do."
+  lead="Recovery is not a separate hobby. It is the process that helps you adapt to training, manage fatigue and keep moving. Use focused mobility, breathing and lower-intensity routines when they serve a clear purpose."
+  {faqs}
+  {toc}
+  secondaryLabel="Try a 10-Minute Routine"
+  secondaryHref="/recovery/10-minute-mobility-routine/"
+>
+  <p><strong>Recovery is not the absence of training.</strong> Sleep, nutrition, stress, time and appropriately dosed movement all affect how the body responds between sessions.</p>
+
+  <h2 id="recovery-means">What recovery means</h2>
+  <p>Recovery includes the lower-intensity work and daily habits that help you prepare for the next meaningful effort. That can include mobility, easy walking, breathing, warmups, cooldowns, sleep, nutrition and simple awareness of soreness or fatigue.</p>
+
+  <div class="grid two">
+    <div class="card"><h3>Prepare</h3><p>Use targeted movement to raise temperature, explore the ranges needed for training and rehearse the patterns ahead.</p></div>
+    <div class="card"><h3>Downshift</h3><p>Use easy movement and breathing after training when you want to transition out of a harder session.</p></div>
+    <div class="card"><h3>Restore options</h3><p>Work gradually on comfortable range and control where daily habits or training have left you feeling restricted.</p></div>
+    <div class="card"><h3>Build awareness</h3><p>Notice soreness, fatigue, tension and changes in movement so you can make better training decisions.</p></div>
+  </div>
+
+  <h2 id="routine-types">Four useful types of recovery routines</h2>
+  <h3>Pre-workout movement preparation</h3>
+  <p>Choose movements related to the session ahead. A lower-body day might include ankle, hip and squat-pattern preparation; an upper-body session may focus on shoulders, upper back and pressing or pulling patterns.</p>
+
+  <h3>Post-workout cooldown</h3>
+  <p>A cooldown can be simple: walk until breathing settles, use a few comfortable movements and avoid turning recovery into another hard workout.</p>
+
+  <h3>Rest-day mobility</h3>
+  <p>Use rest-day routines to explore range without chasing fatigue. Easy walking, joint movement and breathing can help people move without adding significant training stress.</p>
+
+  <h3>Workday movement breaks</h3>
+  <p>Changing position regularly is often more useful than searching for one perfect posture. For desk-specific ideas, see our <a href="/workplace-wellness/">workplace wellness hub</a>.</p>
+
+  <h2 id="choose">How to choose the right routine</h2>
+  <ul>
+    <li><strong>Start with the purpose:</strong> preparation, cooldown, range, relaxation or a movement break.</li>
+    <li><strong>Choose the relevant area:</strong> whole body, hips, ankles, shoulders, upper back or another region.</li>
+    <li><strong>Match the available time:</strong> five focused minutes can be more useful than skipping a 30-minute plan.</li>
+    <li><strong>Use an appropriate intensity:</strong> mobility does not need to be painful to be productive.</li>
+    <li><strong>Reassess:</strong> notice whether the routine changed comfort, control or readiness.</li>
+  </ul>
+
+  <div class="callout"><strong>Use the minimum effective routine.</strong> More stretching is not automatically better. Choose the smallest amount that helps you prepare or recover, then return to the activities you care about.</div>
+
+  <h2 id="guides">Recovery and mobility guides</h2>
+  <div class="grid two">
+    <a class="card" href="/recovery/10-minute-mobility-routine/"><h3>10-Minute Full-Body Mobility Routine</h3><p>An equipment-free routine for ankles, hips, upper back and shoulders.</p></a>
+    <a class="card" href="/recovery/mobility-recovery-after-workouts/"><h3>Mobility and Recovery After Workouts</h3><p>How to think about cooldowns, soreness, mobility and recovery between sessions.</p></a>
+    <a class="card" href="/training/"><h3>Strength Training</h3><p>Connect recovery decisions to the work you are actually recovering from.</p></a>
+    <a class="card" href="/nutrition/"><h3>Nutrition & Wellness</h3><p>Support recovery with practical fueling, hydration, sleep and lifestyle habits.</p></a>
+  </div>
+
+  <h2>What a good recovery app should do</h2>
+  <ul>
+    <li>Organize sessions by goal and duration</li>
+    <li>Show movements clearly from useful angles</li>
+    <li>Explain where a movement should be felt</li>
+    <li>Offer alternatives instead of forcing one range</li>
+    <li>Connect recovery recommendations to training</li>
+    <li>Avoid promising to cure pain or prevent every injury</li>
+  </ul>
+
+  <h2 id="warning-signs">When a routine is not enough</h2>
+  <p>General mobility content is not an assessment or treatment plan. Seek appropriate medical or rehabilitation guidance for severe pain, traumatic injury, progressive weakness, loss of sensation, swelling, symptoms that interrupt sleep or problems that persist or worsen.</p>
+
+  <h2>How recovery fits the larger system</h2>
+  <p>Everyone’s an Athlete connects recovery with <a href="/training/">guided strength training</a>, <a href="/nutrition/">nutrition and lifestyle habits</a> and <a href="/mental-performance/">breathing and mental performance</a>. The goal is not endless recovery work. It is helping people return to meaningful movement with better information.</p>
+</SEOArticle>

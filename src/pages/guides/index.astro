@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = 'Fitness, Nutrition, Recovery and Mental Wellness Guides';
-const description = 'Explore practical guides on training, body care, recovery, nutrition, mental performance, workplace wellness and fitness apps.';
+const description = 'Explore practical guides on training, recovery, nutrition, mental performance, workplace wellness and fitness apps.';
 
 const guides = [
   {
@@ -35,25 +35,25 @@ const guides = [
     title: 'Why Nutrition Is Important for Athletes',
     description: 'How protein, hydration, meal timing and everyday food choices support performance, recovery and long-term health.',
     url: '/nutrition/why-nutrition-is-important-for-athletes/',
-    category: 'Fuel & Wellness'
+    category: 'Nutrition'
   },
   {
     title: 'Mobility and Recovery After Workouts',
-    description: 'Simple recovery habits, mobility work and body care routines that help people feel better between workouts.',
+    description: 'Simple recovery habits and mobility routines that help people feel better between workouts.',
     url: '/recovery/mobility-recovery-after-workouts/',
-    category: 'Body Care'
+    category: 'Recovery'
   },
   {
     title: '10-Minute Full-Body Mobility Routine',
     description: 'A simple equipment-free routine for ankles, hips, upper back and shoulders, with easy modifications.',
     url: '/recovery/10-minute-mobility-routine/',
-    category: 'Body Care'
+    category: 'Recovery'
   },
   {
     title: 'Mental Performance Training for Athletes',
     description: 'A practical guide to focus, breathing, awareness, confidence and building the mindset behind better performance.',
     url: '/mental-performance/mental-performance-training-for-athletes/',
-    category: 'Mindset'
+    category: 'Mental Performance'
   },
   {
     title: 'Breathing Exercises for Athletes',
@@ -75,7 +75,7 @@ const guides = [
   },
   {
     title: 'Workplace Ergonomics Guide',
-    description: 'Desk setup, posture, movement breaks and simple body care habits for people who sit for long periods.',
+    description: 'Desk setup, posture, movement breaks and simple recovery habits for people who sit for long periods.',
     url: '/workplace-wellness/workplace-ergonomics/',
     category: 'Workplace Wellness'
   },
@@ -96,7 +96,7 @@ const allGuides = guides.filter((guide) => !guide.featured);
     <div class="container">
       <div class="eyebrow">Guides</div>
       <h1>Fitness, nutrition, recovery and mental wellness guides.</h1>
-      <p class="lead">Explore practical guides built around training, body care, mindset, and fuel. These articles are designed to help people move better, recover smarter, eat with more intention, and build healthier routines.</p>
+      <p class="lead">Explore practical guides built around training, recovery, nutrition and mental performance, plus deeper resources for fitness apps and workplace wellness.</p>
       <div class="hero-actions">
         <a class="btn" href="/contact/">Get Launch Updates</a>
         <a class="btn secondary" href="/about/">Learn About the Mission</a>

@@ -1,0 +1,78 @@
+---
+import SEOArticle from '../../components/SEOArticle.astro';
+
+const faqs = [
+  { question: 'What should a nutrition and wellness app include?', answer: 'Useful apps explain practical nutrition, hydration, sleep and recovery habits without pretending one plan fits everyone. Look for clear education, realistic habit support and appropriate medical boundaries.' },
+  { question: 'Why is protein important for active people?', answer: 'Protein supplies amino acids used for tissue maintenance and repair. Needs vary by body size, training, total diet and goals, so general education should not be treated as an individualized prescription.' },
+  { question: 'Does nutrition matter if I am not a competitive athlete?', answer: 'Yes. Food and hydration support daily energy, training, recovery and general health regardless of competitive status.' },
+  { question: 'Can a wellness app replace a dietitian?', answer: 'No. An app can provide general education and habit support, but people with medical conditions, eating disorders, significant dietary restrictions or complex goals may benefit from individualized care from a qualified professional.' }
+];
+
+const toc = [
+  { id: 'why-it-matters', label: 'Why nutrition matters' },
+  { id: 'foundations', label: 'Core foundations' },
+  { id: 'guides', label: 'Nutrition guides' },
+  { id: 'app', label: 'What an app should do' },
+  { id: 'questions', label: 'Common questions' }
+];
+---
+
+<SEOArticle
+  title="Nutrition and Wellness App for Training & Recovery"
+  description="Practical nutrition and wellness guidance for training, recovery, hydration, protein, sleep and sustainable everyday health habits."
+  canonical="/nutrition/"
+  eyebrow="Nutrition"
+  heading="Practical nutrition and wellness that support real-life training."
+  lead="Food, hydration, sleep and stress all shape how training feels and how well people recover. The goal is not a perfect diet. It is a set of useful habits you can understand and repeat."
+  {faqs}
+  {toc}
+  secondaryLabel="Nutrition Guide"
+  secondaryHref="/nutrition/why-nutrition-is-important-for-athletes/"
+>
+  <p><strong>Training is only one part of performance.</strong> The body also needs enough energy, nutrients, fluids, sleep and recovery time. Nutrition guidance is most useful when it makes those basics easier to understand instead of adding more rules.</p>
+
+  <h2 id="why-it-matters">Why nutrition belongs with training and recovery</h2>
+  <p>What you eat influences energy availability, tissue repair, hydration and the ability to support repeated training. Nutrition also sits inside a larger wellness picture that includes sleep, stress, activity and individual health needs.</p>
+  <div class="callout orange-border"><strong>Keep the goal practical.</strong> Better fueling should make training and everyday health easier to support, not turn every meal into a performance test.</div>
+
+  <h2 id="foundations">Core nutrition and wellness foundations</h2>
+  <div class="grid two">
+    <div class="card"><span class="pill orange">Fuel</span><h3>Balanced meals</h3><p>Build meals from foods you enjoy while including useful sources of protein, carbohydrates, fats, produce and fluids.</p></div>
+    <div class="card"><span class="pill orange">Protein</span><h3>Support repair and adaptation</h3><p>Protein helps support tissue maintenance and repair. The right amount depends on the person, diet, training and goals.</p></div>
+    <div class="card"><span class="pill orange">Hydration</span><h3>Replace what you use</h3><p>Fluid needs change with body size, heat, activity and sweat. Consistent hydration matters more than chasing a complicated protocol.</p></div>
+    <div class="card"><span class="pill orange">Recovery</span><h3>Sleep and stress matter too</h3><p>Nutrition cannot compensate for every recovery problem. Sleep, stress and training load influence energy, appetite and performance.</p></div>
+  </div>
+
+  <h3>Protein and recovery</h3>
+  <p>Protein supports muscle repair and adaptation to training. A useful education module can explain why protein matters, show common food sources and help people think about consistency across the day without making food unnecessarily complicated.</p>
+
+  <h3>Carbohydrates and training energy</h3>
+  <p>Carbohydrates are a major fuel source for many forms of exercise. Needs vary with training duration, intensity and total energy intake. Someone doing several hard sessions each week has different needs from someone taking a short walk or lifting twice per week.</p>
+
+  <h3>Hydration</h3>
+  <p>Hydration affects comfort and performance, especially in hot environments or longer sessions. Pay attention to thirst, sweat, heat and the duration of activity rather than assuming one fixed amount fits everyone.</p>
+
+  <h3>Sleep and stress</h3>
+  <p>Sleep and stress affect recovery, appetite, mood and how training feels. Wellness guidance is more useful when it acknowledges those connections instead of treating nutrition as an isolated score.</p>
+
+  <h2 id="guides">Nutrition and wellness guides</h2>
+  <div class="grid two">
+    <a class="card" href="/nutrition/why-nutrition-is-important-for-athletes/"><h3>Why Nutrition Is Important for Athletes</h3><p>How food, hydration and recovery habits support performance and long-term health.</p></a>
+    <a class="card" href="/fitness-apps/best-fitness-apps-with-nutrition/"><h3>Best Fitness Apps with Nutrition Support</h3><p>What to look for when workouts and nutrition guidance live in the same app.</p></a>
+    <a class="card" href="/recovery/"><h3>Recovery & Mobility</h3><p>Connect fueling and sleep to the training and movement you are recovering from.</p></a>
+    <a class="card" href="/corporate-wellness/"><h3>Corporate Wellness</h3><p>How practical nutrition education can fit into broader employee wellness support.</p></a>
+  </div>
+
+  <h2 id="app">What a good nutrition and wellness app should do</h2>
+  <ul>
+    <li>Explain the fundamentals in plain language</li>
+    <li>Connect nutrition recommendations to training and recovery context</li>
+    <li>Support realistic habits instead of all-or-nothing challenges</li>
+    <li>Avoid labeling foods as morally good or bad</li>
+    <li>Make clear where general education ends and individualized care begins</li>
+    <li>Work alongside movement, recovery and mental-performance tools instead of competing with them</li>
+  </ul>
+
+  <h2>How nutrition fits the larger system</h2>
+  <p>Everyone’s an Athlete connects nutrition with <a href="/training/">strength training</a>, <a href="/recovery/">mobility and recovery</a> and <a href="/mental-performance/">mental performance</a>. The goal is a simpler view of health where the pieces support each other.</p>
+</SEOArticle>
