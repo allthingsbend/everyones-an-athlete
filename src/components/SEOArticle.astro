@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import TopicHubHero from './TopicHubHero.astro';
 
 const {
   title,
@@ -15,7 +16,8 @@ const {
   ctaHref = '/contact/',
   secondaryLabel = 'Explore All Guides',
   secondaryHref = '/guides/',
-  reviewed = 'August 25, 2026'
+  reviewed = 'August 25, 2026',
+  hub = null
 } = Astro.props;
 
 const pageUrl = new URL(canonical, Astro.site).toString();
@@ -28,11 +30,7 @@ const schema = {
       name: heading,
       description,
       url: pageUrl,
-      isPartOf: {
-        '@type': 'WebSite',
-        name: 'Everyone’s an Athlete',
-        url: siteUrl
-      },
+      isPartOf: { '@type': 'WebSite', name: 'Everyone’s an Athlete', url: siteUrl },
       dateModified: '2026-08-25'
     },
     ...(faqs.length ? [{
@@ -50,37 +48,54 @@ const schema = {
 <BaseLayout title={title} description={description} canonical={canonical}>
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
-  <section class="article-hero">
-    <div class="container article-hero-grid">
-      <div class="article-hero-copy">
-        <div class="eyebrow">{eyebrow}</div>
-        <h1>{heading}</h1>
-        <p class="lead">{lead}</p>
-        <div class="hero-actions">
-          <a class="btn" href={ctaHref}>{ctaLabel}</a>
-          <a class="btn secondary" href={secondaryHref}>{secondaryLabel}</a>
+  {hub ? (
+    <TopicHubHero
+      eyebrow={eyebrow}
+      heading={heading}
+      lead={lead}
+      primaryLabel={hub.primaryLabel || ctaLabel}
+      primaryHref={hub.primaryHref || ctaHref}
+      secondaryLabel={hub.secondaryLabel || secondaryLabel}
+      secondaryHref={hub.secondaryHref || secondaryHref}
+      features={hub.features || []}
+      accent={hub.accent || 'teal'}
+      image={hub.image || '/images/app/screenshot-1.png'}
+      image2={hub.image2 || '/images/app/screenshot-2.png'}
+      visualTitle={hub.visualTitle || 'Built to follow'}
+      visualText={hub.visualText || 'Clear direction, useful video guidance and practical support around the work.'}
+    />
+  ) : (
+    <section class="article-hero">
+      <div class="container article-hero-grid">
+        <div class="article-hero-copy">
+          <div class="eyebrow">{eyebrow}</div>
+          <h1>{heading}</h1>
+          <p class="lead">{lead}</p>
+          <div class="hero-actions">
+            <a class="btn" href={ctaHref}>{ctaLabel}</a>
+            <a class="btn secondary" href={secondaryHref}>{secondaryLabel}</a>
+          </div>
         </div>
+        <aside class="guide-preview" aria-label="Guide overview">
+          <div class="guide-preview-top">
+            <span class="guide-preview-label">Everyone’s an Athlete Guide</span>
+            <span class="guide-preview-dot" aria-hidden="true"></span>
+          </div>
+          <strong>Built to use, not just read.</strong>
+          <div class="guide-preview-items">
+            {(toc.length ? toc.slice(0, 4) : [
+              { label: 'Clear guidance' },
+              { label: 'Practical next steps' },
+              { label: 'Simple structure' }
+            ]).map((item, index) => (
+              <span><b>{String(index + 1).padStart(2, '0')}</b>{item.label}</span>
+            ))}
+          </div>
+          <small>Reviewed {reviewed}</small>
+        </aside>
       </div>
-
-      <aside class="guide-preview" aria-label="Guide overview">
-        <div class="guide-preview-top">
-          <span class="guide-preview-label">Everyone’s an Athlete Guide</span>
-          <span class="guide-preview-dot" aria-hidden="true"></span>
-        </div>
-        <strong>Built to use, not just read.</strong>
-        <div class="guide-preview-items">
-          {(toc.length ? toc.slice(0, 4) : [
-            { label: 'Clear guidance' },
-            { label: 'Practical next steps' },
-            { label: 'Simple structure' }
-          ]).map((item, index) => (
-            <span><b>{String(index + 1).padStart(2, '0')}</b>{item.label}</span>
-          ))}
-        </div>
-        <small>Reviewed {reviewed}</small>
-      </aside>
-    </div>
-  </section>
+    </section>
+  )}
 
   <section class="content article-content">
     <div class="container article-layout">
@@ -89,15 +104,10 @@ const schema = {
           <span class="article-aside-kicker">In this guide</span>
           {toc.length > 0 && (
             <nav class="article-nav" aria-label="On this page">
-              {toc.map((item) => (
-                <a href={`#${item.id}`}>{item.label}</a>
-              ))}
+              {toc.map((item) => <a href={`#${item.id}`}>{item.label}</a>)}
             </nav>
           )}
-          <div class="article-aside-meta">
-            <span>Last reviewed</span>
-            <strong>{reviewed}</strong>
-          </div>
+          <div class="article-aside-meta"><span>Last reviewed</span><strong>{reviewed}</strong></div>
           <a class="aside-cta" href={ctaHref}>Get launch updates <span>→</span></a>
         </div>
       </aside>
@@ -121,11 +131,7 @@ const schema = {
         {sources.length > 0 && (
           <section id="sources">
             <h2>Sources and further reading</h2>
-            <ul>
-              {sources.map((source) => (
-                <li><a href={source.url} rel="noopener noreferrer">{source.name}</a></li>
-              ))}
-            </ul>
+            <ul>{sources.map((source) => <li><a href={source.url} rel="noopener noreferrer">{source.name}</a></li>)}</ul>
           </section>
         )}
 
