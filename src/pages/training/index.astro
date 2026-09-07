@@ -8,7 +8,6 @@ const faqs = [
   { question: 'Do I need a full gym?', answer: 'No. Useful programs can be built around bodyweight, resistance bands, dumbbells or a complete gym. The app should make equipment requirements clear before a workout begins.' },
   { question: 'Can an app replace a personal trainer?', answer: 'An app can provide structure and demonstrations, but it cannot fully observe technique, diagnose pain or make every individual adjustment. Some users benefit from in-person coaching, especially when learning complex lifts or returning from injury.' }
 ];
-
 const toc = [
   { id: 'what-to-look-for', label: 'What to look for' },
   { id: 'weekly-plan', label: 'Example weekly plan' },
@@ -16,25 +15,25 @@ const toc = [
   { id: 'videos', label: 'Using exercise videos' },
   { id: 'questions', label: 'Common questions' }
 ];
+const hub = {
+  primaryLabel: 'Explore Guided Workouts',
+  primaryHref: '/fitness-apps/',
+  secondaryLabel: 'Start a Beginner Plan',
+  secondaryHref: '/training/beginner-strength-training-program/',
+  features: ['Workout plans', 'Video demos', 'Progression', 'Dumbbell options'],
+  accent: 'teal',
+  image: '/images/app/screenshot-1.png',
+  image2: '/images/app/screenshot-2.png',
+  visualTitle: 'Know what to do today.',
+  visualText: 'Structured training should feel like a plan you can follow, not an endless exercise library.'
+};
 ---
-
-<SEOArticle
-  title="Strength Training App with Guided Workouts"
-  description="A practical guide to choosing and using a strength training app with guided workouts, exercise videos, weekly plans, progression and recovery support."
-  canonical="/training/"
-  eyebrow="Training"
-  heading="Guided strength training built for real-life consistency."
-  lead="A useful strength training app should do more than display a library of exercises. It should help you know what to do today, how to perform it, when to progress and how training fits with recovery."
-  {faqs}
-  {toc}
-  secondaryLabel="Watch Exercise Videos"
-  secondaryHref="/fitness-apps/workout-videos/"
->
-  <p><strong>Strength improves through repeated, appropriately challenging practice.</strong> The difficult part for many people is not finding an exercise—it is turning hundreds of possible exercises into a plan they can follow for months.</p>
+<SEOArticle title="Strength Training App with Guided Workouts" description="A practical guide to choosing and using a strength training app with guided workouts, exercise videos, weekly plans, progression and recovery support." canonical="/training/" eyebrow="Training" heading="Guided strength training built for real-life consistency." lead="Follow a clear plan, see how each movement works and know how to progress without turning every workout into guesswork." {faqs} {toc} {hub} secondaryLabel="Watch Exercise Videos" secondaryHref="/fitness-apps/workout-videos/">
+  <p><strong>Strength improves through repeated, appropriately challenging practice.</strong> The difficult part for many people is not finding an exercise. It is turning hundreds of possible exercises into a plan they can follow for months.</p>
   <h2 id="what-to-look-for">What to look for in a strength training app</h2>
   <div class="grid two">
     <div class="card"><h3>Structured weekly training</h3><p>The app should connect individual workouts into a schedule, explain the purpose of each session and make rest days visible.</p></div>
-    <div class="card"><h3>Clear exercise videos</h3><p>Demonstrations should show setup, movement and control—not just a fast clip with no explanation.</p></div>
+    <div class="card"><h3>Clear exercise videos</h3><p>Demonstrations should show setup, movement and control, not just a fast clip with no explanation.</p></div>
     <div class="card"><h3>Progression guidance</h3><p>Users need practical direction for increasing weight, repetitions, sets or movement difficulty.</p></div>
     <div class="card"><h3>Exercise alternatives</h3><p>A good plan offers substitutions for equipment, experience and comfortable range of motion without turning every workout into guesswork.</p></div>
     <div class="card"><h3>Useful tracking</h3><p>Workout history should help users repeat and progress their training rather than reward activity for its own sake.</p></div>
@@ -58,7 +57,7 @@ const toc = [
   <ul><li>Repeat the same movement long enough to learn it.</li><li>Complete the target repetitions with controlled technique.</li><li>Increase one variable at a time: load, repetitions, sets, range or exercise difficulty.</li><li>Use small increases rather than dramatic jumps.</li><li>Reduce volume when fatigue is accumulating faster than recovery.</li></ul>
   <div class="callout"><strong>A simple progression rule:</strong> when every prescribed set is completed with stable technique and a few repetitions still possible, consider a small increase next time.</div>
   <h2 id="videos">How to use workout and exercise videos well</h2>
-  <p>Watch the demonstration before the working set. Identify the starting position, direction of movement and finishing position. Then use an appropriate load and compare how the movement feels—not only how it looks.</p>
+  <p>Watch the demonstration before the working set. Identify the starting position, direction of movement and finishing position. Then use an appropriate load and compare how the movement feels, not only how it looks.</p>
   <p>A video cannot determine whether pain is safe or identify an injury. Stop when a movement causes sharp, worsening or unusual symptoms and seek appropriate professional guidance.</p>
   <h2>How Everyone’s an Athlete approaches training</h2>
   <p>Everyone’s an Athlete is being built to connect guided strength work with <a href="/recovery/">mobility and recovery</a>, <a href="/mental-performance/">mental performance</a> and <a href="/nutrition/">nutrition and wellness</a>. That matters because a training plan does not exist separately from the person performing it.</p>
