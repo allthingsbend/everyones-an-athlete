@@ -24,5 +24,11 @@ toggle?.addEventListener('click',()=>{nav?.classList.toggle('is-open');const isO
 nav?.querySelectorAll('a').forEach((link)=>{link.addEventListener('click',()=>{nav.classList.remove('is-open');toggle?.setAttribute('aria-expanded','false');});});
 const canonicalYouTube='https://www.youtube.com/@everyonesanathlete.';
 document.querySelectorAll('a[href*="youtube.com/@everyonesanathlete"]').forEach((link)=>{link.setAttribute('href',canonicalYouTube);link.setAttribute('rel','noopener noreferrer');});
+if(location.pathname==='/'||location.pathname==='/index.html'){
+  const homeHeading=document.querySelector('.home-hero .hero-copy h1');
+  const homeLead=document.querySelector('.home-hero .hero-lead');
+  if(homeHeading) homeHeading.innerHTML='A fitness app built to <em>keep you moving.</em>';
+  if(homeLead) homeLead.textContent='Follow guided workouts with clear video, plus practical recovery, nutrition and mindset support for everything around the workout.';
+}
 </script>
 </body></html>
