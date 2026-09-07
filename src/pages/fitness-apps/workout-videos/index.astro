@@ -1,15 +1,19 @@
 ---
 import SEOArticle from '../../../components/SEOArticle.astro';
+import VideoShowcase from '../../../components/VideoShowcase.astro';
 const faqs=[
  {question:'What makes a good workout video?',answer:'A useful video shows setup, the full movement and important control points from a clear angle. It also identifies equipment, difficulty and common reasons to choose an alternative.'},
  {question:'Are follow-along workouts good for beginners?',answer:'They can be, when the pace allows time to learn and the instructor provides lower-impact options. Beginners should not feel forced to match an instructor’s speed or resistance.'},
  {question:'Can workout videos replace coaching?',answer:'Videos provide demonstrations and structure but cannot fully observe technique or individual symptoms. In-person coaching may be valuable for complex lifts, pain, injury history or sport-specific needs.'},
  {question:'Should I watch or follow along?',answer:'Use demonstrations when training at your own pace and follow-along sessions when timing and coaching are part of the workout. Both formats can belong in one app.'}
 ];
-const toc=[{id:'formats',label:'Video formats'},{id:'quality',label:'Quality checklist'},{id:'use',label:'How to use videos'},{id:'library',label:'Exercise library'},{id:'questions',label:'Common questions'}];
+const toc=[{id:'library',label:'Play exercise videos'},{id:'formats',label:'Video formats'},{id:'quality',label:'Quality checklist'},{id:'use',label:'How to use videos'},{id:'questions',label:'Common questions'}];
 ---
-<SEOArticle title="Fitness Apps with Workout Videos: What to Look For" description="Learn how to choose a fitness app with clear workout videos, exercise demonstrations, follow-along sessions, structured plans and beginner-friendly options." canonical="/fitness-apps/workout-videos/" eyebrow="Guided Training" heading="Fitness apps with workout videos that teach—not just entertain." lead="The best workout video helps you understand the session and perform it at an appropriate pace. Production quality matters, but instruction, structure and usable alternatives matter more." {faqs} {toc} secondaryLabel="Explore Strength Training" secondaryHref="/training/">
+<SEOArticle title="Fitness Apps with Workout Videos: What to Look For" description="Learn how to choose a fitness app with clear workout videos, exercise demonstrations, follow-along sessions, structured plans and beginner-friendly options." canonical="/fitness-apps/workout-videos/" eyebrow="Guided Training" heading="Fitness apps with workout videos that teach, not just entertain." lead="The best workout video helps you understand the session and perform it at an appropriate pace. Production quality matters, but instruction, structure and usable alternatives matter more." {faqs} {toc} secondaryLabel="Explore Strength Training" secondaryHref="/training/">
  <p>A huge video library can still leave users asking the same question: <em>Which workout should I do today?</em> Look for an app that connects videos to a plan and explains who each session is for.</p>
+ <h2 id="library">Play some of the current exercise demos</h2>
+ <p>These are embedded directly from Everyone’s an Athlete so you can watch them here without being sent away from the site.</p>
+ <VideoShowcase compact={true} heading="Clear demos, right where you need them." intro="Deadlift, step-up and bench press are three examples from the current video library. The same idea can expand across programs, substitutions, warmups and movement education." />
  <h2 id="formats">Four workout video formats</h2>
  <div class="grid two">
   <div class="card"><h3>Exercise demonstrations</h3><p>Short clips show one movement so users can review setup and technique before completing their own sets.</p></div>
@@ -21,10 +25,10 @@ const toc=[{id:'formats',label:'Video formats'},{id:'quality',label:'Quality che
  <ul><li>Exercise name and purpose are clear.</li><li>Required equipment and space are listed first.</li><li>The camera shows the movement rather than distracting from it.</li><li>Audio explains useful actions in plain language.</li><li>Users can pause, replay or train at their own pace.</li><li>Beginner and low-impact options are available.</li><li>The instructor avoids promises of instant transformation or guaranteed calorie burn.</li><li>The workout belongs to a logical program or is clearly labeled as standalone.</li></ul>
  <h2 id="use">How to use workout videos safely</h2>
  <ol><li>Preview unfamiliar movements before the timer begins.</li><li>Clear enough space and stabilize equipment.</li><li>Choose resistance based on your ability, not the instructor’s.</li><li>Pause when technique is deteriorating.</li><li>Use the provided alternative when impact, range or equipment is not appropriate.</li><li>Stop for sharp, worsening or unusual symptoms.</li></ol>
- <div class="callout"><strong>You do not fail a video by pausing it.</strong> The video serves the person training—not the other way around.</div>
- <h2 id="library">Build a useful exercise video library</h2>
+ <div class="callout"><strong>You do not fail a video by pausing it.</strong> The video serves the person training, not the other way around.</div>
+ <h2>Build a useful exercise video library</h2>
  <p>A strong library covers foundational patterns and organizes them by equipment, difficulty and purpose. It should help users move from an easier variation toward more demanding versions without implying that the hardest exercise is always the goal.</p>
- <p>Everyone’s an Athlete already publishes exercise demonstrations, including the deadlift, step-up and bench press. The coming app is intended to connect demonstrations with <a href="/training/">structured training</a> and <a href="/body-care/">body-care routines</a>.</p>
+ <p>Everyone’s an Athlete is building toward demonstrations that connect directly with <a href="/training/">structured training</a>, <a href="/recovery/">recovery and mobility</a> and the rest of the app experience.</p>
  <h2>Video app questions before subscribing</h2>
  <ul><li>Are videos demonstrations, classes or both?</li><li>Can I filter by equipment and session length?</li><li>Is there a beginner pathway?</li><li>Can I substitute an exercise?</li><li>Do programs progress or simply rotate content?</li><li>Can videos be downloaded?</li><li>Are captions and accessible controls available?</li></ul>
 </SEOArticle>
