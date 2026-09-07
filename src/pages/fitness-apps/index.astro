@@ -1,5 +1,6 @@
 ---
 import SEOArticle from '../../components/SEOArticle.astro';
+import VideoShowcase from '../../components/VideoShowcase.astro';
 const faqs = [
   { question: 'What should an all-in-one fitness app include?', answer: 'A useful all-in-one app should connect workouts with recovery, nutrition and behavior support while keeping each area simple enough to use. Clear exercise instruction, progression, mobility, practical education and realistic tracking matter more than a huge feature list.' },
   { question: 'Are fitness apps good for beginners?', answer: 'They can be, especially when they provide a clear starting pathway, technique demonstrations, manageable weekly structure and easier exercise options. Beginners should not have to build a program from a giant exercise library on day one.' },
@@ -8,6 +9,7 @@ const faqs = [
 ];
 const toc = [
   { id: 'connected', label: 'Why connected tools matter' },
+  { id: 'videos', label: 'Exercise videos' },
   { id: 'compare', label: 'What to compare' },
   { id: 'guides', label: 'Fitness app guides' },
   { id: 'ea', label: 'Everyone’s an Athlete' },
@@ -36,6 +38,9 @@ const hub = {
     <div class="card"><span class="pill orange">Nutrition</span><h3>Support the work</h3><p>Practical fueling, hydration and recovery education can make training more sustainable.</p></div>
     <div class="card"><span class="pill purple">Mindset</span><h3>Build consistency</h3><p>Breathing, awareness, reflection and behavior tools support the habits behind the program.</p></div>
   </div>
+  <h2 id="videos">Video guidance is part of the product</h2>
+  <p>People should not have to leave the workout just to remember how an exercise is performed. The app approach is to keep useful demonstrations close to the plan so a movement can be reviewed right when it matters.</p>
+  <VideoShowcase compact={true} eyebrow="Inside the training experience" heading="Watch without leaving the page." intro="These current exercise demos show the direction: clear movement videos embedded directly alongside the training guidance." />
   <h2 id="compare">What to compare when choosing a fitness app</h2>
   <ul><li><strong>Starting pathway:</strong> Can a new user tell what to do first?</li><li><strong>Workout structure:</strong> Are sessions connected into a plan or just listed in a library?</li><li><strong>Exercise instruction:</strong> Are movements demonstrated clearly with useful alternatives?</li><li><strong>Progression:</strong> Does the app explain how to increase difficulty over time?</li><li><strong>Recovery support:</strong> Can users find mobility or easier sessions that fit the training plan?</li><li><strong>Nutrition approach:</strong> Is the guidance practical and appropriately scoped?</li><li><strong>Mental-performance tools:</strong> Are they useful without overpromising?</li><li><strong>Tracking:</strong> Does data help people make decisions instead of simply creating more scores?</li></ul>
   <h2 id="guides">Fitness app guides</h2>
