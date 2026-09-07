@@ -22,9 +22,8 @@ body { background: var(--paper); color: var(--ink); }
 .btn:hover { box-shadow: 0 14px 30px rgba(39,55,80,.16); }
 .eyebrow, .section-label, .article-aside-kicker, .nav-links > a:not(.btn)::after { color: var(--teal-dark); }
 .nav-links > a:not(.btn)::after { background: var(--teal); }
-.brand-mark { background: #273750; }
-.brand-mark::before { border-color: #c5d1e3; border-right-color: transparent; }
-.brand-mark::after { background: #7890b8; }
+.brand-logo { width: 44px; height: 44px; display: block; flex: 0 0 44px; border-radius: 12px; }
+.footer-brand .brand-logo { width: 40px; height: 40px; flex-basis: 40px; }
 .page-hero, .article-hero, .hero { background: linear-gradient(180deg,#f7f9fc 0%,#fbfcfe 100%); }
 .page-hero::after, .article-hero::before, .guide-preview::before { border-color: rgba(95,121,165,.14); }
 .card, .phone-card { border-color: var(--line); box-shadow: var(--shadow-sm); }
@@ -39,4 +38,5 @@ a.card:hover { border-color: #c8d2e0; }
 
 @media (max-width: 620px) {
   .container { width: min(100% - 36px,1180px); }
+  .brand-logo { width: 42px; height: 42px; flex-basis: 42px; }
 }
