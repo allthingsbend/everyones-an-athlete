@@ -1,5 +1,6 @@
 ---
 import SEOArticle from '../../components/SEOArticle.astro';
+import VideoShowcase from '../../components/VideoShowcase.astro';
 
 const faqs = [
   { question: 'What should a strength training app include?', answer: 'Look for clear exercise demonstrations, structured weekly plans, progression guidance, easier and harder options, workout history and realistic recovery expectations. More exercises do not automatically make an app more useful.' },
@@ -56,8 +57,9 @@ const hub = {
   <p>Progressive overload means gradually asking the body to do more. It does not mean adding weight every workout regardless of technique or recovery.</p>
   <ul><li>Repeat the same movement long enough to learn it.</li><li>Complete the target repetitions with controlled technique.</li><li>Increase one variable at a time: load, repetitions, sets, range or exercise difficulty.</li><li>Use small increases rather than dramatic jumps.</li><li>Reduce volume when fatigue is accumulating faster than recovery.</li></ul>
   <div class="callout"><strong>A simple progression rule:</strong> when every prescribed set is completed with stable technique and a few repetitions still possible, consider a small increase next time.</div>
-  <h2 id="videos">How to use workout and exercise videos well</h2>
+  <h2 id="videos">See the exercise, then do the work</h2>
   <p>Watch the demonstration before the working set. Identify the starting position, direction of movement and finishing position. Then use an appropriate load and compare how the movement feels, not only how it looks.</p>
+  <VideoShowcase compact={true} eyebrow="Training video library" heading="Play the demos right here." intro="Start with three foundational movements. The videos stay on the page so you can review a movement, pause it and get back to your workout." />
   <p>A video cannot determine whether pain is safe or identify an injury. Stop when a movement causes sharp, worsening or unusual symptoms and seek appropriate professional guidance.</p>
   <h2>How Everyone’s an Athlete approaches training</h2>
   <p>Everyone’s an Athlete is being built to connect guided strength work with <a href="/recovery/">mobility and recovery</a>, <a href="/mental-performance/">mental performance</a> and <a href="/nutrition/">nutrition and wellness</a>. That matters because a training plan does not exist separately from the person performing it.</p>
