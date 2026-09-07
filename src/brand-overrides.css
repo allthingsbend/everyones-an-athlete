@@ -1,0 +1,42 @@
+:root {
+  --teal: #5f79a5;
+  --teal-dark: #4d668f;
+  --teal-deep: #273750;
+  --purple: #5f79a5;
+  --orange: #5f79a5;
+  --salmon: #5f79a5;
+  --ink: #202938;
+  --muted: #687386;
+  --line: #e1e6ee;
+  --line-strong: #d2d9e3;
+  --bg: #f5f7fa;
+  --paper: #fbfcfe;
+  --soft: #eef2f7;
+  --shadow-sm: 0 10px 28px rgba(39,55,80,.05);
+  --shadow-md: 0 24px 60px rgba(39,55,80,.10);
+}
+
+body { background: var(--paper); color: var(--ink); }
+.site-header { background: rgba(251,252,254,.92); border-bottom-color: rgba(210,217,227,.82); }
+.btn, .nav-button { background: var(--teal-deep); border-color: var(--teal-deep); box-shadow: 0 10px 24px rgba(39,55,80,.12); }
+.btn:hover { box-shadow: 0 14px 30px rgba(39,55,80,.16); }
+.eyebrow, .section-label, .article-aside-kicker, .nav-links > a:not(.btn)::after { color: var(--teal-dark); }
+.nav-links > a:not(.btn)::after { background: var(--teal); }
+.brand-mark { background: #273750; }
+.brand-mark::before { border-color: #c5d1e3; border-right-color: transparent; }
+.brand-mark::after { background: #7890b8; }
+.page-hero, .article-hero, .hero { background: linear-gradient(180deg,#f7f9fc 0%,#fbfcfe 100%); }
+.page-hero::after, .article-hero::before, .guide-preview::before { border-color: rgba(95,121,165,.14); }
+.card, .phone-card { border-color: var(--line); box-shadow: var(--shadow-sm); }
+a.card:hover { border-color: #c8d2e0; }
+.pill, .pill.coral, .pill.purple, .pill.orange { background: #eef2f7; color: #4d668f; }
+.callout, .callout.orange-border, .callout.purple-border, .callout.coral-border { border-color: #cfd8e5; background: #f7f9fc; }
+.guide-preview, .footer, .final-cta, .path-personal, .showcase-shell, .product-stage { background: #273750 !important; }
+.guide-preview-label, .guide-preview-items b, .final-eyebrow, .showcase-eyebrow, .footer-status, .footer a:hover { color: #b9c8df !important; }
+.training-card, .recovery-card, .nutrition-card, .mindset-card { color: #4d668f !important; background: #f7f9fc !important; }
+.coral-bg, .purple-bg, .orange-bg { background: #f7f9fc !important; }
+.topic-teal, .topic-purple, .topic-orange, .topic-coral, .topic-dark, .topic-blue { --hub-accent:#5f79a5 !important; --hub-soft:#eef2f7 !important; }
+
+@media (max-width: 620px) {
+  .container { width: min(100% - 36px,1180px); }
+}
